@@ -3,19 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vtlik — Automatización e IA para tu empresa | Python, WhatsApp Bot, Dashboards</title>
-  <meta name="description" content="Vtlik desarrolla sistemas de automatización, agentes de WhatsApp con IA, dashboards, monitoreo en tiempo real, CRM y extensiones Chrome. Soluciones a medida para empresas en Argentina y Latinoamérica." />
-  <meta name="keywords" content="automatización python, agente whatsapp ia, chatbot whatsapp empresa, dashboard google sheets, monitoreo call center, crm personalizado, extensión chrome, scraping web, integración google workspace, sistema de turnos, control de asistencia, auditorías de calidad automatizadas, fastapi, flask, automatización argentina" />
+  <title>Vtlik — Automatización e IA para empresas | Python, WhatsApp Bot, Dashboards</title>
+  <meta name="description" content="Vtlik es una empresa de software especializada en automatización, agentes de WhatsApp con IA, dashboards, monitoreo en tiempo real y CRM. Soluciones a medida para empresas en Colombia y Latinoamérica." />
+  <meta name="keywords" content="automatización python, agente whatsapp ia, chatbot whatsapp empresa, dashboard google sheets, monitoreo call center, crm personalizado, extensión chrome, scraping web, integración google workspace, sistema de turnos, control de asistencia, auditorías de calidad, fastapi, flask, automatización colombia, software a medida colombia, empresa software bpo" />
   <meta name="author" content="Vtlik" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://vtlik.com/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Vtlik — Automatización e IA para tu empresa" />
-  <meta property="og:description" content="Sistemas de automatización, agentes de WhatsApp con IA, dashboards en tiempo real y más. Soluciones a medida para empresas." />
+  <meta property="og:title" content="Vtlik — Automatización e IA para empresas" />
+  <meta property="og:description" content="Automatización, agentes con IA, dashboards y sistemas web a medida. Soluciones reales para empresas en Colombia y LATAM." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vtlik.com/" />
-  <meta property="og:locale" content="es_AR" />
+  <meta property="og:locale" content="es_CO" />
+
+  <!-- Google Analytics -->
+  <!-- Reemplazá G-XXXXXXXXXX con tu ID de Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script> -->
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -23,10 +33,11 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Vtlik",
-    "description": "Desarrollo de automatizaciones, agentes con IA, dashboards, monitoreo y sistemas web a medida para empresas.",
+    "description": "Empresa de software especializada en automatización, agentes con IA, dashboards y sistemas web a medida.",
     "url": "https://vtlik.com",
     "email": "gerencia@vtlik.com",
-    "areaServed": ["Argentina", "Latinoamérica"],
+    "telephone": "+573026119411",
+    "areaServed": ["Colombia", "Latinoamérica"],
     "serviceType": [
       "Automatización con Python",
       "Agente de WhatsApp con IA",
@@ -38,21 +49,7 @@
       "Control de asistencia y turnos",
       "Integración Google Workspace",
       "Sistemas web a medida"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Servicios de automatización y desarrollo",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agente de WhatsApp con IA" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Monitoreo en tiempo real con alertas Slack" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CRM y gestión de leads" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dashboards automáticos en Google Sheets" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auditorías de calidad automatizadas" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistema de turnos y asistencia" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Extensiones de Chrome personalizadas" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Integración Google Workspace con Apps Script" } }
-      ]
-    }
+    ]
   }
   </script>
 
@@ -74,7 +71,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -91,134 +87,137 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       backdrop-filter: blur(16px);
-      background: rgba(15,17,23,0.85);
+      background: rgba(10,10,26,0.9);
       border-bottom: 1px solid var(--border);
       padding: 0 5%;
       height: 64px;
       display: flex; align-items: center; justify-content: space-between;
     }
+    .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; color: #fff; }
+    .logo span { color: var(--accent); }
 
-    .logo {
-      font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px;
-      color: #fff;
+    .nav-links {
+      display: flex; gap: 28px; align-items: center;
     }
-    .logo span { color: var(--primary); }
+    .nav-links a {
+      font-size: 0.88rem; color: var(--text-muted); font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
 
     .nav-cta {
-      background: var(--primary);
-      color: #fff; font-weight: 600; font-size: 0.9rem;
+      background: var(--primary); color: #fff; font-weight: 600; font-size: 0.9rem;
       padding: 9px 22px; border-radius: 50px;
       transition: background 0.2s, transform 0.15s;
     }
     .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
 
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
     /* HERO */
     .hero {
       min-height: 100vh;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center;
-      padding: 120px 5% 80px;
+      text-align: center; padding: 120px 5% 80px;
       background: radial-gradient(ellipse at 50% 0%, rgba(123,47,190,0.28) 0%, transparent 65%),
                   radial-gradient(ellipse at 80% 80%, rgba(0,229,255,0.07) 0%, transparent 50%),
                   var(--dark);
-      position: relative; overflow: hidden;
     }
-
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(123,47,190,0.18); border: 1px solid rgba(123,47,190,0.45);
       color: #C77DFF; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
-      padding: 6px 16px; border-radius: 50px;
-      margin-bottom: 28px;
+      padding: 6px 16px; border-radius: 50px; margin-bottom: 28px;
     }
     .hero-badge .dot { width: 6px; height: 6px; background: var(--accent-2); border-radius: 50%; animation: pulse 2s infinite; }
-
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
 
     h1 {
-      font-size: clamp(2.2rem, 5.5vw, 4rem);
-      font-weight: 800; line-height: 1.12;
-      letter-spacing: -1.5px;
-      max-width: 820px;
-      margin-bottom: 20px;
+      font-size: clamp(2.2rem, 5.5vw, 4rem); font-weight: 800;
+      line-height: 1.12; letter-spacing: -1.5px; max-width: 820px; margin-bottom: 20px;
     }
-    h1 .accent { color: var(--primary); }
+    h1 .accent { color: var(--accent); }
 
     .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: var(--text-muted);
-      max-width: 600px;
-      margin-bottom: 44px;
+      font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-muted);
+      max-width: 600px; margin-bottom: 44px;
     }
-
-    .hero-actions {
-      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
-    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 
     .btn-primary {
       display: inline-flex; align-items: center; gap: 10px;
-      background: var(--primary); color: #fff;
-      font-weight: 700; font-size: 1rem;
-      padding: 15px 32px; border-radius: 50px;
-      transition: all 0.2s;
+      background: var(--primary); color: #fff; font-weight: 700; font-size: 1rem;
+      padding: 15px 32px; border-radius: 50px; transition: all 0.2s;
       box-shadow: 0 4px 20px rgba(123,47,190,0.45);
     }
     .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(123,47,190,0.6); }
 
     .btn-secondary {
       display: inline-flex; align-items: center; gap: 10px;
-      background: transparent; color: var(--text);
-      font-weight: 600; font-size: 1rem;
-      padding: 15px 32px; border-radius: 50px;
-      border: 1px solid var(--border);
-      transition: all 0.2s;
+      background: transparent; color: var(--text); font-weight: 600; font-size: 1rem;
+      padding: 15px 32px; border-radius: 50px; border: 1px solid var(--border); transition: all 0.2s;
     }
     .btn-secondary:hover { background: var(--card-bg); border-color: rgba(255,255,255,0.2); }
 
-    .hero-stats {
-      display: flex; gap: 48px; margin-top: 72px; flex-wrap: wrap; justify-content: center;
-    }
+    .hero-stats { display: flex; gap: 48px; margin-top: 72px; flex-wrap: wrap; justify-content: center; }
     .stat { text-align: center; }
-    .stat-num { font-size: 2rem; font-weight: 800; color: #fff; }
+    .stat-num { font-size: 2rem; font-weight: 800; color: var(--accent); }
     .stat-label { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
 
     /* SECTIONS */
     section { padding: 96px 5%; }
     .section-tag {
       font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--primary); margin-bottom: 12px;
+      color: var(--accent); margin-bottom: 12px;
     }
     h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 800; letter-spacing: -1px; line-height: 1.2;
-      margin-bottom: 16px;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+      letter-spacing: -1px; line-height: 1.2; margin-bottom: 16px;
     }
     .section-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 560px; }
-
     .section-header { margin-bottom: 56px; }
     .section-header.center { text-align: center; }
     .section-header.center .section-sub { margin: 0 auto; }
 
-    /* SERVICES */
-    #servicios { background: var(--dark-2); }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+    /* NOSOTROS */
+    #nosotros { background: var(--dark-2); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
     }
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
 
+    .about-text h2 { margin-bottom: 20px; }
+    .about-text p { color: var(--text-muted); font-size: 1rem; margin-bottom: 16px; line-height: 1.7; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--text); }
+
+    .about-cards { display: flex; flex-direction: column; gap: 16px; }
+    .about-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px 24px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .about-card-icon {
+      font-size: 1.5rem; width: 48px; height: 48px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,229,255,0.08); border-radius: 10px;
+    }
+    .about-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+    .about-card p { font-size: 0.84rem; color: var(--text-muted); }
+
+    /* SERVICES */
+    #servicios { background: var(--dark); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;
+    }
     .service-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
       transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
       position: relative; overflow: hidden;
     }
     .service-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
       background: linear-gradient(90deg, var(--accent), var(--primary), transparent);
       opacity: 0; transition: opacity 0.2s;
     }
@@ -228,152 +227,183 @@
     .service-icon {
       font-size: 2rem; margin-bottom: 16px;
       display: inline-flex; align-items: center; justify-content: center;
-      width: 54px; height: 54px;
-      background: rgba(123,47,190,0.15); border-radius: 12px;
+      width: 54px; height: 54px; background: rgba(123,47,190,0.15); border-radius: 12px;
     }
-
     .service-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
     .service-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; }
-
-    .service-tags {
-      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px;
-    }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
     .tag {
       font-size: 0.72rem; font-weight: 600; padding: 3px 9px;
       border-radius: 50px; background: rgba(0,229,255,0.08);
       color: #00E5FF; border: 1px solid rgba(0,229,255,0.2);
     }
-    .tag.green { background: rgba(224,64,251,0.1); color: #E040FB; border-color: rgba(224,64,251,0.25); }
+    .tag.highlight { background: rgba(224,64,251,0.1); color: #E040FB; border-color: rgba(224,64,251,0.25); }
+
+    /* CASO DE ÉXITO */
+    #caso { background: var(--dark-2); }
+    .case-wrapper {
+      background: var(--dark-3); border: 1px solid rgba(0,229,255,0.2);
+      border-radius: 20px; overflow: hidden;
+    }
+    .case-header {
+      background: linear-gradient(135deg, rgba(123,47,190,0.3), rgba(0,229,255,0.1));
+      padding: 40px 48px; border-bottom: 1px solid rgba(0,229,255,0.15);
+    }
+    @media (max-width: 640px) { .case-header { padding: 28px 24px; } }
+    .case-client {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
+    }
+    .case-logo {
+      width: 52px; height: 52px; background: rgba(0,229,255,0.12);
+      border: 1px solid rgba(0,229,255,0.3); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; font-weight: 900; color: var(--accent);
+    }
+    .case-client-info h3 { font-size: 1.2rem; font-weight: 800; }
+    .case-client-info span { font-size: 0.82rem; color: var(--text-muted); }
+    .case-header p { color: var(--text-muted); font-size: 1rem; max-width: 640px; line-height: 1.7; }
+
+    .case-metrics {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0; border-bottom: 1px solid rgba(0,229,255,0.1);
+    }
+    .metric {
+      padding: 32px 28px; border-right: 1px solid rgba(0,229,255,0.1);
+      text-align: center;
+    }
+    .metric:last-child { border-right: none; }
+    .metric-num { font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1; }
+    .metric-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; }
+
+    .case-tools {
+      padding: 32px 48px;
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+    }
+    @media (max-width: 640px) { .case-tools { padding: 24px; } }
+    .case-tools span { font-size: 0.82rem; color: var(--text-muted); margin-right: 4px; }
+    .tool-badge {
+      font-size: 0.78rem; font-weight: 600; padding: 5px 12px;
+      border-radius: 50px; background: rgba(123,47,190,0.12);
+      color: #C77DFF; border: 1px solid rgba(123,47,190,0.25);
+    }
 
     /* PORTFOLIO */
     #proyectos { background: var(--dark); }
-
     .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 20px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;
     }
-
     .project-card {
-      background: var(--dark-3);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px 28px;
-      transition: border-color 0.2s, transform 0.2s;
+      background: var(--dark-3); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 28px; transition: border-color 0.2s, transform 0.2s;
     }
     .project-card:hover { border-color: rgba(123,47,190,0.5); transform: translateY(-2px); }
-
-    .project-header {
-      display: flex; align-items: flex-start; justify-content: space-between;
-      margin-bottom: 12px;
-    }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
     .project-emoji { font-size: 1.6rem; }
     .project-badge {
-      font-size: 0.72rem; font-weight: 700; padding: 3px 10px;
-      border-radius: 50px;
-      background: rgba(0,229,255,0.1); color: #00E5FF;
-      border: 1px solid rgba(0,229,255,0.25);
+      font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 50px;
+      background: rgba(0,229,255,0.1); color: #00E5FF; border: 1px solid rgba(0,229,255,0.25);
     }
-
     .project-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
     .project-card p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.55; }
-
-    .project-stack {
-      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px;
-    }
+    .project-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
     .stack-item {
       font-size: 0.72rem; font-weight: 600; padding: 3px 9px;
-      border-radius: 50px; background: rgba(255,255,255,0.06);
-      color: var(--text-muted);
+      border-radius: 50px; background: rgba(255,255,255,0.06); color: var(--text-muted);
     }
 
-    /* HOW IT WORKS */
+    /* PROCESS */
     #proceso { background: var(--dark-2); }
-
-    .steps {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 24px; counter-reset: step;
-    }
-
+    .steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
     .step {
       padding: 28px; background: var(--card-bg);
       border: 1px solid var(--border); border-radius: var(--radius);
-      position: relative;
     }
-    .step-num {
-      font-size: 2.5rem; font-weight: 900;
-      color: rgba(123,47,190,0.4); line-height: 1;
-      margin-bottom: 12px;
-    }
+    .step-num { font-size: 2.5rem; font-weight: 900; color: rgba(0,229,255,0.25); line-height: 1; margin-bottom: 12px; }
     .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
     .step p { font-size: 0.86rem; color: var(--text-muted); }
 
     /* WHY US */
     #ventajas { background: var(--dark); }
-
-    .advantages-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .advantage {
-      padding: 24px; border-radius: var(--radius);
-      background: var(--card-bg); border: 1px solid var(--border);
-    }
+    .advantages-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+    .advantage { padding: 24px; border-radius: var(--radius); background: var(--card-bg); border: 1px solid var(--border); }
     .advantage-icon { font-size: 1.5rem; margin-bottom: 12px; }
     .advantage h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
     .advantage p { font-size: 0.84rem; color: var(--text-muted); }
 
-    /* CTA */
+    /* FAQ */
+    #faq { background: var(--dark-2); }
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .faq-question {
+      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+      padding: 20px 24px; display: flex; justify-content: space-between; align-items: center;
+      color: var(--text); font-size: 0.98rem; font-weight: 600; gap: 16px;
+    }
+    .faq-question:hover { background: rgba(123,47,190,0.08); }
+    .faq-icon { font-size: 1.2rem; color: var(--accent); flex-shrink: 0; transition: transform 0.2s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 200px; }
+    .faq-answer p { padding: 0 24px 20px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* CONTACT */
     #contacto {
-      background: radial-gradient(ellipse at 50% 0%, rgba(123,47,190,0.25) 0%, transparent 70%), var(--dark-2);
-      text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, rgba(123,47,190,0.25) 0%, transparent 70%), var(--dark);
     }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
 
-    #contacto h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
-    #contacto p { color: var(--text-muted); font-size: 1.05rem; max-width: 520px; margin: 16px auto 40px; }
+    .contact-left h2 { margin-bottom: 16px; }
+    .contact-left p { color: var(--text-muted); font-size: 1rem; margin-bottom: 32px; line-height: 1.7; }
 
-    .contact-options {
-      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px;
+    .contact-direct { display: flex; flex-direction: column; gap: 12px; }
+    .contact-link {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px; border-radius: var(--radius);
+      border: 1px solid var(--border); background: var(--card-bg);
+      font-size: 0.9rem; font-weight: 500; transition: all 0.2s;
     }
+    .contact-link:hover { border-color: rgba(123,47,190,0.5); background: rgba(123,47,190,0.1); }
+    .contact-link .link-icon { font-size: 1.2rem; }
 
-    .btn-whatsapp {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--primary); color: #fff;
-      font-weight: 700; font-size: 1rem;
-      padding: 15px 32px; border-radius: 50px;
-      transition: all 0.2s;
-      box-shadow: 0 4px 20px rgba(123,47,190,0.45);
+    .contact-form {
+      background: var(--dark-3); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px;
     }
-    .btn-whatsapp:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(123,47,190,0.6); }
-
-    .btn-email {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: transparent; color: var(--text);
-      font-weight: 600; font-size: 1rem;
-      padding: 15px 32px; border-radius: 50px;
-      border: 1px solid var(--border);
-      transition: all 0.2s;
+    .contact-form h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 24px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 11px 14px; color: var(--text); font-size: 0.9rem;
+      font-family: inherit; outline: none; transition: border-color 0.2s;
     }
-    .btn-email:hover { background: var(--card-bg); border-color: rgba(255,255,255,0.2); }
-
-    .contact-info {
-      display: flex; gap: 36px; justify-content: center; flex-wrap: wrap;
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      border-color: var(--primary);
     }
-    .contact-item {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 0.9rem; color: var(--text-muted);
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select option { background: var(--dark-2); }
+    .btn-submit {
+      width: 100%; background: var(--primary); color: #fff;
+      border: none; border-radius: 50px; padding: 14px;
+      font-size: 1rem; font-weight: 700; cursor: pointer;
+      transition: all 0.2s; box-shadow: 0 4px 20px rgba(123,47,190,0.4);
     }
+    .btn-submit:hover { background: var(--primary-dark); transform: translateY(-1px); }
 
     /* FOOTER */
     footer {
-      background: var(--dark);
-      border-top: 1px solid var(--border);
-      padding: 36px 5%;
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+      background: var(--dark); border-top: 1px solid var(--border);
+      padding: 36px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
     }
     .footer-logo { font-size: 1.2rem; font-weight: 800; }
-    .footer-logo span { color: var(--primary); }
+    .footer-logo span { color: var(--accent); }
     footer p { color: var(--text-muted); font-size: 0.82rem; }
 
     /* FLOATING WA */
@@ -382,10 +412,8 @@
       background: var(--primary); color: #fff;
       width: 58px; height: 58px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem;
-      box-shadow: 0 6px 24px rgba(123,47,190,0.55);
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
+      font-size: 1.6rem; box-shadow: 0 6px 24px rgba(123,47,190,0.55);
+      transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;
     }
     .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(123,47,190,0.7); }
 
@@ -393,8 +421,9 @@
     @media (max-width: 640px) {
       nav { padding: 0 4%; }
       .hero-stats { gap: 28px; }
-      .contact-options { flex-direction: column; align-items: center; }
       footer { flex-direction: column; text-align: center; }
+      .metric { border-right: none; border-bottom: 1px solid rgba(0,229,255,0.1); }
+      .metric:last-child { border-bottom: none; }
     }
   </style>
 </head>
@@ -403,6 +432,12 @@
 <!-- NAV -->
 <nav>
   <div class="logo">vt<span>lik</span></div>
+  <div class="nav-links">
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#caso">Caso de éxito</a>
+    <a href="#faq">FAQ</a>
+  </div>
   <a href="https://wa.me/573026119411?text=Hola,%20me%20interesa%20saber%20más%20sobre%20sus%20servicios" class="nav-cta" target="_blank" rel="noopener">Hablar por WhatsApp →</a>
 </nav>
 
@@ -416,22 +451,65 @@
   <p class="hero-sub">Desarrollamos sistemas de automatización, agentes con IA, dashboards y herramientas web que ahorran tiempo y escalan tu operación.</p>
   <div class="hero-actions">
     <a href="https://wa.me/573026119411?text=Hola,%20quiero%20automatizar%20mi%20empresa" class="btn-primary" target="_blank" rel="noopener">
-      💬 Consultá gratis
+      💬 Consulta gratis
     </a>
     <a href="#servicios" class="btn-secondary">Ver servicios ↓</a>
   </div>
   <div class="hero-stats">
     <div class="stat">
       <div class="stat-num">10+</div>
-      <div class="stat-label">Sistemas desplegados</div>
+      <div class="stat-label">Sistemas en producción</div>
     </div>
     <div class="stat">
-      <div class="stat-num">100%</div>
-      <div class="stat-label">Código a medida</div>
+      <div class="stat-num">40h</div>
+      <div class="stat-label">Ahorradas por semana al cliente</div>
     </div>
     <div class="stat">
       <div class="stat-num">24/7</div>
       <div class="stat-label">Automatizaciones activas</div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-tag">Quiénes somos</div>
+      <h2>Una casa de software pequeña con resultados grandes</h2>
+      <p>Somos <strong>Vtlik</strong>, un equipo compacto de desarrolladores apasionados por la automatización y la inteligencia artificial. Nacimos con una idea clara: que las empresas no deberían perder tiempo en tareas repetitivas que una máquina puede hacer mejor.</p>
+      <p>Estamos comenzando, pero no partimos de cero. Tenemos <strong>experiencia real implementando sistemas en producción</strong> para empresas que operan todos los días con las herramientas que construimos.</p>
+      <p>No vendemos humo ni promesas genéricas. Cada proyecto que tomamos lo entregamos funcionando, y seguimos presentes cuando algo necesita ajuste.</p>
+    </div>
+    <div class="about-cards">
+      <div class="about-card">
+        <div class="about-card-icon">🇨🇴</div>
+        <div>
+          <h4>Basados en Colombia</h4>
+          <p>Trabajamos de forma remota para clientes en toda Latinoamérica con comunicación directa y sin intermediarios.</p>
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">⚡</div>
+        <div>
+          <h4>Entrega en días, no meses</h4>
+          <p>Nuestro equipo pequeño nos permite movernos rápido. Primera versión funcional en la primera semana.</p>
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🤝</div>
+        <div>
+          <h4>Trato directo con quien desarrolla</h4>
+          <p>Hablás directamente con el desarrollador que va a construir tu sistema, no con un vendedor que después pasa el ticket.</p>
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🔩</div>
+        <div>
+          <h4>Tecnología que ya probamos</h4>
+          <p>Cada herramienta que usamos ya la tenemos corriendo en producción. Sin experimentos con tu proyecto.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -443,15 +521,14 @@
     <h2>Todo lo que tu empresa necesita, ya lo hicimos</h2>
     <p class="section-sub">Desde un bot de WhatsApp hasta un sistema completo de monitoreo — entregamos en días, no meses.</p>
   </div>
-
   <div class="services-grid">
 
     <div class="service-card">
       <div class="service-icon">🤖</div>
       <h3>Agente de WhatsApp con IA</h3>
-      <p>Bot inteligente que atiende clientes 24/7 vía WhatsApp. Responde consultas, deriva a humanos cuando lo necesita y aprende del contexto de cada conversación.</p>
+      <p>Bot inteligente que atiende clientes 24/7. Responde consultas, detecta cuándo derivar a un humano y aprende del contexto de cada conversación.</p>
       <div class="service-tags">
-        <span class="tag green">Más solicitado</span>
+        <span class="tag highlight">Más solicitado</span>
         <span class="tag">DeepSeek / GPT</span>
         <span class="tag">Next.js</span>
       </div>
@@ -459,8 +536,8 @@
 
     <div class="service-card">
       <div class="service-icon">📊</div>
-      <h3>Dashboard y reportes automáticos</h3>
-      <p>Tableros de control conectados a tus datos en tiempo real. Métricas de ventas, agentes, operaciones — todo en Google Sheets o una app web.</p>
+      <h3>Dashboards y reportes automáticos</h3>
+      <p>Tableros de control conectados a tus datos en tiempo real. Métricas de ventas, agentes y operaciones en Google Sheets o una app web.</p>
       <div class="service-tags">
         <span class="tag">Google Sheets</span>
         <span class="tag">Apps Script</span>
@@ -515,7 +592,7 @@
     <div class="service-card">
       <div class="service-icon">🧩</div>
       <h3>Extensiones de Chrome a medida</h3>
-      <p>Herramientas que corren directo en el navegador de tus agentes: autocompletan formularios, extraen datos o automatizan flujos repetitivos sin cambiar tus sistemas actuales.</p>
+      <p>Herramientas que corren en el navegador de tus agentes: autocompletan formularios, extraen datos o automatizan flujos sin cambiar tus sistemas actuales.</p>
       <div class="service-tags">
         <span class="tag">Chrome Extension</span>
         <span class="tag">Manifest V3</span>
@@ -561,7 +638,7 @@
       <h3>Chatbot para atención al cliente</h3>
       <p>Asistente virtual para tu sitio web o WhatsApp que responde preguntas frecuentes, toma pedidos y transfiere a humanos según reglas configurables.</p>
       <div class="service-tags">
-        <span class="tag green">En demanda</span>
+        <span class="tag highlight">En demanda</span>
         <span class="tag">IA</span>
         <span class="tag">Multi-canal</span>
       </div>
@@ -581,14 +658,72 @@
   </div>
 </section>
 
+<!-- CASO DE ÉXITO -->
+<section id="caso">
+  <div class="section-header center">
+    <div class="section-tag">Caso de éxito</div>
+    <h2>De la operación manual al sistema automatizado</h2>
+    <p class="section-sub">Un cliente, múltiples sistemas implementados, resultados medibles desde el primer mes.</p>
+  </div>
+
+  <div class="case-wrapper">
+    <div class="case-header">
+      <div class="case-client">
+        <div class="case-logo">X</div>
+        <div class="case-client-info">
+          <h3>Xtendo BPO</h3>
+          <span>Business Process Outsourcing · Contact Center · Gestión de Clientes</span>
+        </div>
+      </div>
+      <p>Xtendo BPO operaba con procesos completamente manuales: auditorías que tomaban horas, monitoreo de agentes por inspección visual, reportes que alguien armaba a mano al final del día y gestión de leads en planillas sin control. Implementamos un ecosistema completo de automatización que transformó su operación.</p>
+    </div>
+
+    <div class="case-metrics">
+      <div class="metric">
+        <div class="metric-num">-90%</div>
+        <div class="metric-label">Tiempo en auditorías de calidad</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">60+</div>
+        <div class="metric-label">Agentes monitoreados en tiempo real</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">500+</div>
+        <div class="metric-label">Leads gestionados por mes</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">40h</div>
+        <div class="metric-label">Ahorradas por semana en trabajo manual</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">10</div>
+        <div class="metric-label">Sistemas en producción simultánea</div>
+      </div>
+    </div>
+
+    <div class="case-tools">
+      <span>Herramientas implementadas:</span>
+      <span class="tool-badge">Monitor de agentes</span>
+      <span class="tool-badge">CRM de leads</span>
+      <span class="tool-badge">Auditorías QA automáticas</span>
+      <span class="tool-badge">Dashboard de métricas</span>
+      <span class="tool-badge">Control de asistencia</span>
+      <span class="tool-badge">Extensiones Chrome</span>
+      <span class="tool-badge">Rotación de turnos</span>
+      <span class="tool-badge">Agente de informes con IA</span>
+      <span class="tool-badge">Agente WhatsApp</span>
+      <span class="tool-badge">Integración Google Workspace</span>
+    </div>
+  </div>
+</section>
+
 <!-- PORTFOLIO -->
 <section id="proyectos">
   <div class="section-header center">
     <div class="section-tag">Portfolio</div>
     <h2>Proyectos reales, en producción</h2>
-    <p class="section-sub">Sistemas que hoy están corriendo y generando valor en empresas reales.</p>
+    <p class="section-sub">Sistemas que hoy están corriendo y generando valor.</p>
   </div>
-
   <div class="projects-grid">
 
     <div class="project-card">
@@ -597,7 +732,7 @@
         <span class="project-badge">En producción</span>
       </div>
       <h3>WOpen — Agente WhatsApp con IA</h3>
-      <p>Bot multimodal enterprise conectado a un número real de WhatsApp. Usa DeepSeek para responder, detecta cuando derivar a humanos, envía alertas por Telegram y tiene panel de administración.</p>
+      <p>Bot multimodal enterprise conectado a un número real de WhatsApp. Usa DeepSeek para responder, detecta cuándo derivar a humanos, envía alertas por Telegram y tiene panel de administración.</p>
       <div class="project-stack">
         <span class="stack-item">Next.js 15</span>
         <span class="stack-item">TypeScript</span>
@@ -630,7 +765,7 @@
         <span class="project-badge">En producción</span>
       </div>
       <h3>TigoApp — CRM de leads</h3>
-      <p>Sistema completo de gestión de leads para Tigo. Auto-asignación de contactos, seguimiento por etapas, panel de coordinadores y agentes, integración con Gmail vía Apps Script.</p>
+      <p>Sistema completo de gestión de leads. Auto-asignación de contactos, seguimiento por etapas, panel de coordinadores y agentes, integración con Gmail vía Apps Script.</p>
       <div class="project-stack">
         <span class="stack-item">FastAPI</span>
         <span class="stack-item">Supabase</span>
@@ -646,7 +781,7 @@
         <span class="project-badge">En producción</span>
       </div>
       <h3>Auditorías SMD — QA automatizado</h3>
-      <p>Sistema de auditoría de calidad que descarga reportes, analiza eficiencia y genera informes automáticos de gestiones de agentes en call center.</p>
+      <p>Sistema que descarga reportes, analiza eficiencia y genera informes automáticos de gestiones de agentes. Redujo el tiempo de auditoría de 3 horas a 15 minutos.</p>
       <div class="project-stack">
         <span class="stack-item">Python</span>
         <span class="stack-item">Selenium</span>
@@ -661,7 +796,7 @@
         <span class="project-badge">En producción</span>
       </div>
       <h3>Agente de informes — KPIs automáticos</h3>
-      <p>Agente que explora fuentes de datos, identifica KPIs clave y genera reportes de métricas sin intervención manual. Conectado a Looker y Google Sheets.</p>
+      <p>Agente con IA que explora fuentes de datos, identifica KPIs clave y genera reportes de métricas sin intervención manual. Conectado a Looker y Google Sheets.</p>
       <div class="project-stack">
         <span class="stack-item">Python</span>
         <span class="stack-item">Claude API</span>
@@ -690,8 +825,8 @@
         <span class="project-emoji">📋</span>
         <span class="project-badge">En producción</span>
       </div>
-      <h3>DashBig — Portal de métricas PDI</h3>
-      <p>Dashboard grande con portal interno y motor de reportes. Combinación de datos de múltiples fuentes, visualizaciones por agente y gestión adecuada de customer service.</p>
+      <h3>DashBig — Portal de métricas</h3>
+      <p>Dashboard con portal interno y motor de reportes. Combinación de datos de múltiples fuentes y visualizaciones por agente para customer service.</p>
       <div class="project-stack">
         <span class="stack-item">Google Apps Script</span>
         <span class="stack-item">HTML/JS</span>
@@ -800,23 +935,146 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-header center">
+    <div class="section-tag">Preguntas frecuentes</div>
+    <h2>Lo que nos preguntan siempre</h2>
+    <p class="section-sub">Respuestas directas a las dudas más comunes antes de arrancar un proyecto.</p>
+  </div>
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        ¿Cuánto tarda en entregarse un proyecto?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Depende de la complejidad, pero trabajamos para tener una primera versión funcional en la primera semana. Un sistema simple como una extensión Chrome o un script de automatización puede estar listo en 2-3 días. Un sistema completo como un CRM o un bot de WhatsApp lleva entre 2 y 4 semanas.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        ¿Trabajan de forma remota? ¿Pueden ayudarme si no estoy en Colombia?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Sí, trabajamos 100% remoto y atendemos clientes en toda Latinoamérica. Coordinamos por WhatsApp, videollamadas o el canal que prefieras. La diferencia horaria no ha sido un problema con ningún cliente.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        ¿Cuánto cuesta un proyecto?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Los proyectos arrancan desde USD 300 para automatizaciones simples y scripts. Sistemas más complejos como CRMs, bots de WhatsApp con IA o sistemas de monitoreo están entre USD 800 y USD 3.000 dependiendo del alcance. Siempre damos un presupuesto fijo antes de empezar, sin sorpresas.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        ¿Necesito saber de tecnología para trabajar con ustedes?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Para nada. Solo necesitás contarnos qué problema querés resolver y nosotros nos encargamos del resto. Explicamos todo en lenguaje claro, sin tecnicismos, y entregamos el sistema listo para usar.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        ¿Qué pasa si necesito cambios después de la entrega?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Incluimos un período de ajustes post-entrega en todos los proyectos. Para cambios más grandes o nuevas funcionalidades, coordinamos un presupuesto adicional. No desaparecemos cuando entregamos — seguimos disponibles.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        ¿Pueden integrarse con los sistemas que ya uso?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Sí, es parte de nuestra especialidad. Nos conectamos con Google Workspace, WhatsApp, Slack, Salesforce, portales internos, bases de datos existentes y prácticamente cualquier sistema que tenga una API o interfaz web. Si lo usás, lo podemos conectar.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contacto">
-  <div class="section-tag">Contacto</div>
-  <h2>¿Tenés un proceso que querés automatizar?</h2>
-  <p>Contanos tu caso — sin costo ni compromiso. En menos de 24 horas te respondemos con una propuesta.</p>
-  <div class="contact-options">
-    <a href="https://wa.me/573026119411?text=Hola%20Vtlik,%20me%20interesa%20automatizar%20un%20proceso%20en%20mi%20empresa" class="btn-whatsapp" target="_blank" rel="noopener">
-      💬 Escribir por WhatsApp
-    </a>
-    <a href="mailto:gerencia@vtlik.com" class="btn-email">
-      ✉️ gerencia@vtlik.com
-    </a>
-  </div>
-  <div class="contact-info">
-    <div class="contact-item">⏱️ Respuesta en menos de 24 hs</div>
-    <div class="contact-item">📍 Argentina · Remoto para toda Latinoamérica</div>
-    <div class="contact-item">💼 Proyectos desde $USD 500</div>
+  <div class="contact-grid">
+    <div class="contact-left">
+      <div class="section-tag">Contacto</div>
+      <h2>¿Tenés un proceso que querés automatizar?</h2>
+      <p>Contanos tu caso — sin costo ni compromiso. En menos de 24 horas te respondemos con una propuesta concreta.</p>
+      <div class="contact-direct">
+        <a href="https://wa.me/573026119411?text=Hola%20Vtlik,%20me%20interesa%20automatizar%20un%20proceso%20en%20mi%20empresa" class="contact-link" target="_blank" rel="noopener">
+          <span class="link-icon">💬</span>
+          WhatsApp: +57 302 611 9411
+        </a>
+        <a href="mailto:gerencia@vtlik.com" class="contact-link">
+          <span class="link-icon">✉️</span>
+          gerencia@vtlik.com
+        </a>
+        <div class="contact-link" style="cursor:default">
+          <span class="link-icon">📍</span>
+          Colombia · Remoto para toda Latinoamérica
+        </div>
+        <div class="contact-link" style="cursor:default">
+          <span class="link-icon">⏱️</span>
+          Respuesta en menos de 24 horas
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>Cuéntanos tu proyecto</h3>
+      <!-- Para activar el formulario: registrate gratis en formspree.io,
+           creá un formulario y reemplazá YOUR_FORM_ID con tu ID real -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" name="nombre" placeholder="Tu nombre" required />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="tu@empresa.com" required />
+        </div>
+        <div class="form-group">
+          <label>Empresa</label>
+          <input type="text" name="empresa" placeholder="Nombre de tu empresa" />
+        </div>
+        <div class="form-group">
+          <label>¿Qué necesitás?</label>
+          <select name="servicio">
+            <option value="">Seleccioná un servicio</option>
+            <option>Agente de WhatsApp con IA</option>
+            <option>Dashboard y reportes automáticos</option>
+            <option>Monitoreo en tiempo real</option>
+            <option>CRM y gestión de leads</option>
+            <option>Auditorías de calidad</option>
+            <option>Extensión de Chrome</option>
+            <option>Automatización con Python</option>
+            <option>Integración Google Workspace</option>
+            <option>Sistema web a medida</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Contanos más</label>
+          <textarea name="mensaje" placeholder="Describí brevemente qué proceso querés automatizar o qué sistema necesitás..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar consulta →</button>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -830,6 +1088,13 @@
 <a href="https://wa.me/573026119411?text=Hola%20Vtlik,%20me%20interesa%20hablar%20sobre%20automatización" class="wa-float" target="_blank" rel="noopener" title="Contactar por WhatsApp" aria-label="Contactar por WhatsApp">
   💬
 </a>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    item.classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
