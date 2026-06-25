@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vtlik — Automatización e IA para tu empresa | Python, WhatsApp Bot, Dashboards</title>
+  <meta name="description" content="Vtlik desarrolla sistemas de automatización, agentes de WhatsApp con IA, dashboards, monitoreo en tiempo real, CRM y extensiones Chrome. Soluciones a medida para empresas en Argentina y Latinoamérica." />
+  <meta name="keywords" content="automatización python, agente whatsapp ia, chatbot whatsapp empresa, dashboard google sheets, monitoreo call center, crm personalizado, extensión chrome, scraping web, integración google workspace, sistema de turnos, control de asistencia, auditorías de calidad automatizadas, fastapi, flask, automatización argentina" />
+  <meta name="author" content="Vtlik" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vtlik.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vtlik — Automatización e IA para tu empresa" />
+  <meta property="og:description" content="Sistemas de automatización, agentes de WhatsApp con IA, dashboards en tiempo real y más. Soluciones a medida para empresas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vtlik.com/" />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Vtlik",
+    "description": "Desarrollo de automatizaciones, agentes con IA, dashboards, monitoreo y sistemas web a medida para empresas.",
+    "url": "https://vtlik.com",
+    "email": "gerencia@vtlik.com",
+    "areaServed": ["Argentina", "Latinoamérica"],
+    "serviceType": [
+      "Automatización con Python",
+      "Agente de WhatsApp con IA",
+      "Dashboards y reportes",
+      "Monitoreo en tiempo real",
+      "CRM y gestión de leads",
+      "Extensiones de Chrome",
+      "Auditorías de calidad automatizadas",
+      "Control de asistencia y turnos",
+      "Integración Google Workspace",
+      "Sistemas web a medida"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de automatización y desarrollo",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agente de WhatsApp con IA" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Monitoreo en tiempo real con alertas Slack" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CRM y gestión de leads" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dashboards automáticos en Google Sheets" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auditorías de calidad automatizadas" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistema de turnos y asistencia" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Extensiones de Chrome personalizadas" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Integración Google Workspace con Apps Script" } }
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #1a73e8;
+      --primary-dark: #1557b0;
+      --accent: #00c853;
+      --dark: #0f1117;
+      --dark-2: #1a1d27;
+      --dark-3: #252836;
+      --text: #e8eaf0;
+      --text-muted: #9da3b4;
+      --border: rgba(255,255,255,0.08);
+      --card-bg: rgba(255,255,255,0.04);
+      --radius: 14px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(15,17,23,0.85);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px;
+      color: #fff;
+    }
+    .logo span { color: var(--primary); }
+
+    .nav-cta {
+      background: var(--primary);
+      color: #fff; font-weight: 600; font-size: 0.9rem;
+      padding: 9px 22px; border-radius: 50px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center;
+      padding: 120px 5% 80px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(26,115,232,0.18) 0%, transparent 65%),
+                  radial-gradient(ellipse at 80% 80%, rgba(0,200,83,0.07) 0%, transparent 50%),
+                  var(--dark);
+      position: relative; overflow: hidden;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(26,115,232,0.15); border: 1px solid rgba(26,115,232,0.35);
+      color: #6fa8ff; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
+      padding: 6px 16px; border-radius: 50px;
+      margin-bottom: 28px;
+    }
+    .hero-badge .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+
+    h1 {
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      font-weight: 800; line-height: 1.12;
+      letter-spacing: -1.5px;
+      max-width: 820px;
+      margin-bottom: 20px;
+    }
+    h1 .accent { color: var(--primary); }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-muted);
+      max-width: 600px;
+      margin-bottom: 44px;
+    }
+
+    .hero-actions {
+      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+    }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--primary); color: #fff;
+      font-weight: 700; font-size: 1rem;
+      padding: 15px 32px; border-radius: 50px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(26,115,232,0.4);
+    }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(26,115,232,0.5); }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--text);
+      font-weight: 600; font-size: 1rem;
+      padding: 15px 32px; border-radius: 50px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: var(--card-bg); border-color: rgba(255,255,255,0.2); }
+
+    .hero-stats {
+      display: flex; gap: 48px; margin-top: 72px; flex-wrap: wrap; justify-content: center;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 800; color: #fff; }
+    .stat-label { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* SECTIONS */
+    section { padding: 96px 5%; }
+    .section-tag {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--primary); margin-bottom: 12px;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800; letter-spacing: -1px; line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 560px; }
+
+    .section-header { margin-bottom: 56px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin: 0 auto; }
+
+    /* SERVICES */
+    #servicios { background: var(--dark-2); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .service-card:hover { border-color: rgba(26,115,232,0.35); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .service-card:hover::before { opacity: 1; }
+
+    .service-icon {
+      font-size: 2rem; margin-bottom: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 54px; height: 54px;
+      background: rgba(26,115,232,0.12); border-radius: 12px;
+    }
+
+    .service-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .service-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; }
+
+    .service-tags {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px;
+    }
+    .tag {
+      font-size: 0.72rem; font-weight: 600; padding: 3px 9px;
+      border-radius: 50px; background: rgba(26,115,232,0.12);
+      color: #6fa8ff; border: 1px solid rgba(26,115,232,0.2);
+    }
+    .tag.green { background: rgba(0,200,83,0.1); color: #5ce87e; border-color: rgba(0,200,83,0.2); }
+
+    /* PORTFOLIO */
+    #proyectos { background: var(--dark); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .project-card:hover { border-color: rgba(26,115,232,0.4); transform: translateY(-2px); }
+
+    .project-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .project-emoji { font-size: 1.6rem; }
+    .project-badge {
+      font-size: 0.72rem; font-weight: 700; padding: 3px 10px;
+      border-radius: 50px;
+      background: rgba(0,200,83,0.12); color: #5ce87e;
+      border: 1px solid rgba(0,200,83,0.25);
+    }
+
+    .project-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .project-card p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.55; }
+
+    .project-stack {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px;
+    }
+    .stack-item {
+      font-size: 0.72rem; font-weight: 600; padding: 3px 9px;
+      border-radius: 50px; background: rgba(255,255,255,0.06);
+      color: var(--text-muted);
+    }
+
+    /* HOW IT WORKS */
+    #proceso { background: var(--dark-2); }
+
+    .steps {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 24px; counter-reset: step;
+    }
+
+    .step {
+      padding: 28px; background: var(--card-bg);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      position: relative;
+    }
+    .step-num {
+      font-size: 2.5rem; font-weight: 900;
+      color: rgba(26,115,232,0.2); line-height: 1;
+      margin-bottom: 12px;
+    }
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 0.86rem; color: var(--text-muted); }
+
+    /* WHY US */
+    #ventajas { background: var(--dark); }
+
+    .advantages-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .advantage {
+      padding: 24px; border-radius: var(--radius);
+      background: var(--card-bg); border: 1px solid var(--border);
+    }
+    .advantage-icon { font-size: 1.5rem; margin-bottom: 12px; }
+    .advantage h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+    .advantage p { font-size: 0.84rem; color: var(--text-muted); }
+
+    /* CTA */
+    #contacto {
+      background: radial-gradient(ellipse at 50% 0%, rgba(26,115,232,0.2) 0%, transparent 70%), var(--dark-2);
+      text-align: center;
+    }
+
+    #contacto h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+    #contacto p { color: var(--text-muted); font-size: 1.05rem; max-width: 520px; margin: 16px auto 40px; }
+
+    .contact-options {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px;
+    }
+
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #25d366; color: #fff;
+      font-weight: 700; font-size: 1rem;
+      padding: 15px 32px; border-radius: 50px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+    }
+    .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,211,102,0.45); }
+
+    .btn-email {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--text);
+      font-weight: 600; font-size: 1rem;
+      padding: 15px 32px; border-radius: 50px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .btn-email:hover { background: var(--card-bg); border-color: rgba(255,255,255,0.2); }
+
+    .contact-info {
+      display: flex; gap: 36px; justify-content: center; flex-wrap: wrap;
+    }
+    .contact-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.9rem; color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      padding: 36px 5%;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { font-size: 1.2rem; font-weight: 800; }
+    .footer-logo span { color: var(--primary); }
+    footer p { color: var(--text-muted); font-size: 0.82rem; }
+
+    /* FLOATING WA */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      background: #25d366; color: #fff;
+      width: 58px; height: 58px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,0.6); }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      nav { padding: 0 4%; }
+      .hero-stats { gap: 28px; }
+      .contact-options { flex-direction: column; align-items: center; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">vt<span>lik</span></div>
+  <a href="https://wa.me/573026119411?text=Hola,%20me%20interesa%20saber%20más%20sobre%20sus%20servicios" class="nav-cta" target="_blank" rel="noopener">Hablar por WhatsApp →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">
+    <span class="dot"></span>
+    Automatización · IA · Desarrollo a medida
+  </div>
+  <h1>Tu empresa en <span class="accent">piloto automático</span> con tecnología real</h1>
+  <p class="hero-sub">Desarrollamos sistemas de automatización, agentes con IA, dashboards y herramientas web que ahorran tiempo y escalan tu operación.</p>
+  <div class="hero-actions">
+    <a href="https://wa.me/573026119411?text=Hola,%20quiero%20automatizar%20mi%20empresa" class="btn-primary" target="_blank" rel="noopener">
+      💬 Consultá gratis
+    </a>
+    <a href="#servicios" class="btn-secondary">Ver servicios ↓</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Sistemas desplegados</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Código a medida</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Automatizaciones activas</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicios">
+  <div class="section-header center">
+    <div class="section-tag">Servicios</div>
+    <h2>Todo lo que tu empresa necesita, ya lo hicimos</h2>
+    <p class="section-sub">Desde un bot de WhatsApp hasta un sistema completo de monitoreo — entregamos en días, no meses.</p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <h3>Agente de WhatsApp con IA</h3>
+      <p>Bot inteligente que atiende clientes 24/7 vía WhatsApp. Responde consultas, deriva a humanos cuando lo necesita y aprende del contexto de cada conversación.</p>
+      <div class="service-tags">
+        <span class="tag green">Más solicitado</span>
+        <span class="tag">DeepSeek / GPT</span>
+        <span class="tag">Next.js</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Dashboard y reportes automáticos</h3>
+      <p>Tableros de control conectados a tus datos en tiempo real. Métricas de ventas, agentes, operaciones — todo en Google Sheets o una app web.</p>
+      <div class="service-tags">
+        <span class="tag">Google Sheets</span>
+        <span class="tag">Apps Script</span>
+        <span class="tag">Python</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🔔</div>
+      <h3>Monitoreo en tiempo real</h3>
+      <p>Sistema que vigila tus procesos, agentes o KPIs y envía alertas automáticas a Slack o email cuando algo sale de rango.</p>
+      <div class="service-tags">
+        <span class="tag">Slack Alerts</span>
+        <span class="tag">Email</span>
+        <span class="tag">Python</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🎯</div>
+      <h3>CRM y gestión de leads</h3>
+      <p>Sistema web para asignar, hacer seguimiento y cerrar leads. Panel para coordinadores y agentes con historial completo y etapas configurables.</p>
+      <div class="service-tags">
+        <span class="tag">FastAPI</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Railway</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">✅</div>
+      <h3>Auditorías de calidad automatizadas</h3>
+      <p>Automatización de auditorías QA sobre gestiones de agentes. Descarga, procesa y genera reportes sin intervención humana.</p>
+      <div class="service-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Selenium</span>
+        <span class="tag">Google Sheets</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🗓️</div>
+      <h3>Control de asistencia y turnos</h3>
+      <p>Sistema web para gestionar turnos de trabajo, registrar presencia y visualizar coberturas por área o equipo.</p>
+      <div class="service-tags">
+        <span class="tag">Flask / FastAPI</span>
+        <span class="tag">Web App</span>
+        <span class="tag">Apps Script</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🧩</div>
+      <h3>Extensiones de Chrome a medida</h3>
+      <p>Herramientas que corren directo en el navegador de tus agentes: autocompletan formularios, extraen datos o automatizan flujos repetitivos sin cambiar tus sistemas actuales.</p>
+      <div class="service-tags">
+        <span class="tag">Chrome Extension</span>
+        <span class="tag">Manifest V3</span>
+        <span class="tag">JavaScript</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
+      <h3>Automatización con Python</h3>
+      <p>Scripts y bots que reemplazan tareas manuales: descargas de reportes, envíos de emails, procesamiento de datos, sincronización entre sistemas.</p>
+      <div class="service-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Selenium</span>
+        <span class="tag">API REST</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📋</div>
+      <h3>Integración Google Workspace</h3>
+      <p>Conectamos Google Sheets, Gmail, Calendar y Drive con tus herramientas mediante Apps Script o la API de Google — sin plugins de terceros.</p>
+      <div class="service-tags">
+        <span class="tag">Apps Script</span>
+        <span class="tag">Google API</span>
+        <span class="tag">Triggers</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🕷️</div>
+      <h3>Scraping y extracción de datos</h3>
+      <p>Extraemos información de cualquier sitio web de forma automatizada: precios, publicaciones, datos de competencia, portales internos.</p>
+      <div class="service-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Selenium</span>
+        <span class="tag">BeautifulSoup</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">💬</div>
+      <h3>Chatbot para atención al cliente</h3>
+      <p>Asistente virtual para tu sitio web o WhatsApp que responde preguntas frecuentes, toma pedidos y transfiere a humanos según reglas configurables.</p>
+      <div class="service-tags">
+        <span class="tag green">En demanda</span>
+        <span class="tag">IA</span>
+        <span class="tag">Multi-canal</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🌐</div>
+      <h3>Sistemas web a medida</h3>
+      <p>Aplicaciones web completas con login, roles, base de datos y API. Desde un panel interno hasta un sistema para tus clientes finales.</p>
+      <div class="service-tags">
+        <span class="tag">FastAPI</span>
+        <span class="tag">Flask</span>
+        <span class="tag">Next.js</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="proyectos">
+  <div class="section-header center">
+    <div class="section-tag">Portfolio</div>
+    <h2>Proyectos reales, en producción</h2>
+    <p class="section-sub">Sistemas que hoy están corriendo y generando valor en empresas reales.</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-emoji">🤖</span>
+        <span class="project-badge">En producción</span>
+      </div>
+      <h3>WOpen — Agente WhatsApp con IA</h3>
+      <p>Bot multimodal enterprise conectado a un número real de WhatsApp. Usa DeepSeek para responder, detecta cuando derivar a humanos, envía alertas por Telegram y tiene panel de administración.</p>
+      <div class="project-stack">
+        <span class="stack-item">Next.js 15</span>
+        <span class="stack-item">TypeScript</span>
+        <span class="stack-item">PostgreSQL</span>
+        <span class="stack-item">Redis</span>
+        <span class="stack-item">Docker</span>
+        <span class="stack-item">Baileys</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-emoji">🔔</span>
+        <span class="project-badge">En producción</span>
+      </div>
+      <h3>Monitor — Sistema de alertas para call center</h3>
+      <p>Monitoreo en tiempo real de agentes y casos con scraping automatizado, umbrales dinámicos, alertas a Slack y email, cache multinivel y configuración desde Google Sheets sin reiniciar.</p>
+      <div class="project-stack">
+        <span class="stack-item">Python</span>
+        <span class="stack-item">Selenium</span>
+        <span class="stack-item">Slack API</span>
+        <span class="stack-item">Google Sheets</span>
+        <span class="stack-item">Cache multicapa</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-emoji">🎯</span>
+        <span class="project-badge">En producción</span>
+      </div>
+      <h3>TigoApp — CRM de leads</h3>
+      <p>Sistema completo de gestión de leads para Tigo. Auto-asignación de contactos, seguimiento por etapas, panel de coordinadores y agentes, integración con Gmail vía Apps Script.</p>
+      <div class="project-stack">
+        <span class="stack-item">FastAPI</span>
+        <span class="stack-item">Supabase</span>
+        <span class="stack-item">PostgreSQL</span>
+        <span class="stack-item">Railway</span>
+        <span class="stack-item">Apps Script</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-emoji">✅</span>
+        <span class="project-badge">En producción</span>
+      </div>
+      <h3>Auditorías SMD — QA automatizado</h3>
+      <p>Sistema de auditoría de calidad que descarga reportes, analiza eficiencia y genera informes automáticos de gestiones de agentes en call center.</p>
+      <div class="project-stack">
+        <span class="stack-item">Python</span>
+        <span class="stack-item">Selenium</span>
+        <span class="stack-item">Google Sheets</span>
+        <span class="stack-item">ChatGPT API</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-emoji">📊</span>
+        <span class="project-badge">En producción</span>
+      </div>
+      <h3>Agente de informes — KPIs automáticos</h3>
+      <p>Agente que explora fuentes de datos, identifica KPIs clave y genera reportes de métricas sin intervención manual. Conectado a Looker y Google Sheets.</p>
+      <div class="project-stack">
+        <span class="stack-item">Python</span>
+        <span class="stack-item">Claude API</span>
+        <span class="stack-item">Google Sheets</span>
+        <span class="stack-item">Looker</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-emoji">🗓️</span>
+        <span class="project-badge">En producción</span>
+      </div>
+      <h3>Asistencia 2.0 — Control de presencia</h3>
+      <p>Sistema web de control de asistencia para equipos. Registro automático, reportes y alertas cuando un agente no se conecta en su turno.</p>
+      <div class="project-stack">
+        <span class="stack-item">Python</span>
+        <span class="stack-item">Flask</span>
+        <span class="stack-item">Chrome</span>
+        <span class="stack-item">Google API</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-emoji">📋</span>
+        <span class="project-badge">En producción</span>
+      </div>
+      <h3>DashBig — Portal de métricas PDI</h3>
+      <p>Dashboard grande con portal interno y motor de reportes. Combinación de datos de múltiples fuentes, visualizaciones por agente y gestión adecuada de customer service.</p>
+      <div class="project-stack">
+        <span class="stack-item">Google Apps Script</span>
+        <span class="stack-item">HTML/JS</span>
+        <span class="stack-item">Google Sheets</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-emoji">🧩</span>
+        <span class="project-badge">En producción</span>
+      </div>
+      <h3>IssueFiller — Extensión Chrome</h3>
+      <p>Extensión Chrome para llenado automático de tickets e issues. Los agentes ahorran tiempo en cada gestión sin cambiar sus sistemas actuales.</p>
+      <div class="project-stack">
+        <span class="stack-item">Manifest V3</span>
+        <span class="stack-item">JavaScript</span>
+        <span class="stack-item">Chrome Extension</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-emoji">🔄</span>
+        <span class="project-badge">En producción</span>
+      </div>
+      <h3>Wolftls — Rotación de turnos</h3>
+      <p>Sistema de rotación de agentes en Google Sheets con lógica de asignación automática, visualización de cronograma y horarios configurables.</p>
+      <div class="project-stack">
+        <span class="stack-item">Google Apps Script</span>
+        <span class="stack-item">Google Sheets</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="proceso">
+  <div class="section-header center">
+    <div class="section-tag">¿Cómo trabajamos?</div>
+    <h2>De la idea al sistema en funcionamiento</h2>
+    <p class="section-sub">Proceso ágil y sin burocracia.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Escuchamos tu problema</h3>
+      <p>Una llamada o chat para entender qué proceso querés automatizar y cuál es el impacto esperado.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Diseñamos la solución</h3>
+      <p>Te mostramos un plan claro: qué vamos a construir, en qué tiempo y con qué tecnología.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Desarrollamos rápido</h3>
+      <p>Entregamos versiones funcionales desde la primera semana. Iteramos en base a tu feedback.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h3>Desplegamos y acompañamos</h3>
+      <p>Lanzamos el sistema en producción y te damos soporte para que funcione sin fricción.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="ventajas">
+  <div class="section-header center">
+    <div class="section-tag">Por qué Vtlik</div>
+    <h2>Ventajas que sí importan</h2>
+  </div>
+  <div class="advantages-grid">
+    <div class="advantage">
+      <div class="advantage-icon">⚡</div>
+      <h3>Entrega rápida</h3>
+      <p>Primera versión funcional en días. Sin largos procesos de consultoría antes de ver resultados.</p>
+    </div>
+    <div class="advantage">
+      <div class="advantage-icon">🎯</div>
+      <h3>Soluciones específicas</h3>
+      <p>No usamos plantillas genéricas. Cada sistema se adapta exactamente a tu flujo de trabajo.</p>
+    </div>
+    <div class="advantage">
+      <div class="advantage-icon">🔗</div>
+      <h3>Integración con lo que ya usás</h3>
+      <p>Conectamos con Google Sheets, WhatsApp, Slack, Gmail, portales internos y APIs existentes.</p>
+    </div>
+    <div class="advantage">
+      <div class="advantage-icon">🧠</div>
+      <h3>IA cuando suma valor</h3>
+      <p>Incorporamos ChatGPT, Claude o DeepSeek donde realmente cambia el resultado — no como marketing.</p>
+    </div>
+    <div class="advantage">
+      <div class="advantage-icon">📈</div>
+      <h3>ROI visible desde el día 1</h3>
+      <p>Automatizamos tareas que hoy le cuestan horas a tu equipo. El ahorro se ve desde la primera semana.</p>
+    </div>
+    <div class="advantage">
+      <div class="advantage-icon">🔒</div>
+      <h3>Código propio, sin dependencias</h3>
+      <p>Todo lo que desarrollamos es tuyo. Sin plataformas de terceros que te pueden cerrar la cuenta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="section-tag">Contacto</div>
+  <h2>¿Tenés un proceso que querés automatizar?</h2>
+  <p>Contanos tu caso — sin costo ni compromiso. En menos de 24 horas te respondemos con una propuesta.</p>
+  <div class="contact-options">
+    <a href="https://wa.me/573026119411?text=Hola%20Vtlik,%20me%20interesa%20automatizar%20un%20proceso%20en%20mi%20empresa" class="btn-whatsapp" target="_blank" rel="noopener">
+      💬 Escribir por WhatsApp
+    </a>
+    <a href="mailto:gerencia@vtlik.com" class="btn-email">
+      ✉️ gerencia@vtlik.com
+    </a>
+  </div>
+  <div class="contact-info">
+    <div class="contact-item">⏱️ Respuesta en menos de 24 hs</div>
+    <div class="contact-item">📍 Argentina · Remoto para toda Latinoamérica</div>
+    <div class="contact-item">💼 Proyectos desde $USD 500</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">vt<span>lik</span></div>
+  <p>© 2025 Vtlik. Automatización e IA para empresas. · <a href="mailto:gerencia@vtlik.com" style="color:inherit">gerencia@vtlik.com</a></p>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/573026119411?text=Hola%20Vtlik,%20me%20interesa%20hablar%20sobre%20automatización" class="wa-float" target="_blank" rel="noopener" title="Contactar por WhatsApp" aria-label="Contactar por WhatsApp">
+  💬
+</a>
+
+</body>
+</html>
