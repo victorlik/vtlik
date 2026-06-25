@@ -58,18 +58,19 @@
 
   <style>
     :root {
-      --primary: #1a73e8;
-      --primary-dark: #1557b0;
-      --accent: #00c853;
-      --dark: #0f1117;
-      --dark-2: #1a1d27;
-      --dark-3: #252836;
-      --text: #e8eaf0;
-      --text-muted: #9da3b4;
-      --border: rgba(255,255,255,0.08);
-      --card-bg: rgba(255,255,255,0.04);
+      --primary: #7B2FBE;
+      --primary-dark: #6020A0;
+      --accent: #00E5FF;
+      --accent-2: #E040FB;
+      --dark: #0A0A1A;
+      --dark-2: #1A1A35;
+      --dark-3: #2A2A50;
+      --text: #FFFFFF;
+      --text-muted: #AAAACC;
+      --border: rgba(123,47,190,0.2);
+      --card-bg: rgba(123,47,190,0.06);
       --radius: 14px;
-      --shadow: 0 8px 32px rgba(0,0,0,0.35);
+      --shadow: 0 8px 32px rgba(0,0,0,0.5);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -117,20 +118,20 @@
       display: flex; flex-direction: column; justify-content: center; align-items: center;
       text-align: center;
       padding: 120px 5% 80px;
-      background: radial-gradient(ellipse at 50% 0%, rgba(26,115,232,0.18) 0%, transparent 65%),
-                  radial-gradient(ellipse at 80% 80%, rgba(0,200,83,0.07) 0%, transparent 50%),
+      background: radial-gradient(ellipse at 50% 0%, rgba(123,47,190,0.28) 0%, transparent 65%),
+                  radial-gradient(ellipse at 80% 80%, rgba(0,229,255,0.07) 0%, transparent 50%),
                   var(--dark);
       position: relative; overflow: hidden;
     }
 
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(26,115,232,0.15); border: 1px solid rgba(26,115,232,0.35);
-      color: #6fa8ff; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
+      background: rgba(123,47,190,0.18); border: 1px solid rgba(123,47,190,0.45);
+      color: #C77DFF; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
       padding: 6px 16px; border-radius: 50px;
       margin-bottom: 28px;
     }
-    .hero-badge .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+    .hero-badge .dot { width: 6px; height: 6px; background: var(--accent-2); border-radius: 50%; animation: pulse 2s infinite; }
 
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
 
@@ -160,9 +161,9 @@
       font-weight: 700; font-size: 1rem;
       padding: 15px 32px; border-radius: 50px;
       transition: all 0.2s;
-      box-shadow: 0 4px 20px rgba(26,115,232,0.4);
+      box-shadow: 0 4px 20px rgba(123,47,190,0.45);
     }
-    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(26,115,232,0.5); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(123,47,190,0.6); }
 
     .btn-secondary {
       display: inline-flex; align-items: center; gap: 10px;
@@ -218,17 +219,17 @@
     .service-card::before {
       content: '';
       position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--primary), transparent);
+      background: linear-gradient(90deg, var(--accent), var(--primary), transparent);
       opacity: 0; transition: opacity 0.2s;
     }
-    .service-card:hover { border-color: rgba(26,115,232,0.35); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .service-card:hover { border-color: rgba(123,47,190,0.5); transform: translateY(-3px); box-shadow: var(--shadow); }
     .service-card:hover::before { opacity: 1; }
 
     .service-icon {
       font-size: 2rem; margin-bottom: 16px;
       display: inline-flex; align-items: center; justify-content: center;
       width: 54px; height: 54px;
-      background: rgba(26,115,232,0.12); border-radius: 12px;
+      background: rgba(123,47,190,0.15); border-radius: 12px;
     }
 
     .service-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
@@ -239,10 +240,10 @@
     }
     .tag {
       font-size: 0.72rem; font-weight: 600; padding: 3px 9px;
-      border-radius: 50px; background: rgba(26,115,232,0.12);
-      color: #6fa8ff; border: 1px solid rgba(26,115,232,0.2);
+      border-radius: 50px; background: rgba(0,229,255,0.08);
+      color: #00E5FF; border: 1px solid rgba(0,229,255,0.2);
     }
-    .tag.green { background: rgba(0,200,83,0.1); color: #5ce87e; border-color: rgba(0,200,83,0.2); }
+    .tag.green { background: rgba(224,64,251,0.1); color: #E040FB; border-color: rgba(224,64,251,0.25); }
 
     /* PORTFOLIO */
     #proyectos { background: var(--dark); }
@@ -260,7 +261,7 @@
       padding: 24px 28px;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .project-card:hover { border-color: rgba(26,115,232,0.4); transform: translateY(-2px); }
+    .project-card:hover { border-color: rgba(123,47,190,0.5); transform: translateY(-2px); }
 
     .project-header {
       display: flex; align-items: flex-start; justify-content: space-between;
@@ -270,8 +271,8 @@
     .project-badge {
       font-size: 0.72rem; font-weight: 700; padding: 3px 10px;
       border-radius: 50px;
-      background: rgba(0,200,83,0.12); color: #5ce87e;
-      border: 1px solid rgba(0,200,83,0.25);
+      background: rgba(0,229,255,0.1); color: #00E5FF;
+      border: 1px solid rgba(0,229,255,0.25);
     }
 
     .project-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
@@ -301,7 +302,7 @@
     }
     .step-num {
       font-size: 2.5rem; font-weight: 900;
-      color: rgba(26,115,232,0.2); line-height: 1;
+      color: rgba(123,47,190,0.4); line-height: 1;
       margin-bottom: 12px;
     }
     .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
@@ -325,7 +326,7 @@
 
     /* CTA */
     #contacto {
-      background: radial-gradient(ellipse at 50% 0%, rgba(26,115,232,0.2) 0%, transparent 70%), var(--dark-2);
+      background: radial-gradient(ellipse at 50% 0%, rgba(123,47,190,0.25) 0%, transparent 70%), var(--dark-2);
       text-align: center;
     }
 
