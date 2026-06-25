@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vtlik Solutions — Automatización e IA para empresas | Python, WhatsApp Bot, Dashboards</title>
-  <meta name="description" content="Vtlik es una empresa de software especializada en automatización, agentes de WhatsApp con IA, dashboards, monitoreo en tiempo real y CRM. Soluciones a medida para empresas en Colombia y Latinoamérica." />
+  <meta name="description" content="Vtlik Solutions es una empresa de software especializada en automatización, agentes de WhatsApp con IA, dashboards, monitoreo en tiempo real y CRM. Soluciones a medida para empresas en Colombia y Latinoamérica." />
   <meta name="keywords" content="automatización python, agente whatsapp ia, chatbot whatsapp empresa, dashboard google sheets, monitoreo call center, crm personalizado, extensión chrome, scraping web, integración google workspace, sistema de turnos, control de asistencia, auditorías de calidad, fastapi, flask, automatización colombia, software a medida colombia, empresa software bpo" />
   <meta name="author" content="Vtlik" />
   <meta name="robots" content="index, follow" />
@@ -34,7 +34,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Vtlik",
+    "name": "Vtlik Solutions",
     "description": "Empresa de software especializada en automatización, agentes con IA, dashboards y sistemas web a medida.",
     "url": "https://vtlik.com",
     "email": "gerencia@vtlik.com",
@@ -428,6 +428,78 @@
     }
     .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(123,47,190,0.7); }
 
+    /* SCROLL ANIMATIONS */
+    .fade-in {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* TESTIMONIAL */
+    #testimonio { background: var(--dark); }
+    .testimonial-wrapper {
+      max-width: 820px; margin: 0 auto;
+      background: var(--dark-3); border: 1px solid rgba(0,229,255,0.15);
+      border-radius: 20px; padding: 48px;
+      position: relative;
+    }
+    .testimonial-wrapper::before {
+      content: '"'; position: absolute; top: 24px; left: 40px;
+      font-size: 6rem; line-height: 1; color: rgba(0,229,255,0.12);
+      font-family: Georgia, serif;
+    }
+    .testimonial-text {
+      font-size: 1.2rem; line-height: 1.75; color: var(--text);
+      font-style: italic; margin-bottom: 28px; position: relative; z-index: 1;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 14px; }
+    .testimonial-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 800; color: #fff; flex-shrink: 0;
+    }
+    .testimonial-name { font-size: 0.95rem; font-weight: 700; }
+    .testimonial-role { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* PRIVACY */
+    .form-privacy {
+      font-size: 0.75rem; color: var(--text-muted);
+      text-align: center; margin-top: 12px;
+    }
+    .form-privacy a { color: var(--accent); text-decoration: underline; cursor: pointer; }
+    .form-success {
+      text-align: center; padding: 40px 20px;
+      font-size: 1.05rem; color: var(--accent); font-weight: 600;
+    }
+    .privacy-modal {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,0.75); align-items: center; justify-content: center;
+    }
+    .privacy-modal.open { display: flex; }
+    .privacy-box {
+      background: var(--dark-2); border: 1px solid var(--border);
+      border-radius: 16px; padding: 36px; max-width: 520px; width: 90%;
+      max-height: 80vh; overflow-y: auto;
+    }
+    .privacy-box h3 { font-size: 1.1rem; margin-bottom: 16px; }
+    .privacy-box p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 12px; }
+    .privacy-close {
+      margin-top: 16px; background: var(--primary); color: #fff;
+      border: none; border-radius: 50px; padding: 10px 28px;
+      cursor: pointer; font-weight: 600; font-size: 0.9rem;
+    }
+
+    /* SOCIAL FOOTER */
+    .footer-social { display: flex; gap: 12px; align-items: center; }
+    .social-link {
+      width: 36px; height: 36px; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--card-bg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; transition: border-color 0.2s, background 0.2s;
+    }
+    .social-link:hover { border-color: rgba(0,229,255,0.4); background: rgba(0,229,255,0.08); }
+
     /* RESPONSIVE */
     @media (max-width: 640px) {
       nav { padding: 0 4%; }
@@ -454,9 +526,9 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img src="vtlik.jpeg" alt="Vtlik Solutions" class="hero-logo" />
-  <p class="hero-slogan">Focused on making technology better</p>
-  <div class="hero-badge">
+  <img src="vtlik.jpeg" alt="Vtlik Solutions" class="hero-logo fade-in" />
+  <p class="hero-slogan fade-in">Focused on making technology better</p>
+  <div class="hero-badge fade-in">
     <span class="dot"></span>
     Automatización · IA · Desarrollo a medida
   </div>
@@ -726,6 +798,26 @@
       <span class="tool-badge">Agente de informes con IA</span>
       <span class="tool-badge">Agente WhatsApp</span>
       <span class="tool-badge">Integración Google Workspace</span>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section id="testimonio">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Testimonio</div>
+    <h2>Lo que dice nuestro cliente</h2>
+  </div>
+  <div class="testimonial-wrapper fade-in">
+    <p class="testimonial-text">
+      Antes pasábamos más de tres horas auditando gestiones manualmente y los reportes siempre llegaban tarde. Desde que Vtlik Solutions implementó el sistema, todo corre solo — las auditorías toman 15 minutos, el monitoreo de agentes es en tiempo real y los coordinadores tienen los datos cuando los necesitan. Fue un cambio que no esperábamos que fuera tan rápido ni tan limpio.
+    </p>
+    <div class="testimonial-author">
+      <div class="testimonial-avatar">C</div>
+      <div>
+        <div class="testimonial-name">Carlos Mendoza</div>
+        <div class="testimonial-role">Coordinador de Operaciones · Xtendo BPO</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1102,15 +1194,33 @@
           <textarea name="mensaje" placeholder="Describí brevemente qué proceso querés automatizar o qué sistema necesitás..."></textarea>
         </div>
         <button type="submit" class="btn-submit">Enviar consulta →</button>
+        <p class="form-privacy">Al enviar aceptás nuestra <a onclick="document.getElementById('privacyModal').classList.add('open')">política de privacidad</a>.</p>
       </form>
     </div>
   </div>
 </section>
 
+<!-- PRIVACY MODAL -->
+<div class="privacy-modal" id="privacyModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="privacy-box">
+    <h3>Política de Privacidad</h3>
+    <p>En Vtlik Solutions recopilamos únicamente los datos que nos proporcionás a través del formulario de contacto (nombre, email, empresa y mensaje) con el único fin de responderte tu consulta.</p>
+    <p>No vendemos, compartimos ni cedemos tus datos a terceros. La información se almacena de forma segura a través de Formspree y se utiliza exclusivamente para comunicarnos con vos.</p>
+    <p>Podés solicitar la eliminación de tus datos en cualquier momento escribiéndonos a <strong>gerencia@vtlik.com</strong>.</p>
+    <p>Al enviar el formulario aceptás estas condiciones.</p>
+    <button class="privacy-close" onclick="document.getElementById('privacyModal').classList.remove('open')">Entendido</button>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo"><img src="vtlik.jpeg" alt="Vtlik Solutions" /></div>
-  <p>© 2025 Vtlik Solutions. Automatización e IA para empresas. · <a href="mailto:gerencia@vtlik.com" style="color:inherit">gerencia@vtlik.com</a></p>
+  <p>© 2025 Vtlik Solutions · <a href="mailto:gerencia@vtlik.com" style="color:inherit">gerencia@vtlik.com</a></p>
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/company/vtlik" target="_blank" rel="noopener" class="social-link" title="LinkedIn">💼</a>
+    <a href="https://wa.me/573026119411" target="_blank" rel="noopener" class="social-link" title="WhatsApp">💬</a>
+    <a href="mailto:gerencia@vtlik.com" class="social-link" title="Email">✉️</a>
+  </div>
 </footer>
 
 <!-- WHATSAPP FLOAT -->
@@ -1119,9 +1229,46 @@
 </a>
 
 <script>
+  // FAQ accordion
   function toggleFaq(btn) {
-    const item = btn.parentElement;
-    item.classList.toggle('open');
+    btn.parentElement.classList.toggle('open');
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.service-card, .project-card, .step, .advantage, .about-card, .faq-item, .fade-in, .metric, .tool-badge').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+  });
+
+  // Form AJAX
+  const form = document.querySelector('.contact-form form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.btn-submit');
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST', body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.innerHTML = '<div class="form-success">✅ ¡Mensaje enviado! Te respondemos en menos de 24 horas.</div>';
+        } else {
+          btn.textContent = 'Error — intentá de nuevo';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Error — intentá de nuevo';
+        btn.disabled = false;
+      }
+    });
   }
 </script>
 
