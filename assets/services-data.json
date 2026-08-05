@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "agente-whatsapp-ia",
+    "name": "Agente de WhatsApp con IA",
+    "icon": "🤖"
+  },
+  {
+    "slug": "dashboards-reportes-automaticos",
+    "name": "Dashboards y reportes automáticos",
+    "icon": "📊"
+  },
+  {
+    "slug": "monitoreo-tiempo-real",
+    "name": "Monitoreo en tiempo real",
+    "icon": "🔔"
+  },
+  {
+    "slug": "crm-gestion-leads",
+    "name": "CRM y gestión de leads",
+    "icon": "🎯"
+  },
+  {
+    "slug": "auditorias-calidad-automatizadas",
+    "name": "Auditorías de calidad automatizadas",
+    "icon": "✅"
+  },
+  {
+    "slug": "control-asistencia-turnos",
+    "name": "Control de asistencia y turnos",
+    "icon": "🗓️"
+  },
+  {
+    "slug": "extensiones-chrome-medida",
+    "name": "Extensiones de Chrome a medida",
+    "icon": "🧩"
+  },
+  {
+    "slug": "automatizacion-python",
+    "name": "Automatización con Python",
+    "icon": "⚙️"
+  },
+  {
+    "slug": "integracion-google-workspace",
+    "name": "Integración Google Workspace",
+    "icon": "📋"
+  },
+  {
+    "slug": "scraping-extraccion-datos",
+    "name": "Scraping y extracción de datos",
+    "icon": "🕷️"
+  },
+  {
+    "slug": "chatbot-atencion-cliente",
+    "name": "Chatbot para atención al cliente",
+    "icon": "💬"
+  },
+  {
+    "slug": "sistemas-web-medida",
+    "name": "Sistemas web a medida",
+    "icon": "🌐"
+  }
+]

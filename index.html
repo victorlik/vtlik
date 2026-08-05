@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vtlik Solutions — Automatización e IA para empresas | Python, WhatsApp Bot, Dashboards</title>
-  <meta name="description" content="Vtlik Solutions es una empresa de software especializada en automatización, agentes de WhatsApp con IA, dashboards, monitoreo en tiempo real y CRM. Soluciones a medida para empresas en Colombia y Latinoamérica." />
-  <meta name="keywords" content="automatización python, agente whatsapp ia, chatbot whatsapp empresa, dashboard google sheets, monitoreo call center, crm personalizado, extensión chrome, scraping web, integración google workspace, sistema de turnos, control de asistencia, auditorías de calidad, fastapi, flask, automatización colombia, software a medida colombia, empresa software bpo" />
+  <title>Automatización e IA para empresas en Medellín | Vtlik Solutions</title>
+  <meta name="description" content="Vtlik Solutions: automatización, agentes de WhatsApp con IA, dashboards y CRM a medida. Con base en Medellín, atendemos empresas en toda Colombia y Latinoamérica." />
+  <meta name="keywords" content="automatización medellín, software a medida medellín, empresa de automatización colombia, automatización python, agente whatsapp ia, chatbot whatsapp empresa, dashboard google sheets, monitoreo call center, crm personalizado, extensión chrome, scraping web, integración google workspace, sistema de turnos, control de asistencia, auditorías de calidad, fastapi, flask, empresa software bpo" />
   <meta name="author" content="Vtlik" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://vtlik.com/" />
@@ -13,8 +13,8 @@
   <link rel="apple-touch-icon" href="vtlik.jpeg" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Vtlik Solutions — Automatización e IA para empresas" />
-  <meta property="og:description" content="Automatización, agentes con IA, dashboards y sistemas web a medida. Soluciones reales para empresas en Colombia y LATAM." />
+  <meta property="og:title" content="Automatización e IA para empresas en Medellín | Vtlik Solutions" />
+  <meta property="og:description" content="Automatización, agentes con IA, dashboards y sistemas web a medida. Con base en Medellín, atendemos empresas en toda Colombia y LATAM." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vtlik.com/" />
   <meta property="og:locale" content="es_CO" />
@@ -34,12 +34,22 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": "https://vtlik.com/#organization",
     "name": "Vtlik Solutions",
     "description": "Empresa de software especializada en automatización, agentes con IA, dashboards y sistemas web a medida.",
     "url": "https://vtlik.com",
     "email": "gerencia@vtlik.com",
     "telephone": "+573026119411",
-    "areaServed": ["Colombia", "Latinoamérica"],
+    "image": "https://vtlik.com/vtlik.jpeg",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Medellín",
+      "addressRegion": "Antioquia",
+      "addressCountry": "CO"
+    },
+    "areaServed": ["Medellín", "Colombia", "Latinoamérica"],
+    "sameAs": ["https://www.linkedin.com/company/vtlik"],
     "serviceType": [
       "Automatización con Python",
       "Agente de WhatsApp con IA",
@@ -55,460 +65,47 @@
   }
   </script>
 
-  <style>
-    :root {
-      --primary: #7B2FBE;
-      --primary-dark: #6020A0;
-      --accent: #00E5FF;
-      --accent-2: #E040FB;
-      --dark: #0A0A1A;
-      --dark-2: #1A1A35;
-      --dark-3: #2A2A50;
-      --text: #FFFFFF;
-      --text-muted: #AAAACC;
-      --border: rgba(123,47,190,0.2);
-      --card-bg: rgba(123,47,190,0.06);
-      --radius: 14px;
-      --shadow: 0 8px 32px rgba(0,0,0,0.5);
-    }
+  <!-- Schema.org: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tarda en entregarse un proyecto?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Depende de la complejidad, pero trabajamos para tener una primera versión funcional en la primera semana. Un sistema simple como una extensión Chrome o un script de automatización puede estar listo en 2-3 días. Un sistema completo como un CRM o un bot de WhatsApp lleva entre 2 y 4 semanas." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Trabajan de forma remota? ¿Pueden ayudarme si no estoy en Colombia?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí, trabajamos 100% remoto y atendemos clientes en toda Latinoamérica. Coordinamos por WhatsApp, videollamadas o el canal que prefieras. La diferencia horaria no ha sido un problema con ningún cliente." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta un proyecto?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Los proyectos arrancan desde USD 300 para automatizaciones simples y scripts. Sistemas más complejos como CRMs, bots de WhatsApp con IA o sistemas de monitoreo están entre USD 800 y USD 3.000 dependiendo del alcance. Siempre damos un presupuesto fijo antes de empezar, sin sorpresas." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Necesito saber de tecnología para trabajar con ustedes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Para nada. Solo necesitás contarnos qué problema querés resolver y nosotros nos encargamos del resto. Explicamos todo en lenguaje claro, sin tecnicismos, y entregamos el sistema listo para usar." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si necesito cambios después de la entrega?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Incluimos un período de ajustes post-entrega en todos los proyectos. Para cambios más grandes o nuevas funcionalidades, coordinamos un presupuesto adicional. No desaparecemos cuando entregamos — seguimos disponibles." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Pueden integrarse con los sistemas que ya uso?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí, es parte de nuestra especialidad. Nos conectamos con Google Workspace, WhatsApp, Slack, Salesforce, portales internos, bases de datos existentes y prácticamente cualquier sistema que tenga una API o interfaz web. Si lo usás, lo podemos conectar." }
+      }
+    ]
+  }
+  </script>
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--dark);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      backdrop-filter: blur(16px);
-      background: rgba(10,10,26,0.9);
-      border-bottom: 1px solid var(--border);
-      padding: 0 5%;
-      height: 64px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .logo-img { height: 42px; border-radius: 8px; display: block; }
-
-    .nav-links {
-      display: flex; gap: 28px; align-items: center;
-    }
-    .nav-links a {
-      font-size: 0.88rem; color: var(--text-muted); font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: #fff; }
-
-    .nav-cta {
-      background: var(--primary); color: #fff; font-weight: 600; font-size: 0.9rem;
-      padding: 9px 22px; border-radius: 50px;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
-
-    @media (max-width: 768px) { .nav-links { display: none; } }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; padding: 120px 5% 80px;
-      background: radial-gradient(ellipse at 50% 0%, rgba(123,47,190,0.28) 0%, transparent 65%),
-                  radial-gradient(ellipse at 80% 80%, rgba(0,229,255,0.07) 0%, transparent 50%),
-                  var(--dark);
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(123,47,190,0.18); border: 1px solid rgba(123,47,190,0.45);
-      color: #C77DFF; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
-      padding: 6px 16px; border-radius: 50px; margin-bottom: 28px;
-    }
-    .hero-badge .dot { width: 6px; height: 6px; background: var(--accent-2); border-radius: 50%; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
-
-    .hero-logo {
-      width: 110px; height: 110px; border-radius: 20px;
-      margin-bottom: 28px;
-      box-shadow: 0 8px 40px rgba(123,47,190,0.5);
-    }
-    .hero-slogan {
-      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      font-size: clamp(2.2rem, 5.5vw, 4rem); font-weight: 800;
-      line-height: 1.12; letter-spacing: -1.5px; max-width: 820px; margin-bottom: 20px;
-    }
-    h1 .accent { color: var(--accent); }
-
-    .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-muted);
-      max-width: 600px; margin-bottom: 44px;
-    }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
-
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--primary); color: #fff; font-weight: 700; font-size: 1rem;
-      padding: 15px 32px; border-radius: 50px; transition: all 0.2s;
-      box-shadow: 0 4px 20px rgba(123,47,190,0.45);
-    }
-    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(123,47,190,0.6); }
-
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: transparent; color: var(--text); font-weight: 600; font-size: 1rem;
-      padding: 15px 32px; border-radius: 50px; border: 1px solid var(--border); transition: all 0.2s;
-    }
-    .btn-secondary:hover { background: var(--card-bg); border-color: rgba(255,255,255,0.2); }
-
-    .hero-stats { display: flex; gap: 48px; margin-top: 72px; flex-wrap: wrap; justify-content: center; }
-    .stat { text-align: center; }
-    .stat-num { font-size: 2rem; font-weight: 800; color: var(--accent); }
-    .stat-label { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
-
-    /* SECTIONS */
-    section { padding: 96px 5%; }
-    .section-tag {
-      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 12px;
-    }
-    h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
-      letter-spacing: -1px; line-height: 1.2; margin-bottom: 16px;
-    }
-    .section-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 560px; }
-    .section-header { margin-bottom: 56px; }
-    .section-header.center { text-align: center; }
-    .section-header.center .section-sub { margin: 0 auto; }
-
-    /* NOSOTROS */
-    #nosotros { background: var(--dark-2); }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
-    }
-    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
-
-    .about-text h2 { margin-bottom: 20px; }
-    .about-text p { color: var(--text-muted); font-size: 1rem; margin-bottom: 16px; line-height: 1.7; }
-    .about-text p:last-child { margin-bottom: 0; }
-    .about-text strong { color: var(--text); }
-
-    .about-cards { display: flex; flex-direction: column; gap: 16px; }
-    .about-card {
-      background: var(--card-bg); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 20px 24px;
-      display: flex; align-items: center; gap: 16px;
-    }
-    .about-card-icon {
-      font-size: 1.5rem; width: 48px; height: 48px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(0,229,255,0.08); border-radius: 10px;
-    }
-    .about-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
-    .about-card p { font-size: 0.84rem; color: var(--text-muted); }
-
-    /* SERVICES */
-    #servicios { background: var(--dark); }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;
-    }
-    .service-card {
-      background: var(--card-bg); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 28px;
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-      position: relative; overflow: hidden;
-    }
-    .service-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--primary), transparent);
-      opacity: 0; transition: opacity 0.2s;
-    }
-    .service-card:hover { border-color: rgba(123,47,190,0.5); transform: translateY(-3px); box-shadow: var(--shadow); }
-    .service-card:hover::before { opacity: 1; }
-
-    .service-icon {
-      font-size: 2rem; margin-bottom: 16px;
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 54px; height: 54px; background: rgba(123,47,190,0.15); border-radius: 12px;
-    }
-    .service-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
-    .service-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; }
-    .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-    .tag {
-      font-size: 0.72rem; font-weight: 600; padding: 3px 9px;
-      border-radius: 50px; background: rgba(0,229,255,0.08);
-      color: #00E5FF; border: 1px solid rgba(0,229,255,0.2);
-    }
-    .tag.highlight { background: rgba(224,64,251,0.1); color: #E040FB; border-color: rgba(224,64,251,0.25); }
-
-    /* CASO DE ÉXITO */
-    #caso { background: var(--dark-2); }
-    .case-wrapper {
-      background: var(--dark-3); border: 1px solid rgba(0,229,255,0.2);
-      border-radius: 20px; overflow: hidden;
-    }
-    .case-header {
-      background: linear-gradient(135deg, rgba(123,47,190,0.3), rgba(0,229,255,0.1));
-      padding: 40px 48px; border-bottom: 1px solid rgba(0,229,255,0.15);
-    }
-    @media (max-width: 640px) { .case-header { padding: 28px 24px; } }
-    .case-client {
-      display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
-    }
-    .case-logo {
-      width: 52px; height: 52px; background: rgba(0,229,255,0.12);
-      border: 1px solid rgba(0,229,255,0.3); border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; font-weight: 900; color: var(--accent);
-    }
-    .case-client-info h3 { font-size: 1.2rem; font-weight: 800; }
-    .case-client-info span { font-size: 0.82rem; color: var(--text-muted); }
-    .case-header p { color: var(--text-muted); font-size: 1rem; max-width: 640px; line-height: 1.7; }
-
-    .case-metrics {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 0; border-bottom: 1px solid rgba(0,229,255,0.1);
-    }
-    .metric {
-      padding: 32px 28px; border-right: 1px solid rgba(0,229,255,0.1);
-      text-align: center;
-    }
-    .metric:last-child { border-right: none; }
-    .metric-num { font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1; }
-    .metric-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; }
-
-    .case-tools {
-      padding: 32px 48px;
-      display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
-    }
-    @media (max-width: 640px) { .case-tools { padding: 24px; } }
-    .case-tools span { font-size: 0.82rem; color: var(--text-muted); margin-right: 4px; }
-    .tool-badge {
-      font-size: 0.78rem; font-weight: 600; padding: 5px 12px;
-      border-radius: 50px; background: rgba(123,47,190,0.12);
-      color: #C77DFF; border: 1px solid rgba(123,47,190,0.25);
-    }
-
-    /* PORTFOLIO */
-    #proyectos { background: var(--dark); }
-    .projects-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;
-    }
-    .project-card {
-      background: var(--dark-3); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 24px 28px; transition: border-color 0.2s, transform 0.2s;
-    }
-    .project-card:hover { border-color: rgba(123,47,190,0.5); transform: translateY(-2px); }
-    .project-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
-    .project-emoji { font-size: 1.6rem; }
-    .project-badge {
-      font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 50px;
-      background: rgba(0,229,255,0.1); color: #00E5FF; border: 1px solid rgba(0,229,255,0.25);
-    }
-    .project-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
-    .project-card p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.55; }
-    .project-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
-    .stack-item {
-      font-size: 0.72rem; font-weight: 600; padding: 3px 9px;
-      border-radius: 50px; background: rgba(255,255,255,0.06); color: var(--text-muted);
-    }
-
-    /* PROCESS */
-    #proceso { background: var(--dark-2); }
-    .steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
-    .step {
-      padding: 28px; background: var(--card-bg);
-      border: 1px solid var(--border); border-radius: var(--radius);
-    }
-    .step-num { font-size: 2.5rem; font-weight: 900; color: rgba(0,229,255,0.25); line-height: 1; margin-bottom: 12px; }
-    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
-    .step p { font-size: 0.86rem; color: var(--text-muted); }
-
-    /* WHY US */
-    #ventajas { background: var(--dark); }
-    .advantages-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
-    .advantage { padding: 24px; border-radius: var(--radius); background: var(--card-bg); border: 1px solid var(--border); }
-    .advantage-icon { font-size: 1.5rem; margin-bottom: 12px; }
-    .advantage h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
-    .advantage p { font-size: 0.84rem; color: var(--text-muted); }
-
-    /* FAQ */
-    #faq { background: var(--dark-2); }
-    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-    .faq-item {
-      background: var(--card-bg); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-    }
-    .faq-question {
-      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
-      padding: 20px 24px; display: flex; justify-content: space-between; align-items: center;
-      color: var(--text); font-size: 0.98rem; font-weight: 600; gap: 16px;
-    }
-    .faq-question:hover { background: rgba(123,47,190,0.08); }
-    .faq-icon { font-size: 1.2rem; color: var(--accent); flex-shrink: 0; transition: transform 0.2s; }
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
-    .faq-answer {
-      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
-    }
-    .faq-item.open .faq-answer { max-height: 200px; }
-    .faq-answer p { padding: 0 24px 20px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
-
-    /* CONTACT */
-    #contacto {
-      background: radial-gradient(ellipse at 50% 0%, rgba(123,47,190,0.25) 0%, transparent 70%), var(--dark);
-    }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
-
-    .contact-left h2 { margin-bottom: 16px; }
-    .contact-left p { color: var(--text-muted); font-size: 1rem; margin-bottom: 32px; line-height: 1.7; }
-
-    .contact-direct { display: flex; flex-direction: column; gap: 12px; }
-    .contact-link {
-      display: flex; align-items: center; gap: 12px;
-      padding: 14px 18px; border-radius: var(--radius);
-      border: 1px solid var(--border); background: var(--card-bg);
-      font-size: 0.9rem; font-weight: 500; transition: all 0.2s;
-    }
-    .contact-link:hover { border-color: rgba(123,47,190,0.5); background: rgba(123,47,190,0.1); }
-    .contact-link .link-icon { font-size: 1.2rem; }
-
-    .contact-form {
-      background: var(--dark-3); border: 1px solid var(--border);
-      border-radius: 16px; padding: 32px;
-    }
-    .contact-form h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 24px; }
-    .form-group { margin-bottom: 16px; }
-    .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%; background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border); border-radius: 8px;
-      padding: 11px 14px; color: var(--text); font-size: 0.9rem;
-      font-family: inherit; outline: none; transition: border-color 0.2s;
-    }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      border-color: var(--primary);
-    }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-group select option { background: var(--dark-2); }
-    .btn-submit {
-      width: 100%; background: var(--primary); color: #fff;
-      border: none; border-radius: 50px; padding: 14px;
-      font-size: 1rem; font-weight: 700; cursor: pointer;
-      transition: all 0.2s; box-shadow: 0 4px 20px rgba(123,47,190,0.4);
-    }
-    .btn-submit:hover { background: var(--primary-dark); transform: translateY(-1px); }
-
-    /* FOOTER */
-    footer {
-      background: var(--dark); border-top: 1px solid var(--border);
-      padding: 36px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
-    }
-    .footer-logo img { height: 36px; border-radius: 6px; }
-    footer p { color: var(--text-muted); font-size: 0.82rem; }
-
-    /* FLOATING WA */
-    .wa-float {
-      position: fixed; bottom: 28px; right: 28px; z-index: 999;
-      background: var(--primary); color: #fff;
-      width: 58px; height: 58px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; box-shadow: 0 6px 24px rgba(123,47,190,0.55);
-      transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;
-    }
-    .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(123,47,190,0.7); }
-
-    /* SCROLL ANIMATIONS */
-    .fade-in {
-      opacity: 0; transform: translateY(28px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-    /* TESTIMONIAL */
-    #testimonio { background: var(--dark); }
-    .testimonial-wrapper {
-      max-width: 820px; margin: 0 auto;
-      background: var(--dark-3); border: 1px solid rgba(0,229,255,0.15);
-      border-radius: 20px; padding: 48px;
-      position: relative;
-    }
-    .testimonial-wrapper::before {
-      content: '"'; position: absolute; top: 24px; left: 40px;
-      font-size: 6rem; line-height: 1; color: rgba(0,229,255,0.12);
-      font-family: Georgia, serif;
-    }
-    .testimonial-text {
-      font-size: 1.2rem; line-height: 1.75; color: var(--text);
-      font-style: italic; margin-bottom: 28px; position: relative; z-index: 1;
-    }
-    .testimonial-author { display: flex; align-items: center; gap: 14px; }
-    .testimonial-avatar {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--primary));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; font-weight: 800; color: #fff; flex-shrink: 0;
-    }
-    .testimonial-name { font-size: 0.95rem; font-weight: 700; }
-    .testimonial-role { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
-
-    /* PRIVACY */
-    .form-privacy {
-      font-size: 0.75rem; color: var(--text-muted);
-      text-align: center; margin-top: 12px;
-    }
-    .form-privacy a { color: var(--accent); text-decoration: underline; cursor: pointer; }
-    .form-success {
-      text-align: center; padding: 40px 20px;
-      font-size: 1.05rem; color: var(--accent); font-weight: 600;
-    }
-    .privacy-modal {
-      display: none; position: fixed; inset: 0; z-index: 999;
-      background: rgba(0,0,0,0.75); align-items: center; justify-content: center;
-    }
-    .privacy-modal.open { display: flex; }
-    .privacy-box {
-      background: var(--dark-2); border: 1px solid var(--border);
-      border-radius: 16px; padding: 36px; max-width: 520px; width: 90%;
-      max-height: 80vh; overflow-y: auto;
-    }
-    .privacy-box h3 { font-size: 1.1rem; margin-bottom: 16px; }
-    .privacy-box p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 12px; }
-    .privacy-close {
-      margin-top: 16px; background: var(--primary); color: #fff;
-      border: none; border-radius: 50px; padding: 10px 28px;
-      cursor: pointer; font-weight: 600; font-size: 0.9rem;
-    }
-
-    /* SOCIAL FOOTER */
-    .footer-social { display: flex; gap: 12px; align-items: center; }
-    .social-link {
-      width: 36px; height: 36px; border-radius: 8px;
-      border: 1px solid var(--border); background: var(--card-bg);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; transition: border-color 0.2s, background 0.2s;
-    }
-    .social-link:hover { border-color: rgba(0,229,255,0.4); background: rgba(0,229,255,0.08); }
-
-    /* RESPONSIVE */
-    @media (max-width: 640px) {
-      nav { padding: 0 4%; }
-      .hero-stats { gap: 28px; }
-      footer { flex-direction: column; text-align: center; }
-      .metric { border-right: none; border-bottom: 1px solid rgba(0,229,255,0.1); }
-      .metric:last-child { border-bottom: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
 
@@ -570,7 +167,7 @@
       <div class="about-card">
         <div class="about-card-icon">🇨🇴</div>
         <div>
-          <h4>Basados en Colombia</h4>
+          <h4>Basados en Medellín, Colombia</h4>
           <p>Trabajamos de forma remota para clientes en toda Latinoamérica con comunicación directa y sin intermediarios.</p>
         </div>
       </div>
@@ -608,7 +205,7 @@
   </div>
   <div class="services-grid">
 
-    <div class="service-card">
+    <a href="/agente-whatsapp-ia/" class="service-card">
       <div class="service-icon">🤖</div>
       <h3>Agente de WhatsApp con IA</h3>
       <p>Bot inteligente que atiende clientes 24/7. Responde consultas, detecta cuándo derivar a un humano y aprende del contexto de cada conversación.</p>
@@ -617,9 +214,9 @@
         <span class="tag">DeepSeek / GPT</span>
         <span class="tag">Next.js</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="/dashboards-reportes-automaticos/" class="service-card">
       <div class="service-icon">📊</div>
       <h3>Dashboards y reportes automáticos</h3>
       <p>Tableros de control conectados a tus datos en tiempo real. Métricas de ventas, agentes y operaciones en Google Sheets o una app web.</p>
@@ -628,9 +225,9 @@
         <span class="tag">Apps Script</span>
         <span class="tag">Python</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="/monitoreo-tiempo-real/" class="service-card">
       <div class="service-icon">🔔</div>
       <h3>Monitoreo en tiempo real</h3>
       <p>Sistema que vigila tus procesos, agentes o KPIs y envía alertas automáticas a Slack o email cuando algo sale de rango.</p>
@@ -639,9 +236,9 @@
         <span class="tag">Email</span>
         <span class="tag">Python</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="/crm-gestion-leads/" class="service-card">
       <div class="service-icon">🎯</div>
       <h3>CRM y gestión de leads</h3>
       <p>Sistema web para asignar, hacer seguimiento y cerrar leads. Panel para coordinadores y agentes con historial completo y etapas configurables.</p>
@@ -650,9 +247,9 @@
         <span class="tag">PostgreSQL</span>
         <span class="tag">Railway</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="/auditorias-calidad-automatizadas/" class="service-card">
       <div class="service-icon">✅</div>
       <h3>Auditorías de calidad automatizadas</h3>
       <p>Automatización de auditorías QA sobre gestiones de agentes. Descarga, procesa y genera reportes sin intervención humana.</p>
@@ -661,9 +258,9 @@
         <span class="tag">Selenium</span>
         <span class="tag">Google Sheets</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="/control-asistencia-turnos/" class="service-card">
       <div class="service-icon">🗓️</div>
       <h3>Control de asistencia y turnos</h3>
       <p>Sistema web para gestionar turnos de trabajo, registrar presencia y visualizar coberturas por área o equipo.</p>
@@ -672,9 +269,9 @@
         <span class="tag">Web App</span>
         <span class="tag">Apps Script</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="/extensiones-chrome-medida/" class="service-card">
       <div class="service-icon">🧩</div>
       <h3>Extensiones de Chrome a medida</h3>
       <p>Herramientas que corren en el navegador de tus agentes: autocompletan formularios, extraen datos o automatizan flujos sin cambiar tus sistemas actuales.</p>
@@ -683,9 +280,9 @@
         <span class="tag">Manifest V3</span>
         <span class="tag">JavaScript</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="/automatizacion-python/" class="service-card">
       <div class="service-icon">⚙️</div>
       <h3>Automatización con Python</h3>
       <p>Scripts y bots que reemplazan tareas manuales: descargas de reportes, envíos de emails, procesamiento de datos, sincronización entre sistemas.</p>
@@ -694,9 +291,9 @@
         <span class="tag">Selenium</span>
         <span class="tag">API REST</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="/integracion-google-workspace/" class="service-card">
       <div class="service-icon">📋</div>
       <h3>Integración Google Workspace</h3>
       <p>Conectamos Google Sheets, Gmail, Calendar y Drive con tus herramientas mediante Apps Script o la API de Google — sin plugins de terceros.</p>
@@ -705,9 +302,9 @@
         <span class="tag">Google API</span>
         <span class="tag">Triggers</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="/scraping-extraccion-datos/" class="service-card">
       <div class="service-icon">🕷️</div>
       <h3>Scraping y extracción de datos</h3>
       <p>Extraemos información de cualquier sitio web de forma automatizada: precios, publicaciones, datos de competencia, portales internos.</p>
@@ -716,9 +313,9 @@
         <span class="tag">Selenium</span>
         <span class="tag">BeautifulSoup</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="/chatbot-atencion-cliente/" class="service-card">
       <div class="service-icon">💬</div>
       <h3>Chatbot para atención al cliente</h3>
       <p>Asistente virtual para tu sitio web o WhatsApp que responde preguntas frecuentes, toma pedidos y transfiere a humanos según reglas configurables.</p>
@@ -727,9 +324,9 @@
         <span class="tag">IA</span>
         <span class="tag">Multi-canal</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a href="/sistemas-web-medida/" class="service-card">
       <div class="service-icon">🌐</div>
       <h3>Sistemas web a medida</h3>
       <p>Aplicaciones web completas con login, roles, base de datos y API. Desde un panel interno hasta un sistema para tus clientes finales.</p>
@@ -738,7 +335,7 @@
         <span class="tag">Flask</span>
         <span class="tag">Next.js</span>
       </div>
-    </div>
+    </a>
 
   </div>
 </section>
@@ -1161,7 +758,7 @@
         </a>
         <div class="contact-link" style="cursor:default">
           <span class="link-icon">📍</span>
-          Colombia · Remoto para toda Latinoamérica
+          Medellín, Colombia · Remoto para toda Latinoamérica
         </div>
         <div class="contact-link" style="cursor:default">
           <span class="link-icon">⏱️</span>
