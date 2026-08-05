@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discos — El panel de control de tu discoteca | Vtlik Solutions</title>
+  <meta name="description" content="Discos es el sistema que usa tu staff para operar la noche: acceso por QR, mesas en vivo, pedidos, cover sin efectivo y reportes por sesión. Pagas solo las noches que abres. Un producto de Vtlik Solutions." />
+  <meta name="keywords" content="software para discotecas, sistema para bares, control de acceso QR discoteca, gestión de mesas bar, cover charge digital, panel de staff discoteca, software nocturno colombia" />
+  <meta name="author" content="Vtlik" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vtlik.com/discos/" />
+  <link rel="icon" href="../vtlik.jpeg" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="../vtlik.jpeg" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Discos — El panel de control de tu discoteca" />
+  <meta property="og:description" content="Acceso por QR, mesas en vivo, pedidos y reportes de la noche. Pagas solo las noches que abres." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vtlik.com/discos/" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:image" content="https://vtlik.com/vtlik.jpeg" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6N509L5H1C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6N509L5H1C');
+  </script>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Discos",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Panel operativo para discotecas y bares: acceso por QR, mesas en vivo, pedidos, cover digital y reportes por sesión.",
+    "url": "https://vtlik.com/discos/",
+    "creator": { "@type": "Organization", "name": "Vtlik Solutions", "url": "https://vtlik.com" },
+    "offers": { "@type": "Offer", "priceCurrency": "COP", "description": "Piloto gratis, luego créditos por noche activa" }
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #7B2FBE;
+      --primary-dark: #6020A0;
+      --accent: #00E5FF;
+      --accent-2: #E040FB;
+      --dark: #0A0A1A;
+      --dark-2: #1A1A35;
+      --dark-3: #2A2A50;
+      --text: #FFFFFF;
+      --text-muted: #AAAACC;
+      --border: rgba(123,47,190,0.2);
+      --card-bg: rgba(123,47,190,0.06);
+      --radius: 14px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.5);
+      --gold: #F0C56B;
+      --gold-bg: rgba(240,197,107,0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    section { padding: 96px 5%; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(10,10,26,0.9);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .brand-mark {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.05rem;
+    }
+    .brand-name { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.3px; }
+    .brand-by { font-size: 0.72rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .brand-by img { height: 16px; border-radius: 3px; opacity: .85; }
+
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 0.88rem; color: var(--text-muted); font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      background: var(--primary); color: #fff; font-weight: 600; font-size: 0.9rem;
+      padding: 9px 22px; border-radius: 50px; transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 120px 5% 80px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(123,47,190,0.28) 0%, transparent 65%),
+                  radial-gradient(ellipse at 80% 80%, rgba(0,229,255,0.07) 0%, transparent 50%),
+                  var(--dark);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(123,47,190,0.18); border: 1px solid rgba(123,47,190,0.45);
+      color: #C77DFF; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
+      padding: 6px 16px; border-radius: 50px; margin-bottom: 28px;
+    }
+    .hero-badge .dot { width: 6px; height: 6px; background: var(--accent-2); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+
+    .hero-slogan {
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 5.5vw, 4rem); font-weight: 800;
+      line-height: 1.12; letter-spacing: -1.5px; max-width: 820px; margin-bottom: 20px;
+    }
+    h1 .accent { color: var(--accent); }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-muted);
+      max-width: 620px; margin-bottom: 44px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--primary); color: #fff; font-weight: 700; font-size: 1rem;
+      padding: 15px 32px; border-radius: 50px; transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(123,47,190,0.45);
+    }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(123,47,190,0.6); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--text); font-weight: 600; font-size: 1rem;
+      padding: 15px 32px; border-radius: 50px; border: 1px solid var(--border); transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: var(--card-bg); border-color: rgba(255,255,255,0.2); }
+
+    .hero-facts { display: flex; gap: 48px; margin-top: 72px; flex-wrap: wrap; justify-content: center; }
+    .fact { text-align: center; max-width: 160px; }
+    .fact-num { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+    .fact-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; line-height: 1.4; }
+
+    /* SECTION HEADERS */
+    .section-tag {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 12px;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+      letter-spacing: -1px; line-height: 1.2; margin-bottom: 16px;
+    }
+    .section-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 560px; }
+    .section-header { margin-bottom: 56px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin: 0 auto; }
+
+    /* VALUE GRID */
+    #resuelve { background: var(--dark-2); }
+    .value-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .value-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+      position: relative; overflow: hidden; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .value-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--primary), transparent);
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .value-card:hover { border-color: rgba(123,47,190,0.5); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .value-card:hover::before { opacity: 1; }
+    .value-icon {
+      font-size: 1.7rem; margin-bottom: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 54px; height: 54px; background: rgba(123,47,190,0.15); border-radius: 12px;
+    }
+    .value-card h3 { font-size: 1.02rem; font-weight: 700; margin-bottom: 8px; }
+    .value-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; }
+    .value-card .tag {
+      display: inline-block; margin-top: 14px; font-size: 0.72rem; font-weight: 600; padding: 3px 9px;
+      border-radius: 50px; background: rgba(0,229,255,0.08); color: #00E5FF; border: 1px solid rgba(0,229,255,0.2);
+    }
+
+    /* PROCESO */
+    #proceso { background: var(--dark); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
+    .step { padding: 28px; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); }
+    .step-num { font-size: 2.5rem; font-weight: 900; color: rgba(0,229,255,0.25); line-height: 1; margin-bottom: 12px; }
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 0.86rem; color: var(--text-muted); }
+
+    /* PRICING */
+    #precios { background: var(--dark-2); }
+    .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .price-card {
+      background: var(--dark-3); border: 1px solid var(--border);
+      border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 12px;
+    }
+    .price-card.highlight { border-color: var(--accent); box-shadow: 0 0 0 1px rgba(0,229,255,0.35), var(--shadow); position: relative; }
+    .price-card.highlight .price-flag {
+      position: absolute; top: -12px; right: 24px;
+      background: var(--accent); color: var(--dark); font-weight: 800; font-size: 0.7rem;
+      padding: 4px 12px; border-radius: 50px; letter-spacing: 0.03em;
+    }
+    .price-name { font-weight: 700; font-size: 1.05rem; }
+    .price-amount { font-size: 1.9rem; font-weight: 900; color: var(--gold); }
+    .price-amount small { font-size: 0.85rem; font-weight: 500; color: var(--text-muted); }
+    .price-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; }
+    .price-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 6px; font-size: 0.86rem; }
+    .price-list li { display: flex; gap: 8px; color: var(--text-muted); }
+    .price-list li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+    /* VENTAJAS */
+    #ventajas { background: var(--dark); }
+    .advantages-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+    .advantage { padding: 24px; border-radius: var(--radius); background: var(--card-bg); border: 1px solid var(--border); }
+    .advantage-icon { font-size: 1.5rem; margin-bottom: 12px; }
+    .advantage h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+    .advantage p { font-size: 0.84rem; color: var(--text-muted); }
+
+    /* EARLY ACCESS NOTE */
+    #estado { background: var(--dark-2); }
+    .estado-box {
+      max-width: 760px; margin: 0 auto; text-align: center;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 20px; padding: 44px 36px;
+    }
+    .estado-box .section-tag { justify-content: center; display: flex; }
+    .estado-box p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 60ch; margin: 12px auto 0; }
+    .estado-box strong { color: var(--text); }
+
+    /* CONTACT */
+    #contacto { background: radial-gradient(ellipse at 50% 0%, rgba(123,47,190,0.25) 0%, transparent 70%), var(--dark); text-align: center; }
+    #contacto .section-header { margin-bottom: 40px; }
+    .contact-direct { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; max-width: 680px; margin: 0 auto; }
+    .contact-link {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 22px; border-radius: var(--radius);
+      border: 1px solid var(--border); background: var(--card-bg);
+      font-size: 0.92rem; font-weight: 500; transition: all 0.2s;
+    }
+    .contact-link:hover { border-color: rgba(123,47,190,0.5); background: rgba(123,47,190,0.1); }
+    .contact-link .link-icon { font-size: 1.2rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark); border-top: 1px solid var(--border);
+      padding: 36px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-by { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 0.82rem; }
+    .footer-by img { height: 28px; border-radius: 6px; }
+    footer .back { font-size: 0.82rem; color: var(--text-muted); }
+    footer .back:hover { color: var(--text); }
+
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      background: var(--primary); color: #fff;
+      width: 58px; height: 58px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; box-shadow: 0 6px 24px rgba(123,47,190,0.55);
+      transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(123,47,190,0.7); }
+
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 4%; }
+      .hero-facts { gap: 24px; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="brand">
+    <div class="brand-mark">🌙</div>
+    <div>
+      <div class="brand-name">Discos</div>
+      <div class="brand-by">un producto de <img src="../vtlik.jpeg" alt="Vtlik" /> Vtlik</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#resuelve">Qué resuelve</a>
+    <a href="#proceso">Cómo funciona</a>
+    <a href="#precios">Precios</a>
+  </div>
+  <a href="https://wa.me/573026119411?text=Hola,%20quiero%20activar%20Discos%20gratis%20en%20mi%20local" class="nav-cta" target="_blank" rel="noopener">Activar piloto gratis →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-slogan fade-in">Para dueños de discotecas y bares</p>
+  <div class="hero-badge fade-in">
+    <span class="dot"></span>
+    Acceso QR · Mesas en vivo · Cover sin efectivo
+  </div>
+  <h1 class="fade-in">Discos no es una app de fiesta.<br>Es el <span class="accent">sistema operativo</span> de tu noche.</h1>
+  <p class="hero-sub fade-in">Tu staff opera el acceso, las mesas, los pedidos y el cover desde un solo panel en el celular. Tus clientes entran escaneando un QR. Tú ves cómo estuvo la noche apenas termina — y pagas solo las noches que abres.</p>
+  <div class="hero-actions fade-in">
+    <a href="https://wa.me/573026119411?text=Hola,%20quiero%20activar%20Discos%20gratis%20en%20mi%20local" class="btn-primary" target="_blank" rel="noopener">
+      💬 Activar piloto gratis
+    </a>
+    <a href="#resuelve" class="btn-secondary">Ver qué resuelve ↓</a>
+  </div>
+  <div class="hero-facts fade-in">
+    <div class="fact">
+      <div class="fact-num">0 apps</div>
+      <div class="fact-label">de terceros para tus clientes — solo escanean un QR</div>
+    </div>
+    <div class="fact">
+      <div class="fact-num">$0</div>
+      <div class="fact-label">en las noches que no abres — pagas por créditos, no cuota fija</div>
+    </div>
+    <div class="fact">
+      <div class="fact-num">1 panel</div>
+      <div class="fact-label">para acceso, mesas, pedidos, cover y reportes</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ RESUELVE -->
+<section id="resuelve">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Qué resuelve</div>
+    <h2>Lo que hoy manejas a punta de WhatsApp y cuaderno</h2>
+    <p class="section-sub">Cada función existe porque reemplaza un problema real de operar una noche.</p>
+  </div>
+  <div class="value-grid">
+
+    <div class="value-card fade-in">
+      <div class="value-icon">📲</div>
+      <h3>Acceso por QR</h3>
+      <p>Cada sesión de la noche tiene su propio código. Tu cliente escanea, entra, y no necesita instalar nada ni crear cuenta previa.</p>
+      <span class="tag">Cero fricción en la puerta</span>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">🪑</div>
+      <h3>Mesas y disponibilidad en vivo</h3>
+      <p>El local se ve movido incluso en noche floja: la gente ve quién más está ahí, se invita a bailar y se queda más tiempo consumiendo.</p>
+      <span class="tag">Más tiempo, más consumo</span>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">🧾</div>
+      <h3>Pedidos y llamados a mesero</h3>
+      <p>El pedido llega directo a la pantalla del staff. Menos caminar, más mesas atendidas por el mismo mesero.</p>
+      <span class="tag">Catálogo editable</span>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">💳</div>
+      <h3>Cover sin efectivo</h3>
+      <p>Cobra el cover con comprobante Nequi/Bancolombia aprobado desde el panel admin. Sin cuadre manual de caja al cierre.</p>
+      <span class="tag">Menos fricción en caja</span>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">📈</div>
+      <h3>Reporte por sesión</h3>
+      <p>Hora pico, mesa más activa, tasa de invitaciones aceptadas. Decides turnos y promos con datos de esa misma noche.</p>
+      <span class="tag">Deja de operar a ciegas</span>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">🛡️</div>
+      <h3>Moderación desde el panel</h3>
+      <p>Aprueba selfies y silencia usuarios problemáticos sin perseguir a nadie por WhatsApp. El staff mantiene el ambiente sano.</p>
+      <span class="tag">Control del staff</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section id="proceso">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Cómo funciona</div>
+    <h2>De cero a operando en una noche</h2>
+    <p class="section-sub">Sin instalaciones, sin capacitación de días.</p>
+  </div>
+  <div class="steps">
+    <div class="step fade-in">
+      <div class="step-num">01</div>
+      <h3>Activas tu primera noche gratis</h3>
+      <p>Escribinos y activamos el piloto sobre tu local: sin costo, sin contrato.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">02</div>
+      <h3>Tu staff entra al panel</h3>
+      <p>Con un PIN, desde cualquier celular. Ahí gestionan mesas, pedidos y cover.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">03</div>
+      <h3>Tus clientes escanean el QR</h3>
+      <p>Entran, ven quién más está, piden desde su mesa y llaman al mesero cuando quieren.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">04</div>
+      <h3>Cierras y ves el reporte</h3>
+      <p>Hora pico, mesa más activa y cover cobrado, listos apenas termina la noche.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Precios</div>
+    <h2>Pagas la noche, no el mes</h2>
+    <p class="section-sub">Sin cuota fija en las noches que tu local no abre.</p>
+  </div>
+  <div class="price-grid">
+
+    <div class="price-card fade-in highlight">
+      <span class="price-flag">Empieza aquí</span>
+      <span class="price-name">Piloto</span>
+      <span class="price-amount">Gratis <small>primeras noches</small></span>
+      <p>Activamos el panel sobre tu local sin costo, a cambio de tu feedback directo mientras terminamos de afinar el producto.</p>
+      <ul class="price-list">
+        <li>Panel de staff completo</li>
+        <li>Acceso por QR ilimitado</li>
+        <li>Soporte directo durante el piloto</li>
+      </ul>
+    </div>
+
+    <div class="price-card fade-in">
+      <span class="price-name">Créditos por noche</span>
+      <span class="price-amount">Por noche <small>en paquetes de 5 / 10 / 20</small></span>
+      <p>Terminado el piloto, compras créditos y los usas cuando abres. Sin renovación automática ni cuota mensual.</p>
+      <ul class="price-list">
+        <li>Panel de staff + reportes</li>
+        <li>Cover digital integrado</li>
+        <li>Compra créditos cuando los necesitas</li>
+      </ul>
+    </div>
+
+    <div class="price-card fade-in">
+      <span class="price-name">Suscripción de tus clientes</span>
+      <span class="price-amount">Tráfico <small>sin costo para tu local</small></span>
+      <p>Tus clientes pueden suscribirse para acceder a beneficios en varios locales. Tú decides el % de descuento que ofreces a cambio del tráfico.</p>
+      <ul class="price-list">
+        <li>La paga el usuario, no tu local</li>
+        <li>Tú controlas el descuento</li>
+        <li>Aparece en el directorio de locales</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- VENTAJAS -->
+<section id="ventajas">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Por qué Discos</div>
+    <h2>Construido para operar, no para lucir bonito</h2>
+  </div>
+  <div class="advantages-grid">
+    <div class="advantage fade-in">
+      <div class="advantage-icon">📱</div>
+      <h3>Sin instalar nada</h3>
+      <p>Corre en el navegador. Tu staff y tus clientes lo usan desde cualquier celular, sin descargar una app.</p>
+    </div>
+    <div class="advantage fade-in">
+      <div class="advantage-icon">💰</div>
+      <h3>Pagas por noche abierta</h3>
+      <p>Créditos, no suscripción fija. El gasto en tecnología sigue el ritmo real de tu negocio.</p>
+    </div>
+    <div class="advantage fade-in">
+      <div class="advantage-icon">🔐</div>
+      <h3>Los datos son tuyos</h3>
+      <p>Tus reportes de asistencia, cover y consumo son de tu local — exportables, no retenidos por nosotros.</p>
+    </div>
+    <div class="advantage fade-in">
+      <div class="advantage-icon">🇨🇴</div>
+      <h3>Pensado para Colombia</h3>
+      <p>Cover con Nequi y Bancolombia. Soporte directo en español, sin ticket ni call center.</p>
+    </div>
+    <div class="advantage fade-in">
+      <div class="advantage-icon">🛠️</div>
+      <h3>Detrás está Vtlik</h3>
+      <p>El mismo equipo que construye sistemas a medida en producción para empresas en Colombia y LATAM.</p>
+    </div>
+    <div class="advantage fade-in">
+      <div class="advantage-icon">⚡</div>
+      <h3>Onboarding en una noche</h3>
+      <p>Sin capacitaciones de días. Tu staff aprende el panel la misma noche del piloto, con nosotros presentes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ESTADO / HONESTIDAD -->
+<section id="estado">
+  <div class="estado-box fade-in">
+    <div class="section-tag">Dónde estamos hoy</div>
+    <h3 style="font-size:1.3rem;font-weight:800;margin-top:6px;">Discos está terminando su primera versión</h3>
+    <p>Todavía no tenemos locales operando en vivo — y por eso el piloto es gratis. Buscamos <strong>3 a 5 discotecas o bares</strong> dispuestos a probarlo una noche real, dar feedback directo y ayudarnos a afinar el producto antes de cobrar por él.</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Contacto</div>
+    <h2>¿Tu local quiere ser de los primeros?</h2>
+    <p class="section-sub" style="margin:0 auto;">Escríbenos y activamos el piloto gratis en tu próxima noche.</p>
+  </div>
+  <div class="contact-direct fade-in">
+    <a href="https://wa.me/573026119411?text=Hola,%20quiero%20activar%20Discos%20gratis%20en%20mi%20local" class="contact-link" target="_blank" rel="noopener">
+      <span class="link-icon">💬</span> WhatsApp: +57 302 611 9411
+    </a>
+    <a href="mailto:gerencia@vtlik.com?subject=Quiero%20activar%20Discos%20en%20mi%20local" class="contact-link">
+      <span class="link-icon">✉️</span> gerencia@vtlik.com
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-by">
+    <img src="../vtlik.jpeg" alt="Vtlik Solutions" />
+    <span>Discos es un producto de <a href="https://vtlik.com" style="color:inherit;text-decoration:underline">Vtlik Solutions</a></span>
+  </div>
+  <a href="https://vtlik.com" class="back">← Volver a vtlik.com</a>
+</footer>
+
+<a href="https://wa.me/573026119411?text=Hola,%20quiero%20activar%20Discos%20gratis%20en%20mi%20local" class="wa-float" target="_blank" rel="noopener" title="Contactar por WhatsApp" aria-label="Contactar por WhatsApp">
+  💬
+</a>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
