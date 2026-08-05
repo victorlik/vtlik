@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WalkEarn — Camina. Recibe recompensas. Vive mejor. | Vtlik Solutions</title>
+  <meta name="description" content="WalkEarn es la app que convierte tus pasos reales en recompensas por actividad. Sin cripto, sin inversión — solo caminar. Únete a la lista de espera. Un producto de Vtlik Solutions." />
+  <meta name="keywords" content="app camina y gana, recompensas por caminar, fitness app recompensas, walk to earn colombia, app de pasos con recompensas" />
+  <meta name="author" content="Vtlik" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vtlik.com/walkearn/" />
+  <link rel="icon" href="../vtlik.jpeg" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="../vtlik.jpeg" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="WalkEarn — Camina. Recibe recompensas. Vive mejor." />
+  <meta property="og:description" content="La app que convierte tus pasos reales en recompensas por actividad. Sin cripto, sin inversión — solo caminar." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vtlik.com/walkearn/" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:image" content="https://vtlik.com/vtlik.jpeg" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6N509L5H1C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6N509L5H1C');
+  </script>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "WalkEarn",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Android, iOS",
+    "description": "App que convierte pasos reales en recompensas por actividad, con verificación antifraude y sin elementos de inversión o azar.",
+    "url": "https://vtlik.com/walkearn/",
+    "creator": { "@type": "Organization", "name": "Vtlik Solutions", "url": "https://vtlik.com" }
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #7B2FBE;
+      --primary-dark: #6020A0;
+      --accent: #00E5FF;
+      --accent-2: #E040FB;
+      --dark: #0A0A1A;
+      --dark-2: #1A1A35;
+      --dark-3: #2A2A50;
+      --text: #FFFFFF;
+      --text-muted: #AAAACC;
+      --border: rgba(123,47,190,0.2);
+      --card-bg: rgba(123,47,190,0.06);
+      --radius: 14px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.5);
+      --earn: #33E39B;
+      --earn-bg: rgba(51,227,155,0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    section { padding: 96px 5%; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(10,10,26,0.9);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .brand-mark {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: linear-gradient(135deg, var(--earn), var(--primary));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.05rem;
+    }
+    .brand-name { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.3px; }
+    .brand-by { font-size: 0.72rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .brand-by img { height: 16px; border-radius: 3px; opacity: .85; }
+
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 0.88rem; color: var(--text-muted); font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      background: var(--earn); color: #04231a; font-weight: 700; font-size: 0.9rem;
+      padding: 9px 22px; border-radius: 50px; transition: filter 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { filter: brightness(0.92); transform: translateY(-1px); }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 120px 5% 80px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(51,227,155,0.20) 0%, transparent 65%),
+                  radial-gradient(ellipse at 80% 80%, rgba(123,47,190,0.16) 0%, transparent 50%),
+                  var(--dark);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--earn-bg); border: 1px solid rgba(51,227,155,0.4);
+      color: #7CF2C6; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
+      padding: 6px 16px; border-radius: 50px; margin-bottom: 28px;
+    }
+    .hero-badge .dot { width: 6px; height: 6px; background: var(--earn); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+
+    .hero-slogan {
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--earn); margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 5.5vw, 4rem); font-weight: 800;
+      line-height: 1.12; letter-spacing: -1.5px; max-width: 820px; margin-bottom: 20px;
+    }
+    h1 .accent { color: var(--earn); }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-muted);
+      max-width: 600px; margin-bottom: 44px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--earn); color: #04231a; font-weight: 700; font-size: 1rem;
+      padding: 15px 32px; border-radius: 50px; transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(51,227,155,0.35);
+    }
+    .btn-primary:hover { filter: brightness(0.92); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(51,227,155,0.5); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--text); font-weight: 600; font-size: 1rem;
+      padding: 15px 32px; border-radius: 50px; border: 1px solid var(--border); transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: var(--card-bg); border-color: rgba(255,255,255,0.2); }
+
+    .hero-facts { display: flex; gap: 48px; margin-top: 72px; flex-wrap: wrap; justify-content: center; }
+    .fact { text-align: center; max-width: 170px; }
+    .fact-num { font-size: 1.4rem; font-weight: 800; color: var(--earn); }
+    .fact-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; line-height: 1.4; }
+
+    /* SECTION HEADERS */
+    .section-tag {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--earn); margin-bottom: 12px;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+      letter-spacing: -1px; line-height: 1.2; margin-bottom: 16px;
+    }
+    .section-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 560px; }
+    .section-header { margin-bottom: 56px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin: 0 auto; }
+
+    /* STEPS */
+    #como-funciona { background: var(--dark-2); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
+    .step { padding: 28px; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); }
+    .step-num { font-size: 2.5rem; font-weight: 900; color: rgba(51,227,155,0.28); line-height: 1; margin-bottom: 12px; }
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 0.86rem; color: var(--text-muted); }
+
+    /* FEATURE GRID */
+    #app { background: var(--dark); }
+    .value-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .value-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+      position: relative; overflow: hidden; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .value-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--earn), var(--primary), transparent);
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .value-card:hover { border-color: rgba(51,227,155,0.45); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .value-card:hover::before { opacity: 1; }
+    .value-icon {
+      font-size: 1.7rem; margin-bottom: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 54px; height: 54px; background: var(--earn-bg); border-radius: 12px;
+    }
+    .value-card h3 { font-size: 1.02rem; font-weight: 700; margin-bottom: 8px; }
+    .value-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* HONESTIDAD / CONFIANZA */
+    #confianza { background: var(--dark-2); }
+    .trust-box {
+      max-width: 780px; margin: 0 auto;
+      background: var(--dark-3); border: 1px solid rgba(51,227,155,0.25);
+      border-radius: 20px; padding: 40px 36px;
+    }
+    .trust-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 18px; }
+    .trust-row:last-child { margin-bottom: 0; }
+    .trust-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .trust-row p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin: 0; }
+    .trust-row strong { color: var(--text); }
+
+    /* PARA EMPRESAS */
+    #empresas { background: var(--dark); }
+    .biz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    @media (max-width: 768px) { .biz-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .biz-text p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 16px; max-width: 46ch; }
+    .biz-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 26px;
+    }
+    .biz-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+    .biz-card li { font-size: 0.9rem; color: var(--text-muted); display: flex; gap: 8px; }
+    .biz-card li::before { content: '✓'; color: var(--earn); font-weight: 700; flex-shrink: 0; }
+
+    /* ESTADO */
+    #estado { background: var(--dark-2); }
+    .estado-box {
+      max-width: 760px; margin: 0 auto; text-align: center;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 20px; padding: 44px 36px;
+    }
+    .estado-box .section-tag { justify-content: center; display: flex; }
+    .estado-box p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 60ch; margin: 12px auto 0; }
+    .estado-box strong { color: var(--text); }
+
+    /* CONTACT */
+    #contacto { background: radial-gradient(ellipse at 50% 0%, rgba(51,227,155,0.18) 0%, transparent 70%), var(--dark); text-align: center; }
+    #contacto .section-header { margin-bottom: 40px; }
+    .contact-direct { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; max-width: 680px; margin: 0 auto; }
+    .contact-link {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 22px; border-radius: var(--radius);
+      border: 1px solid var(--border); background: var(--card-bg);
+      font-size: 0.92rem; font-weight: 500; transition: all 0.2s;
+    }
+    .contact-link:hover { border-color: rgba(51,227,155,0.45); background: var(--earn-bg); }
+    .contact-link .link-icon { font-size: 1.2rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark); border-top: 1px solid var(--border);
+      padding: 36px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-by { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 0.82rem; }
+    .footer-by img { height: 28px; border-radius: 6px; }
+    footer .back { font-size: 0.82rem; color: var(--text-muted); }
+    footer .back:hover { color: var(--text); }
+
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      background: var(--earn); color: #04231a;
+      width: 58px; height: 58px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; box-shadow: 0 6px 24px rgba(51,227,155,0.45);
+      transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(51,227,155,0.6); }
+
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 4%; }
+      .hero-facts { gap: 24px; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="brand">
+    <div class="brand-mark">👟</div>
+    <div>
+      <div class="brand-name">WalkEarn</div>
+      <div class="brand-by">un producto de <img src="../vtlik.jpeg" alt="Vtlik" /> Vtlik</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#app">La app</a>
+    <a href="#confianza">Confianza</a>
+  </div>
+  <a href="https://wa.me/573026119411?text=Hola,%20quiero%20unirme%20a%20la%20lista%20de%20espera%20de%20WalkEarn" class="nav-cta" target="_blank" rel="noopener">Unirme a la lista →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-slogan fade-in">Próximamente · Lista de espera abierta</p>
+  <div class="hero-badge fade-in">
+    <span class="dot"></span>
+    Camina · Cumple retos · Recibe recompensas
+  </div>
+  <h1 class="fade-in">Camina. Recibe <span class="accent">recompensas reales</span>. Vive mejor.</h1>
+  <p class="hero-sub fade-in">WalkEarn convierte tus pasos verificados en recompensas por actividad física — con retos, niveles y un ranking con tus amigos. Sin cripto, sin inversión: solo caminar.</p>
+  <div class="hero-actions fade-in">
+    <a href="https://wa.me/573026119411?text=Hola,%20quiero%20unirme%20a%20la%20lista%20de%20espera%20de%20WalkEarn" class="btn-primary" target="_blank" rel="noopener">
+      👟 Unirme a la lista de espera
+    </a>
+    <a href="#como-funciona" class="btn-secondary">Ver cómo funciona ↓</a>
+  </div>
+  <div class="hero-facts fade-in">
+    <div class="fact">
+      <div class="fact-num">100% real</div>
+      <div class="fact-label">recompensas calculadas por pasos reales, verificados con sensores</div>
+    </div>
+    <div class="fact">
+      <div class="fact-num">Sin azar</div>
+      <div class="fact-label">nada de sorteos ni elementos de suerte en el cálculo</div>
+    </div>
+    <div class="fact">
+      <div class="fact-num">iOS y Android</div>
+      <div class="fact-label">una sola app, con Google Fit y Apple Health</div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section id="como-funciona">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Cómo funciona</div>
+    <h2>De caminar a recibir tu recompensa</h2>
+    <p class="section-sub">Un proceso simple, verificado en cada paso.</p>
+  </div>
+  <div class="steps">
+    <div class="step fade-in">
+      <div class="step-num">01</div>
+      <h3>Te registras y activas sensores</h3>
+      <p>Conectás la app con Google Fit o Apple Health — tus pasos se miden con tu propio celular.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">02</div>
+      <h3>Caminás tus sesiones</h3>
+      <p>Cada sesión de caminata válida se verifica con múltiples capas antifraude, no solo un contador simple.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">03</div>
+      <h3>Subís de nivel y competís</h3>
+      <p>Ganás logros, aparecés en el ranking con tus amigos y desbloqueás retos semanales.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">04</div>
+      <h3>Recibís tu recompensa</h3>
+      <p>La actividad verificada se traduce en recompensas dentro de tu billetera de la app.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LA APP -->
+<section id="app">
+  <div class="section-header center fade-in">
+    <div class="section-tag">La app</div>
+    <h2>Todo lo que necesitás en un solo lugar</h2>
+  </div>
+  <div class="value-grid">
+
+    <div class="value-card fade-in">
+      <div class="value-icon">👟</div>
+      <h3>Zapatos digitales</h3>
+      <p>Herramientas de la app que activan tus sesiones de caminata — no son inversiones ni instrumentos financieros, son parte de la mecánica del juego.</p>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">💰</div>
+      <h3>Billetera de recompensas</h3>
+      <p>Seguí tu actividad acumulada y tus recompensas en un solo lugar, con historial completo y transparente.</p>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">🏆</div>
+      <h3>Ranking y logros</h3>
+      <p>Competí con amigos, subí de nivel y desbloqueá logros según tu constancia, no según suerte.</p>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">🎯</div>
+      <h3>Retos semanales</h3>
+      <p>Objetivos nuevos cada semana para mantenerte motivado más allá de la rutina.</p>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">🛡️</div>
+      <h3>Verificación antifraude</h3>
+      <p>Detección de GPS falso, emuladores y patrones de movimiento no humanos — para que la actividad de todos sea real.</p>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">👤</div>
+      <h3>Perfil y progreso</h3>
+      <p>Tu historial de actividad, tus zapatos y tu evolución, todo en tu perfil personal.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONFIANZA -->
+<section id="confianza">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Antes de que preguntes</div>
+    <h2>No es cripto. No es inversión.</h2>
+  </div>
+  <div class="trust-box fade-in">
+    <div class="trust-row">
+      <span class="trust-icon">✅</span>
+      <p><strong>Recompensas por actividad, no promesas de ganancia.</strong> Lo que recibís depende de tu constancia caminando, no de un mercado ni de terceros.</p>
+    </div>
+    <div class="trust-row">
+      <span class="trust-icon">✅</span>
+      <p><strong>Los zapatos digitales son herramientas de la app</strong>, no instrumentos financieros ni activos de inversión.</p>
+    </div>
+    <div class="trust-row">
+      <span class="trust-icon">✅</span>
+      <p><strong>Cero elementos de azar.</strong> El cálculo de recompensas es determinista, basado en pasos reales verificados — no hay sorteo ni suerte de por medio.</p>
+    </div>
+    <div class="trust-row">
+      <span class="trust-icon">✅</span>
+      <p><strong>Verificación en múltiples capas</strong> contra GPS falso, emuladores y bots, para que la actividad de la comunidad sea siempre real.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PARA EMPRESAS -->
+<section id="empresas">
+  <div class="biz-grid">
+    <div class="biz-text fade-in">
+      <div class="section-tag">Para empresas</div>
+      <h2>Bienestar de equipo, medido de verdad</h2>
+      <p>WalkEarn también está pensada para clanes corporativos: empresas que quieren promover la actividad física de su equipo con un programa de bienestar real, no solo una charla motivacional al mes.</p>
+      <p>Retos grupales, ranking interno y visibilidad de la actividad del equipo, sin exponer datos individuales sensibles.</p>
+    </div>
+    <div class="biz-card fade-in">
+      <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px">Plan corporativo incluye</h3>
+      <ul>
+        <li>Grupos o "clanes" por empresa o equipo</li>
+        <li>Retos internos con ranking propio</li>
+        <li>Panel de bienestar agregado para RR.HH.</li>
+        <li>Marca de la empresa dentro de sus retos</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ESTADO / HONESTIDAD -->
+<section id="estado">
+  <div class="estado-box fade-in">
+    <div class="section-tag">Dónde estamos hoy</div>
+    <h3 style="font-size:1.3rem;font-weight:800;margin-top:6px;">WalkEarn está en construcción</h3>
+    <p>Todavía no está disponible para descargar. Estamos en la etapa de desarrollo del MVP — y por eso abrimos lista de espera: quienes se registren ahora serán los primeros en probar la beta cerrada antes del lanzamiento público.</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Lista de espera</div>
+    <h2>Sé de los primeros en caminar con WalkEarn</h2>
+    <p class="section-sub" style="margin:0 auto;">Escribinos para anotarte — te avisamos apenas abramos la beta cerrada.</p>
+  </div>
+  <div class="contact-direct fade-in">
+    <a href="https://wa.me/573026119411?text=Hola,%20quiero%20unirme%20a%20la%20lista%20de%20espera%20de%20WalkEarn" class="contact-link" target="_blank" rel="noopener">
+      <span class="link-icon">💬</span> WhatsApp: +57 302 611 9411
+    </a>
+    <a href="mailto:gerencia@vtlik.com?subject=Lista%20de%20espera%20WalkEarn" class="contact-link">
+      <span class="link-icon">✉️</span> gerencia@vtlik.com
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-by">
+    <img src="../vtlik.jpeg" alt="Vtlik Solutions" />
+    <span>WalkEarn es un producto de <a href="https://vtlik.com" style="color:inherit;text-decoration:underline">Vtlik Solutions</a></span>
+  </div>
+  <a href="https://vtlik.com" class="back">← Volver a vtlik.com</a>
+</footer>
+
+<a href="https://wa.me/573026119411?text=Hola,%20quiero%20unirme%20a%20la%20lista%20de%20espera%20de%20WalkEarn" class="wa-float" target="_blank" rel="noopener" title="Contactar por WhatsApp" aria-label="Contactar por WhatsApp">
+  👟
+</a>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
