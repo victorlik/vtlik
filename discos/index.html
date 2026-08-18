@@ -237,6 +237,17 @@
     .advantage p { font-size: 0.84rem; color: var(--text-muted); }
 
     /* EARLY ACCESS NOTE */
+    /* PROOF */
+    #prueba { background: var(--dark); padding-top: 64px; }
+    .proof-wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; max-width: 1080px; margin: 0 auto; }
+    .proof-shot { border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .proof-shot img { display: block; width: 100%; height: auto; }
+    .proof-caption { font-size: 0.78rem; color: var(--text-muted); margin-top: 10px; text-align: center; }
+    .proof-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+    .proof-list li { display: flex; gap: 10px; font-size: 0.95rem; color: var(--text-muted); }
+    .proof-list li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    @media (max-width: 860px) { .proof-wrap { grid-template-columns: 1fr; gap: 28px; } }
+
     #estado { background: var(--dark-2); }
     .estado-box {
       max-width: 760px; margin: 0 auto; text-align: center;
@@ -306,7 +317,7 @@
     <a href="#proceso">Cómo funciona</a>
     <a href="#precios">Precios</a>
   </div>
-  <a href="https://wa.me/573026119411?text=Hola,%20quiero%20activar%20Discos%20gratis%20en%20mi%20local" class="nav-cta" target="_blank" rel="noopener">Activar piloto gratis →</a>
+  <a href="demo.html" class="nav-cta">Ver demo en vivo →</a>
 </nav>
 
 <!-- HERO -->
@@ -319,10 +330,12 @@
   <h1 class="fade-in">Discos no es una app de fiesta.<br>Es el <span class="accent">sistema operativo</span> de tu noche.</h1>
   <p class="hero-sub fade-in">Tu staff opera el acceso, las mesas, los pedidos y el cover desde un solo panel en el celular. Tus clientes entran escaneando un QR. Tú ves cómo estuvo la noche apenas termina — y pagas solo las noches que abres.</p>
   <div class="hero-actions fade-in">
-    <a href="https://wa.me/573026119411?text=Hola,%20quiero%20activar%20Discos%20gratis%20en%20mi%20local" class="btn-primary" target="_blank" rel="noopener">
+    <a href="demo.html" class="btn-primary">
+      ▶️ Ver demo en vivo
+    </a>
+    <a href="https://wa.me/573026119411?text=Hola,%20quiero%20activar%20Discos%20gratis%20en%20mi%20local" class="btn-secondary" target="_blank" rel="noopener">
       💬 Activar piloto gratis
     </a>
-    <a href="#resuelve" class="btn-secondary">Ver qué resuelve ↓</a>
   </div>
   <div class="hero-facts fade-in">
     <div class="fact">
@@ -336,6 +349,31 @@
     <div class="fact">
       <div class="fact-num">1 panel</div>
       <div class="fact-label">para acceso, mesas, pedidos, cover y reportes</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRUEBA VISUAL -->
+<section id="prueba">
+  <div class="proof-wrap">
+    <div class="fade-in">
+      <div class="proof-shot">
+        <img src="img/panel-staff.jpg" alt="Panel de staff real de Discos operando una sesión de noche" loading="lazy" />
+      </div>
+      <p class="proof-caption">Captura real del panel de staff — así se ve mientras opera tu local.</p>
+    </div>
+    <div class="fade-in">
+      <div class="section-tag">No es un mockup</div>
+      <h2>Esto ya corre en un servidor real</h2>
+      <p class="section-sub" style="max-width:none">Lo que ves a la izquierda es la app real, no un diseño. Tu staff entra desde el celular, abre este mismo panel, y desde ahí gestiona la noche completa.</p>
+      <ul class="proof-list">
+        <li>QR de acceso generado por sesión</li>
+        <li>Panel de órdenes, mesas y analytics en vivo</li>
+        <li>Corre en cualquier navegador, sin instalar nada</li>
+      </ul>
+      <div class="hero-actions" style="justify-content:flex-start;margin-top:28px">
+        <a href="demo.html" class="btn-primary">▶️ Explorar el demo completo</a>
+      </div>
     </div>
   </div>
 </section>

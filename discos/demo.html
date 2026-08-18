@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Demo — Discos | Vtlik Solutions</title>
+<meta name="description" content="Mirá cómo se ve Discos operando una noche real: mesas activas, panel de staff, órdenes y analytics. Datos de ejemplo, interfaz real." />
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="https://vtlik.com/discos/demo.html" />
+<link rel="icon" href="../vtlik.jpeg" type="image/jpeg" />
+<style>
+:root {
+  --bg: #120829;
+  --surface: #1a1033;
+  --surface2: #22143f;
+  --brand-blue: #2c6bff;
+  --brand-cyan: #18d3ff;
+  --brand-pink: #c933ff;
+  --primary: #6a5cff;
+  --primary2: #18d3ff;
+  --accent: #c933ff;
+  --text: #ffffff;
+  --muted: #b6b7d2;
+  --danger: #ff4b6b;
+  --success: #38d49c;
+  --warning: #ffb84b;
+}
+* { box-sizing: border-box }
+html { scroll-behavior: smooth }
+body {
+  font-family: Inter, -apple-system, system-ui, sans-serif; margin: 0; color: var(--text);
+  background: radial-gradient(1200px 600px at 20% 20%, rgba(44,107,255,0.18) 0%, rgba(18,8,41,0.85) 55%), linear-gradient(135deg, #120829, #2b0f4a);
+  min-height: 100vh;
+}
+a { color: inherit }
+
+/* ── Demo chrome (not part of the real app) ─────────────────── */
+.demo-banner {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap;
+  padding: 12px 16px; background: rgba(10,10,26,0.95); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(123,47,190,0.35); font-size: 13px; text-align: center;
+}
+.demo-banner strong { color: #ffe29a }
+.demo-banner .back { color: var(--muted); text-decoration: underline; font-size: 12.5px }
+.demo-banner .wa-cta {
+  background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; font-weight: 700;
+  padding: 7px 16px; border-radius: 50px; font-size: 13px; white-space: nowrap;
+}
+.view-switch {
+  display: flex; justify-content: center; gap: 10px; padding: 18px 16px 4px; max-width: 980px; margin: 0 auto;
+}
+.view-btn {
+  padding: 10px 20px; border-radius: 12px; border: 1px solid #2b2c44; background: rgba(20,21,32,0.6);
+  color: var(--muted); font-weight: 700; font-size: 14px; cursor: pointer;
+}
+.view-btn.active { color: var(--primary2); border-color: #3a3b5c; background: rgba(27,28,44,0.85) }
+
+/* ── Real app classes, copied from public/styles.css + styles-premium.css ── */
+.screen { display: none; padding: 20px; padding-bottom: 60px; max-width: 980px; margin: 0 auto }
+.screen.active { display: block }
+.row { display: flex; gap: 14px; margin: 14px 0; flex-wrap: wrap }
+.card { background: rgba(23,16,51,0.88); backdrop-filter: blur(12px); padding: 18px; border: 1px solid rgba(96,74,166,0.5); border-radius: 16px; margin: 14px 0; box-shadow: 0 12px 28px rgba(12,8,24,0.35) }
+.chip { display:inline-block; padding: 6px 10px; border-radius: 999px; font-size: 13px; border:1px solid #2f3150; background:#1f2032 }
+.chip.cobrado { background:#243a2b; color:#9ee6bf; border-color:#2a6049 }
+.chip.entregado { background:#1f373a; color:#9ae7ea; border-color:#2a5b60 }
+.chip.pendiente { background:#2a2a3a; color:#c9c9ff; border-color:#3c3c6b }
+.chip.state-on { background:#243a2b; color:#9ee6bf; border-color:#2a6049 }
+.grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(190px,1fr)); gap: 10px }
+h2 { font-size: 24px; margin: 0 0 12px 0 }
+h3 { margin: 0 0 10px 0; font-size: 18px; color: var(--primary2) }
+.section-title { color: var(--muted); font-size: 14px; margin: 6px 0 }
+button { padding: 10px 16px; border-radius: 12px; border: 1px solid #31324a; background: var(--surface); color: var(--text); font-family: inherit; cursor: default }
+button.info { background: linear-gradient(135deg, var(--primary), var(--accent)); border: 0; color: #fff }
+button.success { background: linear-gradient(180deg, var(--success), #2cab83); border: 0; color: #fff }
+button.warning { background: linear-gradient(180deg, var(--warning), #e0a33d); border: 0; color: #111 }
+
+/* Party hero */
+.party-title { font-size: 26px; letter-spacing: .3px; margin: 0 0 6px }
+.party-hero { position: relative; overflow: hidden; border-radius: 18px; padding: 22px 18px; margin: 6px 0 16px 0; background: radial-gradient(520px 220px at 10% 0%, rgba(44,107,255,0.2) 0%, rgba(43,15,74,0.85) 60%) }
+.party-hero .hero-text { position: relative; z-index: 2 }
+.party-hero .hero-main { font-size: 24px; font-weight: 800; letter-spacing: .4px }
+.party-hero .hero-sub { color: var(--muted); margin-top: 4px }
+.party-hero .party-bg { position: absolute; inset: 0; background: radial-gradient(700px 300px at 15% 10%, rgba(44,107,255,0.32) 0%, rgba(201,51,255,0.18) 30%, rgba(23,24,38,0.0) 70%); filter: blur(18px); z-index: 1 }
+.party-hero .equalizer { position: absolute; right: 18px; bottom: 18px; display: flex; gap: 4px; align-items: flex-end; z-index: 2 }
+.party-hero .equalizer span { width: 6px; height: 12px; border-radius: 4px; background: linear-gradient(180deg, var(--brand-cyan), var(--brand-blue)); animation: equalize 1.1s ease-in-out infinite }
+.party-hero .equalizer span:nth-child(2) { animation-delay: .08s }
+.party-hero .equalizer span:nth-child(3) { animation-delay: .16s }
+.party-hero .equalizer span:nth-child(4) { animation-delay: .24s }
+.party-hero .equalizer span:nth-child(5) { animation-delay: .32s }
+@keyframes equalize { 0%,100% { height: 10px } 50% { height: 22px } }
+
+/* Mesas grid */
+#mesas-list .item { display: flex; flex-direction: column; gap: 8px; padding: 14px; border: 1px solid #3a3b5c; border-radius: 12px; background: rgba(27,28,44,0.7); box-shadow: 0 6px 16px rgba(0,0,0,0.25) }
+#mesas-list .item .mesa-name { font-weight: 700; font-size: 16px }
+#mesas-list .item .mesa-sub { color: var(--muted); font-size: 12.5px }
+#mesas-list .tags { display: flex; flex-wrap: wrap; gap: 6px }
+
+/* Staff */
+#staff-title { font-size: 16px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; padding: 6px 12px; border-radius: 12px; border: 1px solid #3a3b5c; background: rgba(27,28,44,0.65); color: var(--primary2); display: inline-block }
+.toolbar { display:flex; align-items:center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 14px }
+.tabs { display:flex; gap:10px; flex-wrap:wrap; margin: 6px 0 16px 0 }
+.tab-item { position:relative; padding: 8px 14px; border-radius: 10px; border:1px solid #2b2c44; background: rgba(20,21,32,0.6); color: var(--muted); font-size: 13px; font-weight: 600 }
+.tab-item.active { color: var(--primary2); border-color: #3a3b5c; background: rgba(27,28,44,0.85) }
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px }
+.metrics .chip { padding: 12px 14px; font-weight: 700; text-align: center; font-size: 14px }
+#staff-orders-list .order-card, #staff-mesas .mesa-hist { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; padding: 12px 14px; border: 1px solid #2b2c44; border-radius: 12px; background: rgba(20,21,32,0.55); margin: 8px 0 }
+.order-main { font-weight: 600; font-size: 14px }
+.order-sub { color: var(--muted); font-size: 12.5px; margin-top: 2px }
+.analytics-bars { display: flex; flex-direction: column; gap: 8px; margin: 10px 0 }
+.analytics-bar-row { display: flex; align-items: center; gap: 8px; font-size: 13px }
+.analytics-bar-label { width: 110px; text-align: right; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.analytics-bar-track { flex: 1; background: rgba(255,255,255,0.07); border-radius: 6px; overflow: hidden; height: 18px }
+.analytics-bar-fill { height: 100%; border-radius: 6px }
+.analytics-bar-val { width: 30px; text-align: left; color: var(--muted); font-size: 12px }
+
+.wa-float {
+  position: fixed; bottom: 24px; right: 24px; z-index: 999;
+  background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff;
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; box-shadow: 0 6px 24px rgba(123,47,190,0.55);
+}
+
+@media (max-width: 640px) {
+  .party-hero .hero-main { font-size: 20px }
+  #staff-orders-list .order-card, #staff-mesas .mesa-hist { grid-template-columns: 1fr }
+}
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  <span>🎬 <strong>Estás viendo un demo</strong> — datos de ejemplo, interfaz real de Discos</span>
+  <a class="wa-cta" href="https://wa.me/573026119411?text=Hola,%20vi%20el%20demo%20de%20Discos%20y%20quiero%20activar%20el%20piloto%20gratis%20en%20mi%20local" target="_blank" rel="noopener">💬 Quiero esto en mi local</a>
+  <a class="back" href="index.html">← Volver a la info</a>
+</div>
+
+<div class="view-switch">
+  <button class="view-btn active" id="btn-view-cliente">Vista cliente</button>
+  <button class="view-btn" id="btn-view-staff">Vista panel de staff</button>
+</div>
+
+<!-- ═══════════ VISTA CLIENTE: Mesas activas ═══════════ -->
+<div class="screen active" id="screen-cliente">
+  <h2 class="party-title">Mesas activas</h2>
+  <div class="party-hero">
+    <div class="party-bg"></div>
+    <div class="hero-text">
+      <div class="hero-main">Noche Electrónica · DJ Ramiro</div>
+      <div class="hero-sub">Cover $25.000 · 6 mesas activas · 42 personas</div>
+    </div>
+    <div class="equalizer"><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+  <div id="mesas-list" class="grid"></div>
+</div>
+
+<!-- ═══════════ VISTA STAFF: Panel de control ═══════════ -->
+<div class="screen" id="screen-staff">
+  <div class="toolbar">
+    <span id="staff-title">La Guarida — Panel de órdenes</span>
+    <span class="chip">11h 42m restantes</span>
+  </div>
+  <div class="tabs">
+    <span class="tab-item active">Panel</span>
+    <span class="tab-item">Órdenes <span class="chip" style="padding:1px 6px;font-size:10px;margin-left:4px">7</span></span>
+    <span class="tab-item">Mesas</span>
+    <span class="tab-item">Analytics</span>
+    <span class="tab-item">Llamados <span class="chip" style="padding:1px 6px;font-size:10px;margin-left:4px">2</span></span>
+  </div>
+
+  <div class="card">
+    <h3>Analytics de la noche</h3>
+    <div class="row metrics">
+      <div class="chip">Usuarios: 118</div>
+      <div class="chip">Mesas activas: 6</div>
+      <div class="chip">Invitaciones: 54</div>
+      <div class="chip">Aceptadas: 31</div>
+      <div class="chip">Ratio: 57%</div>
+    </div>
+    <div class="section-title" style="margin-top:16px">Consumo por categoría</div>
+    <div class="analytics-bars">
+      <div class="analytics-bar-row"><div class="analytics-bar-label">Cocteles</div><div class="analytics-bar-track"><div class="analytics-bar-fill" style="width:82%;background:linear-gradient(90deg,var(--brand-cyan),var(--brand-blue))"></div></div><div class="analytics-bar-val">$1.8M</div></div>
+      <div class="analytics-bar-row"><div class="analytics-bar-label">Botellas</div><div class="analytics-bar-track"><div class="analytics-bar-fill" style="width:64%;background:linear-gradient(90deg,var(--accent),var(--primary))"></div></div><div class="analytics-bar-val">$1.4M</div></div>
+      <div class="analytics-bar-row"><div class="analytics-bar-label">Cervezas</div><div class="analytics-bar-track"><div class="analytics-bar-fill" style="width:48%;background:linear-gradient(90deg,var(--warning),#e0a33d)"></div></div><div class="analytics-bar-val">$980K</div></div>
+      <div class="analytics-bar-row"><div class="analytics-bar-label">Cover</div><div class="analytics-bar-track"><div class="analytics-bar-fill" style="width:38%;background:linear-gradient(90deg,var(--success),#2cab83)"></div></div><div class="analytics-bar-val">$775K</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Órdenes recientes</h3>
+    <div id="staff-orders-list"></div>
+  </div>
+</div>
+
+<a class="wa-float" href="https://wa.me/573026119411?text=Hola,%20vi%20el%20demo%20de%20Discos%20y%20quiero%20activar%20el%20piloto%20gratis%20en%20mi%20local" target="_blank" rel="noopener" title="Contactar por WhatsApp">💬</a>
+
+<script>
+const mesas = [
+  { name: 'Mesa 3', sub: '5 personas · 2 disponibles', tags: ['🍾 Botella', '🔥 Activa'] },
+  { name: 'Mesa 7', sub: '3 personas · 1 disponible', tags: ['🍹 Cocteles'] },
+  { name: 'Mesa 1 (barra)', sub: '8 personas · 4 disponibles', tags: ['🍺 Cervezas', '🔥 Activa'] },
+  { name: 'Mesa 12', sub: '4 personas · 0 disponibles', tags: ['🍾 Botella'] },
+  { name: 'Mesa 5', sub: '6 personas · 3 disponibles', tags: ['🍹 Cocteles', '🔥 Activa'] },
+  { name: 'Mesa 9', sub: '2 personas · 2 disponibles', tags: ['🎵 Pidió canción'] },
+]
+document.getElementById('mesas-list').innerHTML = mesas.map(m => `
+  <div class="item">
+    <div class="mesa-name">${m.name}</div>
+    <div class="mesa-sub">${m.sub}</div>
+    <div class="tags">${m.tags.map(t => `<span class="chip">${t}</span>`).join('')}</div>
+  </div>
+`).join('')
+
+const orders = [
+  { main: 'Mesa 3 — 2x Aguardiente Antioqueño', sub: '$180.000 · hace 4 min', state: 'pendiente', label: 'Pendiente de cobro' },
+  { main: 'Mesa 1 (barra) — 4x Cerveza Club Colombia', sub: '$56.000 · hace 6 min', state: 'cobrado', label: 'Cobrado' },
+  { main: 'Mesa 5 — 1x Mojito, 1x Margarita', sub: '$74.000 · hace 9 min', state: 'entregado', label: 'Entregado' },
+  { main: 'Mesa 7 — 1x Botella Buchanan\'s', sub: '$420.000 · hace 12 min', state: 'cobrado', label: 'Cobrado' },
+  { main: 'Mesa 12 — Cover x4', sub: '$100.000 · hace 15 min', state: 'entregado', label: 'Pagado' },
+  { main: 'Mesa 9 — 2x Soda + limón', sub: '$18.000 · hace 18 min', state: 'pendiente', label: 'Pendiente de cobro' },
+  { main: 'Mesa 3 — 1x Botella Old Parr', sub: '$380.000 · hace 21 min', state: 'entregado', label: 'Entregado' },
+]
+document.getElementById('staff-orders-list').innerHTML = orders.map(o => `
+  <div class="order-card">
+    <div>
+      <div class="order-main">${o.main}</div>
+      <div class="order-sub">${o.sub}</div>
+    </div>
+    <span class="chip ${o.state}">${o.label}</span>
+  </div>
+`).join('')
+
+const btnCliente = document.getElementById('btn-view-cliente')
+const btnStaff = document.getElementById('btn-view-staff')
+const screenCliente = document.getElementById('screen-cliente')
+const screenStaff = document.getElementById('screen-staff')
+btnCliente.onclick = () => {
+  btnCliente.classList.add('active'); btnStaff.classList.remove('active')
+  screenCliente.classList.add('active'); screenStaff.classList.remove('active')
+}
+btnStaff.onclick = () => {
+  btnStaff.classList.add('active'); btnCliente.classList.remove('active')
+  screenStaff.classList.add('active'); screenCliente.classList.remove('active')
+}
+</script>
+
+</body>
+</html>
