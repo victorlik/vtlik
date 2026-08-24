@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juegos Personalizados — El regalo que tu hijo va a recordar | Vtlik Solutions</title>
+  <meta name="description" content="Creamos un juego personalizado con el nombre, la foto y los mensajes de voz de la familia felicitando al niño en cada nivel. Desde $100.000 COP / USD 35. Un producto de Vtlik Solutions." />
+  <meta name="keywords" content="juego personalizado para niños, regalo personalizado niño, videojuego con nombre y foto, regalo cumpleaños niño, juego con voz de la familia, regalo día del niño colombia" />
+  <meta name="author" content="Vtlik" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vtlik.com/juegos-personalizados/" />
+  <link rel="icon" href="../vtlik.jpeg" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="../vtlik.jpeg" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Juegos Personalizados — El regalo que tu hijo va a recordar" />
+  <meta property="og:description" content="Nombre, foto y voz de la familia felicitando al niño en cada nivel. Desde $100.000 COP / USD 35." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vtlik.com/juegos-personalizados/" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:image" content="https://vtlik.com/vtlik.jpeg" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6N509L5H1C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6N509L5H1C');
+  </script>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Juegos Personalizados",
+    "description": "Juego personalizado con nombre, foto y mensajes de voz de la familia felicitando al niño al superar cada nivel.",
+    "url": "https://vtlik.com/juegos-personalizados/",
+    "brand": { "@type": "Organization", "name": "Vtlik Solutions", "url": "https://vtlik.com" },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "COP",
+      "price": "100000",
+      "description": "Desde $100.000 COP / USD 35 — sube según el nivel de detalle visual"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #7B2FBE;
+      --primary-dark: #6020A0;
+      --accent: #00E5FF;
+      --accent-2: #E040FB;
+      --dark: #0A0A1A;
+      --dark-2: #1A1A35;
+      --dark-3: #2A2A50;
+      --text: #FFFFFF;
+      --text-muted: #AAAACC;
+      --border: rgba(123,47,190,0.2);
+      --card-bg: rgba(123,47,190,0.06);
+      --radius: 14px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.5);
+      --gold: #F0C56B;
+      --gold-bg: rgba(240,197,107,0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    section { padding: 96px 5%; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(10,10,26,0.9);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .brand-mark {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.05rem;
+    }
+    .brand-name { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.3px; }
+    .brand-by { font-size: 0.72rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .brand-by img { height: 16px; border-radius: 3px; opacity: .85; }
+
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 0.88rem; color: var(--text-muted); font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      background: var(--primary); color: #fff; font-weight: 600; font-size: 0.9rem;
+      padding: 9px 22px; border-radius: 50px; transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 120px 5% 80px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(123,47,190,0.28) 0%, transparent 65%),
+                  radial-gradient(ellipse at 80% 80%, rgba(0,229,255,0.07) 0%, transparent 50%),
+                  var(--dark);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(123,47,190,0.18); border: 1px solid rgba(123,47,190,0.45);
+      color: #C77DFF; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
+      padding: 6px 16px; border-radius: 50px; margin-bottom: 28px;
+    }
+    .hero-badge .dot { width: 6px; height: 6px; background: var(--accent-2); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+
+    .hero-slogan {
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 5.5vw, 4rem); font-weight: 800;
+      line-height: 1.12; letter-spacing: -1.5px; max-width: 820px; margin-bottom: 20px;
+    }
+    h1 .accent { color: var(--accent); }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-muted);
+      max-width: 620px; margin-bottom: 44px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--primary); color: #fff; font-weight: 700; font-size: 1rem;
+      padding: 15px 32px; border-radius: 50px; transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(123,47,190,0.45);
+    }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(123,47,190,0.6); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--text); font-weight: 600; font-size: 1rem;
+      padding: 15px 32px; border-radius: 50px; border: 1px solid var(--border); transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: var(--card-bg); border-color: rgba(255,255,255,0.2); }
+
+    .hero-facts { display: flex; gap: 48px; margin-top: 72px; flex-wrap: wrap; justify-content: center; }
+    .fact { text-align: center; max-width: 180px; }
+    .fact-num { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+    .fact-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; line-height: 1.4; }
+
+    /* SECTION HEADERS */
+    .section-tag {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 12px;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+      letter-spacing: -1px; line-height: 1.2; margin-bottom: 16px;
+    }
+    .section-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 560px; }
+    .section-header { margin-bottom: 56px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin: 0 auto; }
+
+    /* PREVIEW VIDEO */
+    #prueba { background: var(--dark); padding-top: 64px; }
+    .proof-wrap { display: grid; grid-template-columns: 0.8fr 1fr; gap: 48px; align-items: center; max-width: 1080px; margin: 0 auto; }
+    .proof-shot { border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); max-width: 320px; margin: 0 auto; }
+    .proof-shot video { display: block; width: 100%; height: auto; }
+    .proof-caption { font-size: 0.78rem; color: var(--text-muted); margin-top: 10px; text-align: center; }
+    .proof-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+    .proof-list li { display: flex; gap: 10px; font-size: 0.95rem; color: var(--text-muted); }
+    .proof-list li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    @media (max-width: 860px) { .proof-wrap { grid-template-columns: 1fr; gap: 28px; } }
+
+    /* VALUE GRID */
+    #resuelve { background: var(--dark-2); }
+    .value-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .value-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+      position: relative; overflow: hidden; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .value-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--primary), transparent);
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .value-card:hover { border-color: rgba(123,47,190,0.5); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .value-card:hover::before { opacity: 1; }
+    .value-icon {
+      font-size: 1.7rem; margin-bottom: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 54px; height: 54px; background: rgba(123,47,190,0.15); border-radius: 12px;
+    }
+    .value-card h3 { font-size: 1.02rem; font-weight: 700; margin-bottom: 8px; }
+    .value-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; }
+    .value-card .tag {
+      display: inline-block; margin-top: 14px; font-size: 0.72rem; font-weight: 600; padding: 3px 9px;
+      border-radius: 50px; background: rgba(0,229,255,0.08); color: #00E5FF; border: 1px solid rgba(0,229,255,0.2);
+    }
+
+    /* PROCESO */
+    #proceso { background: var(--dark); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
+    .step { padding: 28px; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); }
+    .step-num { font-size: 2.5rem; font-weight: 900; color: rgba(0,229,255,0.25); line-height: 1; margin-bottom: 12px; }
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 0.86rem; color: var(--text-muted); }
+
+    /* PRICING */
+    #precios { background: var(--dark-2); }
+    .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .price-card {
+      background: var(--dark-3); border: 1px solid var(--border);
+      border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 12px;
+    }
+    .price-card.highlight { border-color: var(--accent); box-shadow: 0 0 0 1px rgba(0,229,255,0.35), var(--shadow); position: relative; }
+    .price-card.highlight .price-flag {
+      position: absolute; top: -12px; right: 24px;
+      background: var(--accent); color: var(--dark); font-weight: 800; font-size: 0.7rem;
+      padding: 4px 12px; border-radius: 50px; letter-spacing: 0.03em;
+    }
+    .price-name { font-weight: 700; font-size: 1.05rem; }
+    .price-amount { font-size: 1.9rem; font-weight: 900; color: var(--gold); }
+    .price-amount small { font-size: 0.85rem; font-weight: 500; color: var(--text-muted); }
+    .price-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; }
+    .price-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 6px; font-size: 0.86rem; }
+    .price-list li { display: flex; gap: 8px; color: var(--text-muted); }
+    .price-list li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+    /* VENTAJAS */
+    #ventajas { background: var(--dark); }
+    .advantages-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+    .advantage { padding: 24px; border-radius: var(--radius); background: var(--card-bg); border: 1px solid var(--border); }
+    .advantage-icon { font-size: 1.5rem; margin-bottom: 12px; }
+    .advantage h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+    .advantage p { font-size: 0.84rem; color: var(--text-muted); }
+
+    /* ESTADO */
+    #estado { background: var(--dark-2); }
+    .estado-box {
+      max-width: 760px; margin: 0 auto; text-align: center;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 20px; padding: 44px 36px;
+    }
+    .estado-box .section-tag { justify-content: center; display: flex; }
+    .estado-box p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 60ch; margin: 12px auto 0; }
+    .estado-box strong { color: var(--text); }
+
+    /* CONTACT */
+    #contacto { background: radial-gradient(ellipse at 50% 0%, rgba(123,47,190,0.25) 0%, transparent 70%), var(--dark); text-align: center; }
+    #contacto .section-header { margin-bottom: 40px; }
+    .contact-direct { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; max-width: 680px; margin: 0 auto; }
+    .contact-link {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 22px; border-radius: var(--radius);
+      border: 1px solid var(--border); background: var(--card-bg);
+      font-size: 0.92rem; font-weight: 500; transition: all 0.2s;
+    }
+    .contact-link:hover { border-color: rgba(123,47,190,0.5); background: rgba(123,47,190,0.1); }
+    .contact-link .link-icon { font-size: 1.2rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark); border-top: 1px solid var(--border);
+      padding: 36px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-by { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 0.82rem; }
+    .footer-by img { height: 28px; border-radius: 6px; }
+    footer .back { font-size: 0.82rem; color: var(--text-muted); }
+    footer .back:hover { color: var(--text); }
+
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      background: var(--primary); color: #fff;
+      width: 58px; height: 58px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; box-shadow: 0 6px 24px rgba(123,47,190,0.55);
+      transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(123,47,190,0.7); }
+
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 4%; }
+      .hero-facts { gap: 24px; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="brand">
+    <div class="brand-mark">🎮</div>
+    <div>
+      <div class="brand-name">Juegos Personalizados</div>
+      <div class="brand-by">un producto de <img src="../vtlik.jpeg" alt="Vtlik" /> Vtlik</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#resuelve">Qué incluye</a>
+    <a href="#proceso">Cómo funciona</a>
+    <a href="#precios">Precios</a>
+  </div>
+  <a href="https://wa.me/573026119411?text=Hola,%20quiero%20crear%20un%20juego%20personalizado%20para%20mi%20hijo" class="nav-cta" target="_blank" rel="noopener">Quiero el suyo →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-slogan fade-in">Para papás, mamás, padrinos y abuelos</p>
+  <div class="hero-badge fade-in">
+    <span class="dot"></span>
+    100% personalizado · Voz de la familia · Desde $100.000
+  </div>
+  <h1 class="fade-in">No es un juego genérico.<br>Es <span class="accent">la voz de su familia</span> celebrando cada nivel que supera.</h1>
+  <p class="hero-sub fade-in">Creamos un juego con el nombre, la foto y los mensajes de voz de quienes más quiere — para que cada vez que gane, escuche a mamá, papá o su abuela felicitándolo de verdad.</p>
+  <div class="hero-actions fade-in">
+    <a href="https://wa.me/573026119411?text=Hola,%20quiero%20crear%20un%20juego%20personalizado%20para%20mi%20hijo" class="btn-primary" target="_blank" rel="noopener">
+      💬 Quiero crear el suyo
+    </a>
+    <a href="#precios" class="btn-secondary">Ver precios ↓</a>
+  </div>
+  <div class="hero-facts fade-in">
+    <div class="fact">
+      <div class="fact-num">100%</div>
+      <div class="fact-label">personalizado: nombre, foto y voz de la familia</div>
+    </div>
+    <div class="fact">
+      <div class="fact-num">$100.000</div>
+      <div class="fact-label">COP / USD 35 — sube según el detalle visual que pidas</div>
+    </div>
+    <div class="fact">
+      <div class="fact-num">Hecho a mano</div>
+      <div class="fact-label">por el equipo de Vtlik, pedido por pedido — no una plantilla genérica</div>
+    </div>
+  </div>
+</section>
+
+<!-- PREVIEW -->
+<section id="prueba">
+  <div class="proof-wrap">
+    <div class="fade-in">
+      <div class="proof-shot">
+        <video src="video/preview.mp4" controls playsinline muted loop poster=""></video>
+      </div>
+      <p class="proof-caption">Ejemplo del estilo del video que se arma para promocionar el regalo — no es el juego en sí.</p>
+    </div>
+    <div class="fade-in">
+      <div class="section-tag">Cómo se ve la idea</div>
+      <h2>Un regalo pensado para el momento exacto</h2>
+      <p class="section-sub" style="max-width:none">El juego se arma a mano para cada pedido: tu hijo (o el niño al que le regalás) juega, avanza de nivel, y en el momento justo escucha la voz de la familia felicitándolo.</p>
+      <ul class="proof-list">
+        <li>Nombre y foto del niño dentro del juego</li>
+        <li>Mensajes de voz reales de la familia en cada nivel</li>
+        <li>Ideal para cumpleaños, día del niño, primera comunión o para abuelos que viven lejos</li>
+      </ul>
+      <div class="hero-actions" style="justify-content:flex-start;margin-top:28px">
+        <a href="https://wa.me/573026119411?text=Hola,%20quiero%20crear%20un%20juego%20personalizado%20para%20mi%20hijo" class="btn-primary" target="_blank" rel="noopener">💬 Contarles mi idea</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ INCLUYE -->
+<section id="resuelve">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Qué incluye</div>
+    <h2>Un regalo distinto a cualquier otro</h2>
+    <p class="section-sub">Nada de plantillas genéricas de internet — cada juego se arma para ese niño en particular.</p>
+  </div>
+  <div class="value-grid">
+
+    <div class="value-card fade-in">
+      <div class="value-icon">🎮</div>
+      <h3>Personalización completa</h3>
+      <p>Nombre, foto y voz — el niño se ve y se escucha reflejado en su propio juego, no en un personaje genérico.</p>
+      <span class="tag">Nombre + foto + voz</span>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">🎙️</div>
+      <h3>Mensajes de la familia</h3>
+      <p>Grabás el audio de mamá, papá, abuelos o padrinos felicitándolo — y suena justo cuando supera cada nivel.</p>
+      <span class="tag">El momento más emotivo</span>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">🎨</div>
+      <h3>Visual a tu gusto</h3>
+      <p>Desde una versión simple hasta un diseño más elaborado — vos elegís el nivel de detalle, y el precio se ajusta a eso.</p>
+      <span class="tag">Vos decidís el nivel</span>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">👪</div>
+      <h3>Para cualquier ocasión</h3>
+      <p>Cumpleaños, día del niño, primera comunión, o simplemente un regalo de un abuelo que vive lejos y quiere estar presente.</p>
+      <span class="tag">Un regalo con significado</span>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">💰</div>
+      <h3>Desde $100.000 COP</h3>
+      <p>USD 35 para quienes están fuera de Colombia. Entre mejor el detalle visual que pidas, más puede subir el valor final.</p>
+      <span class="tag">Precio claro desde el inicio</span>
+    </div>
+
+    <div class="value-card fade-in">
+      <div class="value-icon">🛠️</div>
+      <h3>Hecho por Vtlik</h3>
+      <p>El mismo equipo que construye sistemas a medida para empresas arma cada juego personalizado, pedido por pedido.</p>
+      <span class="tag">No es un servicio anónimo</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section id="proceso">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Cómo funciona</div>
+    <h2>De la idea al regalo listo</h2>
+    <p class="section-sub">Todo se coordina por WhatsApp, sin formularios ni procesos complicados.</p>
+  </div>
+  <div class="steps">
+    <div class="step fade-in">
+      <div class="step-num">01</div>
+      <h3>Nos escribís por WhatsApp</h3>
+      <p>Contanos para quién es el regalo y qué ocasión estás celebrando.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">02</div>
+      <h3>Nos mandás nombre, foto y voz</h3>
+      <p>El nombre del niño, una foto, y los mensajes de voz que la familia quiera dejarle.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">03</div>
+      <h3>Armamos el juego a mano</h3>
+      <p>Nuestro equipo arma la personalización completa: visual, nombre, foto y voz integrados.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">04</div>
+      <h3>Te lo entregamos listo</h3>
+      <p>Recibís el juego terminado, listo para sorprender al niño en el momento que elijas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Precios</div>
+    <h2>Personalización completa desde el precio más bajo</h2>
+    <p class="section-sub">El valor final depende del nivel de detalle visual que pidas — la personalización (nombre, foto, voz) siempre está incluida.</p>
+  </div>
+  <div class="price-grid">
+
+    <div class="price-card fade-in highlight">
+      <span class="price-flag">Desde acá</span>
+      <span class="price-name">Personalización completa</span>
+      <span class="price-amount">$100.000 <small>COP / USD 35</small></span>
+      <p>Incluye nombre, foto y mensajes de voz de la familia integrados en el juego, con un diseño visual simple.</p>
+      <ul class="price-list">
+        <li>Nombre y foto del niño</li>
+        <li>Mensajes de voz de la familia</li>
+        <li>Diseño visual simple</li>
+      </ul>
+    </div>
+
+    <div class="price-card fade-in">
+      <span class="price-name">Más detalle visual</span>
+      <span class="price-amount">A cotizar <small>según lo que pidas</small></span>
+      <p>Mientras más elaborado el diseño visual que quieras (más escenas, más animación, más detalle), más sube el valor sobre la base.</p>
+      <ul class="price-list">
+        <li>Todo lo de la personalización completa</li>
+        <li>Diseño visual más elaborado</li>
+        <li>Precio exacto según lo que definas con nosotros</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- VENTAJAS -->
+<section id="ventajas">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Por qué Juegos Personalizados</div>
+    <h2>Un regalo que se siente, no solo se ve</h2>
+  </div>
+  <div class="advantages-grid">
+    <div class="advantage fade-in">
+      <div class="advantage-icon">❤️</div>
+      <h3>Emoción real, no un template</h3>
+      <p>La voz de la familia es real, grabada por ustedes — no una voz genérica de una plantilla comprada en internet.</p>
+    </div>
+    <div class="advantage fade-in">
+      <div class="advantage-icon">💬</div>
+      <h3>Todo por WhatsApp</h3>
+      <p>Sin formularios largos ni procesos de compra complicados — coordinás todo directo con nosotros.</p>
+    </div>
+    <div class="advantage fade-in">
+      <div class="advantage-icon">🌎</div>
+      <h3>Ideal para la distancia</h3>
+      <p>Perfecto para abuelos, padrinos o familiares que viven lejos y quieren estar presentes en un momento especial.</p>
+    </div>
+    <div class="advantage fade-in">
+      <div class="advantage-icon">🛠️</div>
+      <h3>Detrás está Vtlik</h3>
+      <p>El mismo equipo que construye sistemas a medida en producción para empresas en Colombia y LATAM.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ESTADO / HONESTIDAD -->
+<section id="estado">
+  <div class="estado-box fade-in">
+    <div class="section-tag">Dónde estamos hoy</div>
+    <h3 style="font-size:1.3rem;font-weight:800;margin-top:6px;">Juegos Personalizados es un producto nuevo de Vtlik</h3>
+    <p>Recién estamos lanzando este producto y buscamos las <strong>primeras familias</strong> que quieran regalarle a su hijo, ahijado o nieto un juego hecho especialmente para él. Escribinos y coordinamos todo directo por WhatsApp.</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-header center fade-in">
+    <div class="section-tag">Contacto</div>
+    <h2>¿Le querés regalar esto a un niño especial?</h2>
+    <p class="section-sub" style="margin:0 auto;">Escribinos y armamos juntos el juego perfecto para esa ocasión.</p>
+  </div>
+  <div class="contact-direct fade-in">
+    <a href="https://wa.me/573026119411?text=Hola,%20quiero%20crear%20un%20juego%20personalizado%20para%20mi%20hijo" class="contact-link" target="_blank" rel="noopener">
+      <span class="link-icon">💬</span> WhatsApp: +57 302 611 9411
+    </a>
+    <a href="mailto:gerencia@vtlik.com?subject=Quiero%20un%20juego%20personalizado" class="contact-link">
+      <span class="link-icon">✉️</span> gerencia@vtlik.com
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-by">
+    <img src="../vtlik.jpeg" alt="Vtlik Solutions" />
+    <span>Juegos Personalizados es un producto de <a href="https://vtlik.com" style="color:inherit;text-decoration:underline">Vtlik Solutions</a></span>
+  </div>
+  <a href="https://vtlik.com" class="back">← Volver a vtlik.com</a>
+</footer>
+
+<a href="https://wa.me/573026119411?text=Hola,%20quiero%20crear%20un%20juego%20personalizado%20para%20mi%20hijo" class="wa-float" target="_blank" rel="noopener" title="Contactar por WhatsApp" aria-label="Contactar por WhatsApp">
+  💬
+</a>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
