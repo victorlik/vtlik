@@ -1,0 +1,88 @@
+/* Fase 2: caso "ecosistema de operación 24/7" en /empresas. Reusa tokens de style.css. */
+
+/* ---------- FLUJO ---------- */
+.eco-flow {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px;
+  max-width: 1100px; margin: 0 auto 64px; position: relative;
+}
+.eco-col {
+  padding: 22px 20px; border-radius: var(--radius);
+  background: var(--card-bg); border: 1px solid var(--border); position: relative;
+}
+.eco-col:not(:last-child)::after {
+  content: "→"; position: absolute; right: -28px; top: 50%; transform: translateY(-50%);
+  color: var(--accent); font-size: 1.3rem; font-weight: 800;
+}
+.eco-col h3 { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.eco-col ul { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; }
+.eco-col li { color: var(--text); }
+.eco-col.core { border-color: rgba(0,229,255,0.45); background: rgba(0,229,255,0.06); }
+
+/* ---------- EXPLORADOR ---------- */
+.eco {
+  display: grid; grid-template-columns: 300px 1fr; gap: 24px;
+  max-width: 1100px; margin: 0 auto;
+}
+.eco-tabs { display: flex; flex-direction: column; gap: 8px; }
+.eco-tab {
+  display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+  padding: 14px 16px; border-radius: 12px; cursor: pointer;
+  background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted);
+  font: inherit; font-size: 0.95rem; font-weight: 600; transition: all 0.2s;
+}
+.eco-tab:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+.eco-tab[aria-selected="true"] { color: var(--text); background: rgba(123,47,190,0.22); border-color: var(--primary); }
+.eco-tab .ico { font-size: 1.3rem; }
+
+.eco-panel {
+  padding: 32px; border-radius: 20px; background: var(--dark-2); border: 1px solid var(--border);
+}
+.eco-panel[hidden] { display: none; }
+.eco-panel h3 { font-size: 1.4rem; margin-bottom: 18px; }
+.eco-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.eco-label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+.eco-label.bad { color: #FF8A8A; }
+.eco-label.good { color: var(--accent); }
+.eco-panel p, .eco-panel li { font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; }
+.eco-panel ul { padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+.eco-panel strong { color: var(--text); }
+.eco-facts { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.eco-fact {
+  flex: 1 1 150px; padding: 14px 16px; border-radius: 12px;
+  background: rgba(0,229,255,0.06); border: 1px solid rgba(0,229,255,0.25);
+}
+.eco-fact b { display: block; font-size: 1.4rem; color: var(--accent); line-height: 1.1; }
+.eco-fact span { font-size: 0.8rem; color: var(--text-muted); }
+
+.eco-metrics {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  max-width: 1100px; margin: 56px auto 0;
+}
+.eco-metrics .metric { border-right: none; padding: 22px; border-radius: var(--radius); background: var(--card-bg); border: 1px solid var(--border); }
+
+.eco-note { max-width: 1100px; margin: 20px auto 0; font-size: 0.8rem; color: var(--text-muted); text-align: center; }
+
+.shop-banner {
+  max-width: 1100px; margin: 0 auto; padding: 28px 32px; border-radius: 20px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  background: rgba(255,181,71,0.1); border: 1px solid rgba(255,181,71,0.35);
+}
+.shop-banner p { color: var(--text-muted); font-size: 0.95rem; }
+.shop-banner strong { color: #FFB547; }
+
+@media (max-width: 960px) {
+  .eco-flow { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .eco-col::after { display: none; }
+  .eco { grid-template-columns: 1fr; }
+  .eco-tabs { display: grid; grid-template-columns: 1fr 1fr; }
+  .eco-metrics { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .eco-flow { grid-template-columns: 1fr; }
+  .eco-col:not(:last-child)::after { display: block; content: "↓"; right: auto; left: 50%; top: auto; bottom: -22px; transform: translateX(-50%); }
+  .eco-flow { gap: 28px; }
+  .eco-cols { grid-template-columns: 1fr; }
+  .eco-panel { padding: 22px 18px; }
+  .eco-tab { padding: 12px; font-size: 0.85rem; }
+  .shop-banner { padding: 22px 18px; }
+}

@@ -1,0 +1,214 @@
+/* Estilos de la portada con dos puertas y de la sección /negocios.
+   Se carga DESPUÉS de style.css y reusa sus tokens (--primary, --accent, etc.). */
+:root {
+  --warm: #FFB547;
+  --warm-soft: rgba(255,181,71,0.12);
+  --warm-border: rgba(255,181,71,0.35);
+}
+
+.hero.compact { min-height: auto; padding: 128px 5% 64px; }
+h1 .warm, h2 .warm { color: var(--warm); }
+
+/* ---------- PORTADA: DOS PUERTAS ---------- */
+.doors {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  max-width: 1040px; margin: 48px auto 0; width: 100%; text-align: left;
+}
+.door {
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 36px 32px; border-radius: 20px;
+  background: var(--card-bg); border: 1px solid var(--border);
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.door:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.door.biz:hover { border-color: rgba(0,229,255,0.5); }
+.door.shop { background: var(--warm-soft); border-color: var(--warm-border); }
+.door.shop:hover { border-color: var(--warm); }
+.door-kicker { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.door.shop .door-kicker { color: var(--warm); }
+.door h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); margin: 0; }
+.door p { color: var(--text-muted); font-size: 0.95rem; }
+.door ul { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; }
+.door li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+.door.shop li::before { color: var(--warm); }
+.door-go { margin-top: auto; padding-top: 8px; font-weight: 700; color: var(--accent); }
+.door.shop .door-go { color: var(--warm); }
+
+/* ---------- FRANJA DE CREDIBILIDAD ---------- */
+.cred { background: var(--dark-2); }
+.cred-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  max-width: 1000px; margin: 0 auto;
+}
+@media (max-width: 760px) { .cred-grid { grid-template-columns: 1fr 1fr; } .cred-num { font-size: 1.6rem; } }
+.cred-item { padding: 24px; border-radius: var(--radius); background: var(--card-bg); border: 1px solid var(--border); }
+.cred-num { font-size: 2rem; font-weight: 800; color: var(--accent); line-height: 1.1; }
+.cred-label { font-size: 0.86rem; color: var(--text-muted); margin-top: 6px; }
+.cred-bridge {
+  max-width: 760px; margin: 48px auto 0; text-align: center;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem); font-weight: 700; line-height: 1.4;
+}
+
+/* ---------- RUBROS ---------- */
+.rubros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
+.rubro-card {
+  display: flex; flex-direction: column; gap: 10px; padding: 28px;
+  border-radius: var(--radius); background: var(--card-bg); border: 1px solid var(--border);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.rubro-card:hover { transform: translateY(-3px); border-color: var(--warm-border); }
+.rubro-emoji { font-size: 2.2rem; }
+.rubro-card h3 { font-size: 1.1rem; }
+.rubro-card p { font-size: 0.88rem; color: var(--text-muted); }
+.rubro-card .door-go { color: var(--warm); font-size: 0.9rem; margin-top: auto; }
+
+/* ---------- DOLORES / SOLUCIONES ---------- */
+.pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
+.pain { padding: 26px; border-radius: var(--radius); background: var(--card-bg); border: 1px solid var(--border); }
+.pain-before { font-size: 0.86rem; color: #FF8A8A; margin-bottom: 10px; }
+.pain-before::before { content: "Hoy: "; font-weight: 700; }
+.pain h3 { font-size: 1.02rem; margin-bottom: 8px; }
+.pain p { font-size: 0.88rem; color: var(--text-muted); }
+
+/* ---------- CALCULADORA ---------- */
+.calc {
+  max-width: 880px; margin: 0 auto; padding: 36px;
+  border-radius: 20px; background: var(--dark-2); border: 1px solid var(--warm-border);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+}
+.calc-field { margin-bottom: 22px; }
+.calc-field label { display: block; font-size: 0.92rem; font-weight: 600; margin-bottom: 10px; }
+.calc-field .row { display: flex; align-items: center; gap: 12px; }
+.calc-field input[type=range] { flex: 1; accent-color: var(--warm); min-width: 0; }
+.calc-field output { min-width: 96px; text-align: right; font-weight: 700; color: var(--warm); }
+.calc-result { display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.calc-big { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 800; color: #FF8A8A; line-height: 1; }
+.calc-small { font-size: 0.9rem; color: var(--text-muted); }
+.calc-win { font-size: 1.05rem; font-weight: 700; }
+.calc-win strong { color: var(--warm); }
+.calc-note { font-size: 0.78rem; color: var(--text-muted); grid-column: 1 / -1; }
+
+/* ---------- PLANES ---------- */
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto; align-items: stretch; }
+.plan {
+  display: flex; flex-direction: column; gap: 14px; padding: 32px 28px;
+  border-radius: 20px; background: var(--card-bg); border: 1px solid var(--border); position: relative;
+}
+.plan.featured { border: 2px solid var(--warm); background: var(--warm-soft); }
+.plan-flag {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--warm); color: #1a1100; font-size: 0.75rem; font-weight: 800;
+  padding: 4px 14px; border-radius: 50px; white-space: nowrap;
+}
+.plan h3 { font-size: 1.2rem; }
+.plan-for { font-size: 0.86rem; color: var(--text-muted); min-height: 2.6em; }
+.plan-price { font-size: 2.1rem; font-weight: 800; line-height: 1; }
+.plan-price span { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); }
+.plan-setup { font-size: 0.84rem; color: var(--text-muted); }
+.plan ul { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; flex: 1; }
+.plan li::before { content: "✓ "; color: var(--warm); font-weight: 700; }
+.plan .btn-primary, .plan .btn-secondary { justify-content: center; width: 100%; }
+.plan.featured .btn-primary { background: var(--warm); color: #1a1100; box-shadow: none; }
+.plans-foot { max-width: 1100px; margin: 28px auto 0; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.chip {
+  font-size: 0.86rem; padding: 8px 16px; border-radius: 50px;
+  background: var(--card-bg); border: 1px solid var(--border);
+}
+
+/* ---------- PILOTO ---------- */
+.pilot {
+  max-width: 980px; margin: 0 auto; padding: 44px 36px; text-align: center;
+  border-radius: 24px; background: linear-gradient(135deg, rgba(255,181,71,0.16), rgba(123,47,190,0.18));
+  border: 1px solid var(--warm-border);
+}
+.pilot h2 { margin-bottom: 12px; }
+.pilot p { color: var(--text-muted); max-width: 620px; margin: 0 auto 28px; }
+
+.alt { background: var(--dark-2); }
+.crumbs { font-size: 0.84rem; color: var(--text-muted); margin-bottom: 20px; }
+.crumbs a { color: var(--warm); }
+.faq-item.open .faq-answer { max-height: 400px; }
+
+@media (max-width: 860px) {
+  .doors, .calc { grid-template-columns: 1fr; }
+  .plans { grid-template-columns: 1fr; gap: 28px; }
+  .calc, .pilot { padding: 28px 20px; }
+}
+@media (max-width: 640px) {
+  section { padding: 72px 16px; }
+  .hero.compact { padding: 112px 16px 48px; }
+  .door { padding: 28px 22px; }
+  .nav-cta { padding: 8px 14px; font-size: 0.8rem; }
+}
+
+/* ---------- DEMO DE WHATSAPP (fase 3) ---------- */
+.demo-pick { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 900px; margin: -24px auto 32px; }
+.demo-pick-btn { font: inherit; font-size: 0.88rem; color: var(--text-muted); cursor: pointer; transition: all 0.2s; }
+.demo-pick-btn:hover { color: var(--text); }
+.demo-pick-btn[aria-selected="true"] { color: #1a1100; background: var(--warm); border-color: var(--warm); font-weight: 700; }
+
+.demo { display: grid; grid-template-columns: 340px 1fr; gap: 48px; max-width: 900px; margin: 0 auto; align-items: center; }
+.phone {
+  width: 100%; max-width: 340px; margin: 0 auto; border-radius: 34px; overflow: hidden;
+  border: 8px solid #1f1f2e; box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06);
+  background: #0b141a; display: flex; flex-direction: column;
+}
+.phone-head { display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: #1f2c34; }
+.phone-av { width: 36px; height: 36px; border-radius: 50%; background: #2a3942; display: grid; place-items: center; font-size: 1.1rem; }
+.phone-name { font-weight: 700; font-size: 0.92rem; color: #e9edef; }
+.phone-status { font-size: 0.72rem; color: #8696a0; }
+.phone-chat {
+  height: 470px; overflow-y: auto; padding: 14px 10px; display: flex; flex-direction: column; gap: 8px;
+  background: #0b141a radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px) 0 0 / 18px 18px;
+  scrollbar-width: none;
+}
+.phone-chat::-webkit-scrollbar { display: none; }
+.phone-foot { display: flex; justify-content: space-between; align-items: center; margin: 8px; padding: 9px 14px; border-radius: 22px; background: #2a3942; color: #8696a0; font-size: 0.82rem; }
+
+.msg { max-width: 84%; padding: 7px 10px 8px; border-radius: 10px; font-size: 0.84rem; line-height: 1.4; color: #e9edef; animation: msgIn 0.25s ease-out; }
+.msg-text { white-space: pre-line; }
+.msg-b { align-self: flex-start; background: #202c33; border-top-left-radius: 2px; }
+.msg-c { align-self: flex-end; background: #005c4b; border-top-right-radius: 2px; }
+.msg-photo { height: 86px; margin-bottom: 6px; border-radius: 8px; display: grid; place-items: center; font-size: 0.78rem; color: #8696a0; background: linear-gradient(135deg, #2a3942, #111b21); }
+.msg-chips { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
+.msg-chip { text-align: center; padding: 6px 8px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; color: #53bdeb; background: rgba(83,189,235,0.08); border: 1px solid rgba(83,189,235,0.18); transition: all 0.3s; }
+.msg-chip.picked { background: #53bdeb; color: #0b141a; }
+.msg-sep { align-self: center; font-size: 0.72rem; color: #8696a0; background: #182229; padding: 4px 10px; border-radius: 8px; margin: 4px 0; animation: msgIn 0.25s ease-out; }
+.msg-owner { align-self: stretch; display: flex; flex-direction: column; gap: 3px; padding: 9px 12px; border-radius: 10px; font-size: 0.8rem; color: #e9edef; background: rgba(255,181,71,0.14); border: 1px dashed var(--warm-border); animation: msgIn 0.25s ease-out; }
+.msg-owner b { color: var(--warm); font-size: 0.72rem; }
+.typing { display: flex; gap: 4px; padding: 11px 12px; }
+.typing span { width: 6px; height: 6px; border-radius: 50%; background: #8696a0; animation: blink 1.2s infinite; }
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink { 0%, 80%, 100% { opacity: 0.3; } 40% { opacity: 1; } }
+@keyframes msgIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.demo-steps { list-style: none; counter-reset: st; display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.demo-steps li {
+  counter-increment: st; position: relative; padding: 14px 16px 14px 52px; border-radius: 12px;
+  background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); font-size: 0.93rem;
+  transition: all 0.35s;
+}
+.demo-steps li::before {
+  content: counter(st); position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+  font-size: 0.8rem; font-weight: 800; background: var(--dark-3); color: var(--text-muted);
+}
+.demo-steps li.done { color: var(--text); }
+.demo-steps li.done::before { content: "✓"; background: var(--warm); color: #1a1100; }
+.demo-steps li.now { border-color: var(--warm); background: var(--warm-soft); }
+.demo-replay { font: inherit; cursor: pointer; }
+.demo-note { font-size: 0.76rem; color: var(--text-muted); margin-top: 14px; }
+
+@media (max-width: 860px) {
+  .demo { grid-template-columns: 1fr; gap: 32px; }
+  .demo-pick { margin-top: -16px; }
+}
+@media (max-width: 640px) {
+  .phone-chat { height: 420px; }
+  .demo-pick-btn { font-size: 0.8rem; padding: 7px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .msg, .msg-sep, .msg-owner { animation: none; }
+  .typing span { animation: none; }
+}
