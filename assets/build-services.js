@@ -516,6 +516,7 @@ function page(s) {
   <script type="application/ld+json">${JSON.stringify(faqSchema(s.faq), null, 2)}</script>
 
   <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/wa.css" />
 </head>
 <body>
 
@@ -540,7 +541,7 @@ function page(s) {
   <h1 class="fade-in">${s.h1}</h1>
   <p class="hero-sub fade-in">${s.sub}</p>
   <div class="hero-actions fade-in">
-    <a href="${wa(s.waMsg)}" class="btn-primary" target="_blank" rel="noopener">💬 Consulta gratis</a>
+    <a href="${wa(s.waMsg)}" class="btn-primary" target="_blank" rel="noopener">Consulta gratis</a>
     <a href="#incluye" class="btn-secondary">Ver qué incluye ↓</a>
   </div>
 </section>
@@ -642,8 +643,7 @@ ${related.map(r => `    <a href="/${r.slug}/" class="advantage fade-in">
     <p class="section-sub" style="margin:0 auto;">Contanos tu caso — sin costo ni compromiso. Respondemos en menos de 24 horas.</p>
   </div>
   <div class="contact-direct fade-in" style="justify-content:center">
-    <a href="${wa(s.waMsg)}" class="contact-link" target="_blank" rel="noopener">
-      <span class="link-icon">💬</span> WhatsApp: +57 302 611 9411
+    <a href="${wa(s.waMsg)}" class="contact-link" target="_blank" rel="noopener"> WhatsApp: +57 302 611 9411
     </a>
     <a href="mailto:gerencia@vtlik.com?subject=${encodeURIComponent(s.name)}" class="contact-link">
       <span class="link-icon">✉️</span> gerencia@vtlik.com
@@ -662,12 +662,12 @@ ${related.map(r => `    <a href="/${r.slug}/" class="advantage fade-in">
     <a href="https://www.instagram.com/gerenciavtlik/" target="_blank" rel="noopener" class="social-link" title="Instagram">📸</a>
     <a href="https://www.facebook.com/profile.php?id=61593305437571" target="_blank" rel="noopener" class="social-link" title="Facebook">📘</a>
     <a href="https://www.tiktok.com/@gerenciavtlik" target="_blank" rel="noopener" class="social-link" title="TikTok">🎵</a>
-    <a href="https://wa.me/${WA}" target="_blank" rel="noopener" class="social-link" title="WhatsApp">💬</a>
+    <a href="https://wa.me/${WA}" target="_blank" rel="noopener" class="social-link" title="WhatsApp"></a>
     <a href="mailto:gerencia@vtlik.com" class="social-link" title="Email">✉️</a>
   </div>
 </footer>
 
-<a href="${wa(s.waMsg)}" class="wa-float" target="_blank" rel="noopener" title="Contactar por WhatsApp" aria-label="Contactar por WhatsApp">💬</a>
+<a href="${wa(s.waMsg)}" class="wa-float" target="_blank" rel="noopener" title="Contactar por WhatsApp" aria-label="Contactar por WhatsApp"></a>
 
 <script>
   function toggleFaq(btn) { btn.parentElement.classList.toggle('open'); }

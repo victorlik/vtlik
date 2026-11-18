@@ -120,6 +120,153 @@ const RUBROS = [
   },
 ];
 
+// ---------------------------------------------------------------- CONFIGURADOR "ARMÁ TU SOLUCIÓN"
+// Cada tipo de negocio cae en una familia; la familia define qué automatizaciones vienen marcadas
+// y qué página de ejemplo mostrar. Cualquier texto libre que no esté en la lista usa 'general'.
+const FAMILIES = {
+  citas:    { label: 'negocio de citas', example: 'peluquerias-y-belleza', features: ['agenda', 'recordatorios', 'vuelven', 'reporte'] },
+  pedidos:  { label: 'negocio de pedidos', example: 'restaurantes-y-bares', features: ['pedidos', 'confirmacion', 'vuelven', 'reporte'] },
+  tienda:   { label: 'tienda', example: 'tiendas-de-barrio', features: ['pedidos', 'fiados', 'inventario', 'cierre'] },
+  servicio: { label: 'negocio de servicio técnico', example: 'talleres-mecanicos', features: ['estado', 'cotizaciones', 'recordatorios', 'reporte'] },
+  general:  { label: 'negocio', example: null, features: ['pedidos', 'recordatorios', 'vuelven'] },
+};
+
+const BUSINESS = {
+  citas: ['Peluquería', 'Barbería', 'Salón de uñas', 'Spa', 'Centro de estética', 'Consultorio médico', 'Consultorio odontológico', 'Veterinaria', 'Gimnasio', 'Estudio de tatuajes', 'Fisioterapia', 'Psicología', 'Academia o clases', 'Estudio de fotografía', 'Centro de yoga o pilates'],
+  pedidos: ['Restaurante', 'Comidas rápidas', 'Panadería', 'Cafetería', 'Pastelería', 'Floristería', 'Licorera', 'Frutería', 'Pizzería', 'Heladería', 'Bar'],
+  tienda: ['Tienda de barrio', 'Minimercado', 'Droguería', 'Ferretería', 'Papelería', 'Miscelánea', 'Carnicería', 'Tienda de ropa', 'Óptica', 'Tienda de mascotas', 'Distribuidora'],
+  servicio: ['Taller mecánico', 'Taller de motos', 'Lavadero de carros', 'Servicio técnico de celulares', 'Reparación de electrodomésticos', 'Cerrajería', 'Arreglos de ropa', 'Lavandería', 'Montallantas'],
+};
+const POPULAR = ['Peluquería', 'Barbería', 'Veterinaria', 'Gimnasio', 'Restaurante', 'Panadería', 'Ferretería', 'Lavadero de carros', 'Taller de motos', 'Droguería'];
+
+const FEATURES = [
+  { key: 'agenda', name: 'Agenda de citas por WhatsApp 24/7' },
+  { key: 'recordatorios', name: 'Recordatorios automáticos a clientes' },
+  { key: 'pedidos', name: 'Pedidos por WhatsApp' },
+  { key: 'confirmacion', name: 'Confirmación de pedido con total y tiempo de entrega' },
+  { key: 'estado', name: 'Avisos de estado ("tu equipo está listo")' },
+  { key: 'cotizaciones', name: 'Cotizaciones que el cliente aprueba desde el celular' },
+  { key: 'fiados', name: 'Fiados o cartera con recordatorio de pago' },
+  { key: 'inventario', name: 'Alerta de productos por agotarse' },
+  { key: 'vuelven', name: 'Clientes que vuelven solos (cumpleaños, promos)' },
+  { key: 'reporte', name: 'Reporte semanal al dueño' },
+  { key: 'cierre', name: 'Cierre de caja del día' },
+  { key: 'empleados', name: 'Varios empleados o sedes' },
+  { key: 'ia', name: 'Asistente con IA que responde dudas solo' },
+];
+
+const armaSection = () => `
+<section id="arma">
+  <div class="section-header center">
+    <div class="section-tag">Armá tu solución</div>
+    <h2>¿Qué negocio <span class="warm">tenés</span>?</h2>
+    <p class="section-sub">Escribilo como quieras: veterinaria, gimnasio, ferretería, lavadero… Te mostramos qué podemos automatizar y cuánto te costaría.</p>
+  </div>
+  <div class="arma">
+    <div class="arma-left">
+      <label class="arma-label" for="armaInput">Mi negocio es…</label>
+      <input id="armaInput" class="arma-input" type="text" list="armaList" autocomplete="off" maxlength="60" placeholder="Ej: veterinaria, panadería, taller de motos" />
+      <datalist id="armaList">
+${Object.values(BUSINESS).flat().map((b) => `        <option value="${b}"></option>`).join('\n')}
+      </datalist>
+      <div class="arma-pop">
+${POPULAR.map((b) => `        <button type="button" class="chip arma-pop-btn">${b}</button>`).join('\n')}
+      </div>
+      <div class="arma-label" style="margin-top:22px">¿Qué te gustaría automatizar?</div>
+      <div class="arma-feats">
+${FEATURES.map((f) => `        <label class="arma-feat"><input type="checkbox" value="${f.key}" /><span>${f.name}</span></label>`).join('\n')}
+      </div>
+    </div>
+    <div class="arma-right" aria-live="polite">
+      <div class="arma-empty">👈 Escribí o elegí tu tipo de negocio para ver tu propuesta.</div>
+      <div class="arma-result" hidden>
+        <div class="arma-for">Propuesta para tu <strong id="armaName"></strong></div>
+        <ul id="armaChosen"></ul>
+        <div class="arma-plan">
+          <div class="arma-plan-name">Plan recomendado: <strong id="armaPlan"></strong></div>
+          <div class="plan-price"><b id="armaPrice"></b> <span>/ mes</span></div>
+          <div class="plan-setup">Instalación única: <span id="armaSetup"></span> · Piloto gratis 15 días</div>
+        </div>
+        <a id="armaWa" class="btn-primary" target="_blank" rel="noopener" href="https://wa.me/${WA}">Quiero esto para mi negocio</a>
+        <a id="armaEx" class="arma-ex" href="#" hidden></a>
+      </div>
+    </div>
+  </div>
+  <script type="application/json" id="arma-data">${JSON.stringify({
+    families: FAMILIES, business: BUSINESS, features: FEATURES,
+    plans: PLANS.map(({ key, name, monthly, setup }) => ({ key, name, monthly, setup })),
+    examples: Object.fromEntries(RUBROS.map((r) => [r.slug, r.name])),
+    wa: WA,
+  }).replace(/</g, '\\u003c')}</script>
+</section>
+`;
+
+const armaScript = `
+<script>
+  (function () {
+    var root = document.getElementById('arma'); if (!root) return;
+    var D = JSON.parse(document.getElementById('arma-data').textContent);
+    var input = document.getElementById('armaInput');
+    var boxes = Array.prototype.slice.call(root.querySelectorAll('.arma-feat input'));
+    var fmt = function (n) { return '$' + n.toLocaleString('es-CO'); };
+    var norm = function (s) { return s.toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').trim(); };
+    var index = {};
+    Object.keys(D.business).forEach(function (fam) { D.business[fam].forEach(function (b) { index[norm(b)] = fam; }); });
+    var KEYWORDS = { citas: ['pelu', 'barber', 'una', 'spa', 'estetic', 'consult', 'odonto', 'dent', 'veterin', 'gym', 'gimnas', 'tatu', 'fisio', 'psico', 'clase', 'academ', 'foto', 'yoga', 'pilates', 'masaj', 'belleza', 'medic', 'clinic'],
+                     pedidos: ['restaur', 'comida', 'panad', 'cafe', 'pastel', 'flor', 'licor', 'frut', 'pizz', 'helad', 'bar', 'asader', 'empanad', 'cocina', 'postre', 'catering'],
+                     tienda: ['tienda', 'mercado', 'drog', 'farmac', 'ferret', 'papel', 'miscel', 'carnic', 'ropa', 'optic', 'mascot', 'distrib', 'almacen', 'boutique', 'licores', 'granero', 'surti'],
+                     servicio: ['taller', 'moto', 'lavad', 'tecnic', 'celular', 'electro', 'cerraj', 'arreglo', 'costur', 'sastr', 'lavander', 'llant', 'mecan', 'repar', 'mantenim', 'plomer', 'electric'] };
+    function family(txt) {
+      var n = norm(txt); if (!n) return null;
+      if (index[n]) return index[n];
+      for (var fam in KEYWORDS) { if (KEYWORDS[fam].some(function (k) { return n.indexOf(k) !== -1; })) return fam; }
+      return 'general';
+    }
+    var lastFam = null;
+    function applyFamily(fam) {
+      if (fam === lastFam) return; lastFam = fam;
+      var on = fam ? D.families[fam].features : [];
+      boxes.forEach(function (b) { b.checked = on.indexOf(b.value) !== -1; });
+    }
+    function plan(sel) {
+      if (sel.indexOf('ia') !== -1 || sel.length >= 7) return D.plans[2];
+      if (sel.length >= 4 || sel.indexOf('vuelven') !== -1 || sel.indexOf('reporte') !== -1 || sel.indexOf('empleados') !== -1) return D.plans[1];
+      return D.plans[0];
+    }
+    function render() {
+      var name = input.value.trim();
+      var fam = family(name);
+      var sel = boxes.filter(function (b) { return b.checked; }).map(function (b) { return b.value; });
+      var has = !!name || sel.length > 0;
+      root.querySelector('.arma-empty').hidden = has;
+      root.querySelector('.arma-result').hidden = !has;
+      if (!has) return;
+      document.getElementById('armaName').textContent = name ? name.toLowerCase() : 'negocio';
+      var ul = document.getElementById('armaChosen'); ul.innerHTML = '';
+      var names = D.features.filter(function (f) { return sel.indexOf(f.key) !== -1; }).map(function (f) { return f.name; });
+      if (!names.length) { var li0 = document.createElement('li'); li0.textContent = 'Marcá a la izquierda lo que te gustaría automatizar.'; li0.className = 'muted'; ul.appendChild(li0); }
+      names.forEach(function (n) { var li = document.createElement('li'); li.textContent = n; ul.appendChild(li); });
+      var p = plan(sel);
+      document.getElementById('armaPlan').textContent = p.name;
+      document.getElementById('armaPrice').textContent = fmt(p.monthly);
+      document.getElementById('armaSetup').textContent = fmt(p.setup);
+      var msg = 'Hola Vtlik, tengo ' + (name ? 'un negocio: ' + name : 'un negocio') +
+        (names.length ? '. Me interesa: ' + names.join(', ') : '') + '. Plan sugerido: ' + p.name + '. Quiero el piloto gratis de 15 días.';
+      document.getElementById('armaWa').href = 'https://wa.me/' + D.wa + '?text=' + encodeURIComponent(msg);
+      var ex = document.getElementById('armaEx'), slug = fam && D.families[fam].example;
+      ex.hidden = !slug;
+      if (slug) { ex.href = '/negocios/' + slug + '/#demo'; ex.textContent = 'Mirá cómo funciona en un negocio parecido (' + D.examples[slug] + ') →'; }
+      if (window.gtag && name) { clearTimeout(render.t); render.t = setTimeout(function () { gtag('event', 'arma_negocio', { negocio: name.slice(0, 60), familia: fam }); }, 1500); }
+    }
+    input.addEventListener('input', function () { applyFamily(family(input.value)); render(); });
+    boxes.forEach(function (b) { b.addEventListener('change', render); });
+    Array.prototype.forEach.call(root.querySelectorAll('.arma-pop-btn'), function (b) {
+      b.addEventListener('click', function () { input.value = b.textContent; applyFamily(family(input.value)); render(); });
+    });
+  })();
+</script>
+`;
+
 // ---------------------------------------------------------------- DEMOS DE WHATSAPP
 // from: c = cliente, b = asistente del negocio, o = aviso al dueño, s = separador de tiempo.
 // step: índice del paso (en `steps`) que se ilumina cuando aparece ese mensaje.
@@ -306,6 +453,7 @@ const head = ({ title, desc, canonical, extraLd = '' }) => `<!DOCTYPE html>
 ${extraLd}
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="stylesheet" href="/assets/negocios.css" />
+  <link rel="stylesheet" href="/assets/wa.css" />
 </head>
 <body>
 `;
@@ -332,12 +480,12 @@ const footer = (floatMsg) => `
     <a href="https://www.instagram.com/gerenciavtlik/" target="_blank" rel="noopener" class="social-link" title="Instagram">📸</a>
     <a href="https://www.facebook.com/profile.php?id=61593305437571" target="_blank" rel="noopener" class="social-link" title="Facebook">📘</a>
     <a href="https://www.tiktok.com/@gerenciavtlik" target="_blank" rel="noopener" class="social-link" title="TikTok">🎵</a>
-    <a href="https://wa.me/${WA}" target="_blank" rel="noopener" class="social-link" title="WhatsApp">💬</a>
+    <a href="https://wa.me/${WA}" target="_blank" rel="noopener" class="social-link" title="WhatsApp"></a>
     <a href="mailto:gerencia@vtlik.com" class="social-link" title="Email">✉️</a>
   </div>
 </footer>
 
-<a href="${wa(floatMsg)}" class="wa-float" target="_blank" rel="noopener" title="Escribinos por WhatsApp" aria-label="Escribinos por WhatsApp">💬</a>
+<a href="${wa(floatMsg)}" class="wa-float" target="_blank" rel="noopener" title="Escribinos por WhatsApp" aria-label="Escribinos por WhatsApp"></a>
 `;
 
 const commonScript = `
@@ -497,7 +645,7 @@ const pilotSection = (msg) => `
   <div class="pilot">
     <h2>Probalo <span class="warm">15 días gratis</span></h2>
     <p>Lo instalamos en tu negocio y lo usás con clientes reales. Si no te sirve, no pagás nada. Escribinos y en menos de 24 horas te contamos cómo arrancar.</p>
-    <a href="${wa(msg)}" class="btn-primary" target="_blank" rel="noopener">💬 Quiero mi piloto gratis</a>
+    <a href="${wa(msg)}" class="btn-primary" target="_blank" rel="noopener">Quiero mi piloto gratis</a>
   </div>
 </section>
 `;
@@ -537,7 +685,7 @@ function buildHome() {
   return head({ title, desc, canonical: 'https://vtlik.com/', extraLd: org })
     + nav([['/empresas/', 'Para empresas'], ['/negocios/', 'Para negocios'], ['#experiencia', 'Experiencia'], ['#proyectos', 'Proyectos']], 'Hola Vtlik, quiero saber más sobre sus servicios')
     + `
-<section class="hero">
+<section class="hero home">
   <img src="/vtlik.jpeg" alt="Vtlik Solutions" class="hero-logo fade-in" />
   <p class="hero-slogan">Focused on making technology better</p>
   <h1>Automatizamos la operación de una multinacional de delivery. <span class="warm">Ahora también la de tu negocio.</span></h1>
@@ -550,12 +698,12 @@ function buildHome() {
       <ul>${doorsFeat.biz.map((f) => `<li>${f}</li>`).join('')}</ul>
       <span class="door-go">Ver soluciones para empresas →</span>
     </a>
-    <a class="door shop" href="/negocios/">
+    <a class="door shop" href="/negocios/#arma">
       <span class="door-kicker">Para negocios</span>
       <h2>Tengo un negocio o un local</h2>
-      <p>Peluquerías, talleres, tiendas de barrio, restaurantes y más.</p>
+      <p>Cualquier negocio: peluquerías, veterinarias, talleres, tiendas, restaurantes, gimnasios…</p>
       <ul>${doorsFeat.shop.map((f) => `<li>${f}</li>`).join('')}</ul>
-      <span class="door-go">Ver planes para mi negocio →</span>
+      <span class="door-go">Armar la solución para mi negocio →</span>
     </a>
   </div>
 </section>
@@ -578,7 +726,7 @@ function buildHome() {
   <div class="pilot">
     <h2>¿No sabés por dónde empezar?</h2>
     <p>Contanos qué te quita tiempo o plata. En menos de 24 horas te respondemos con una propuesta concreta, sin costo.</p>
-    <a href="${wa('Hola Vtlik, quiero automatizar algo y no sé por dónde empezar')}" class="btn-primary" target="_blank" rel="noopener">💬 Escribinos por WhatsApp</a>
+    <a href="${wa('Hola Vtlik, quiero automatizar algo y no sé por dónde empezar')}" class="btn-primary" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
   </div>
 </section>
 `
@@ -592,14 +740,14 @@ function buildHub() {
   const hubCalc = { qLabel: '¿Cuántos clientes, citas o pedidos se te escapan por semana?', qMin: 1, qMax: 60, qDef: 6, perWeek: true,
                     tLabel: '¿Cuánto vale una venta o servicio promedio?', tMin: 5000, tMax: 300000, tStep: 5000, tDef: 40000 };
   return head({ title, desc, canonical: 'https://vtlik.com/negocios/', extraLd: faqLd(NEG_FAQ) })
-    + nav([['/', 'Inicio'], ['#rubros', 'Rubros'], ['#calculadora', 'Calculadora'], ['#planes', 'Planes'], ['#faq', 'Preguntas']], waBase)
+    + nav([['/', 'Inicio'], ['#arma', 'Armá tu solución'], ['#rubros', 'Ejemplos'], ['#calculadora', 'Calculadora'], ['#planes', 'Planes'], ['#faq', 'Preguntas']], waBase)
     + `
 <section class="hero compact">
   <div class="hero-badge"><span class="dot"></span>Para negocios de barrio y pymes</div>
   <h1>Tu negocio <span class="warm">trabajando solo</span> mientras vos atendés</h1>
   <p class="hero-sub">Citas y pedidos por WhatsApp a cualquier hora, recordatorios para que no te dejen plantado y clientes que vuelven solos. Sin saber de tecnología.</p>
   <div class="hero-actions">
-    <a href="#rubros" class="btn-primary">Elegí tu tipo de negocio ↓</a>
+    <a href="#arma" class="btn-primary">Armá tu solución ↓</a>
     <a href="#calculadora" class="btn-secondary">¿Cuánto estoy perdiendo?</a>
   </div>
   <div class="hero-stats">
@@ -608,17 +756,17 @@ function buildHub() {
     <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Atendiendo por vos</div></div>
   </div>
 </section>
-
+${armaSection()}
 <section id="rubros" class="alt">
   <div class="section-header center">
-    <div class="section-tag">Elegí tu rubro</div>
-    <h2>Hecho para <span class="warm">tu tipo de negocio</span></h2>
-    <p class="section-sub">Cada rubro tiene sus propios dolores. Por eso no vendemos una app genérica.</p>
+    <div class="section-tag">Ejemplos por rubro</div>
+    <h2>Mirá cómo funciona en <span class="warm">negocios como el tuyo</span></h2>
+    <p class="section-sub">Cuatro ejemplos completos, con conversación, precios y calculadora. Si el tuyo no está, armalo arriba.</p>
   </div>
   <div class="rubros-grid">
 ${RUBROS.map((r) => `    <a class="rubro-card" href="/negocios/${r.slug}/"><span class="rubro-emoji">${r.emoji}</span><h3>${r.name}</h3><p>${r.short}</p><span class="door-go">Ver qué hace por mí →</span></a>`).join('\n')}
   </div>
-  <p class="cred-bridge" style="font-size:1rem;font-weight:500;color:var(--text-muted)">¿Tu negocio no está en la lista? Consultorios, gimnasios, lavaderos, veterinarias… <a href="${wa('Hola Vtlik, tengo un negocio que no está en la lista y quiero automatizarlo')}" target="_blank" rel="noopener" style="color:var(--warm)">Escribinos</a>, seguramente también aplica.</p>
+  <p class="cred-bridge" style="font-size:1rem;font-weight:500;color:var(--text-muted)">¿Tu negocio no está acá? Veterinarias, gimnasios, ferreterías, lavaderos… <a href="#arma" style="color:var(--warm)">Armá tu solución</a> con cualquier tipo de negocio.</p>
 </section>
 `
     + demoSection(RUBROS.map((r) => r.slug), 'Elegí un rubro y mirá una conversación real de principio a fin: el cliente escribe, el sistema responde solo.')
@@ -636,7 +784,7 @@ ${faqBlock(NEG_FAQ)}
 </section>
 `
     + pilotSection('Hola Vtlik, quiero el piloto gratis de 15 días para mi negocio')
-    + footer(waBase) + commonScript + calcScript + demoScript + '\n</body>\n</html>\n';
+    + footer(waBase) + commonScript + calcScript + demoScript + armaScript +'\n</body>\n</html>\n';
 }
 
 function buildRubro(r) {
@@ -656,7 +804,7 @@ function buildRubro(r) {
   <h1>${r.h1}</h1>
   <p class="hero-sub">${r.sub}</p>
   <div class="hero-actions">
-    <a href="${wa(r.waMsg)}" class="btn-primary" target="_blank" rel="noopener">💬 Quiero probarlo gratis</a>
+    <a href="${wa(r.waMsg)}" class="btn-primary" target="_blank" rel="noopener">Quiero probarlo gratis</a>
     <a href="#demo" class="btn-secondary">Ver cómo funciona ↓</a>
   </div>
 </section>

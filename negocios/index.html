@@ -81,6 +81,7 @@
   </script>
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="stylesheet" href="/assets/negocios.css" />
+  <link rel="stylesheet" href="/assets/wa.css" />
 </head>
 <body>
 
@@ -88,7 +89,8 @@
   <a href="/"><img src="/vtlik.jpeg" alt="Vtlik Solutions" class="logo-img" /></a>
   <div class="nav-links">
     <a href="/">Inicio</a>
-    <a href="#rubros">Rubros</a>
+    <a href="#arma">Armá tu solución</a>
+    <a href="#rubros">Ejemplos</a>
     <a href="#calculadora">Calculadora</a>
     <a href="#planes">Planes</a>
     <a href="#faq">Preguntas</a>
@@ -101,7 +103,7 @@
   <h1>Tu negocio <span class="warm">trabajando solo</span> mientras vos atendés</h1>
   <p class="hero-sub">Citas y pedidos por WhatsApp a cualquier hora, recordatorios para que no te dejen plantado y clientes que vuelven solos. Sin saber de tecnología.</p>
   <div class="hero-actions">
-    <a href="#rubros" class="btn-primary">Elegí tu tipo de negocio ↓</a>
+    <a href="#arma" class="btn-primary">Armá tu solución ↓</a>
     <a href="#calculadora" class="btn-secondary">¿Cuánto estoy perdiendo?</a>
   </div>
   <div class="hero-stats">
@@ -111,11 +113,116 @@
   </div>
 </section>
 
+<section id="arma">
+  <div class="section-header center">
+    <div class="section-tag">Armá tu solución</div>
+    <h2>¿Qué negocio <span class="warm">tenés</span>?</h2>
+    <p class="section-sub">Escribilo como quieras: veterinaria, gimnasio, ferretería, lavadero… Te mostramos qué podemos automatizar y cuánto te costaría.</p>
+  </div>
+  <div class="arma">
+    <div class="arma-left">
+      <label class="arma-label" for="armaInput">Mi negocio es…</label>
+      <input id="armaInput" class="arma-input" type="text" list="armaList" autocomplete="off" maxlength="60" placeholder="Ej: veterinaria, panadería, taller de motos" />
+      <datalist id="armaList">
+        <option value="Peluquería"></option>
+        <option value="Barbería"></option>
+        <option value="Salón de uñas"></option>
+        <option value="Spa"></option>
+        <option value="Centro de estética"></option>
+        <option value="Consultorio médico"></option>
+        <option value="Consultorio odontológico"></option>
+        <option value="Veterinaria"></option>
+        <option value="Gimnasio"></option>
+        <option value="Estudio de tatuajes"></option>
+        <option value="Fisioterapia"></option>
+        <option value="Psicología"></option>
+        <option value="Academia o clases"></option>
+        <option value="Estudio de fotografía"></option>
+        <option value="Centro de yoga o pilates"></option>
+        <option value="Restaurante"></option>
+        <option value="Comidas rápidas"></option>
+        <option value="Panadería"></option>
+        <option value="Cafetería"></option>
+        <option value="Pastelería"></option>
+        <option value="Floristería"></option>
+        <option value="Licorera"></option>
+        <option value="Frutería"></option>
+        <option value="Pizzería"></option>
+        <option value="Heladería"></option>
+        <option value="Bar"></option>
+        <option value="Tienda de barrio"></option>
+        <option value="Minimercado"></option>
+        <option value="Droguería"></option>
+        <option value="Ferretería"></option>
+        <option value="Papelería"></option>
+        <option value="Miscelánea"></option>
+        <option value="Carnicería"></option>
+        <option value="Tienda de ropa"></option>
+        <option value="Óptica"></option>
+        <option value="Tienda de mascotas"></option>
+        <option value="Distribuidora"></option>
+        <option value="Taller mecánico"></option>
+        <option value="Taller de motos"></option>
+        <option value="Lavadero de carros"></option>
+        <option value="Servicio técnico de celulares"></option>
+        <option value="Reparación de electrodomésticos"></option>
+        <option value="Cerrajería"></option>
+        <option value="Arreglos de ropa"></option>
+        <option value="Lavandería"></option>
+        <option value="Montallantas"></option>
+      </datalist>
+      <div class="arma-pop">
+        <button type="button" class="chip arma-pop-btn">Peluquería</button>
+        <button type="button" class="chip arma-pop-btn">Barbería</button>
+        <button type="button" class="chip arma-pop-btn">Veterinaria</button>
+        <button type="button" class="chip arma-pop-btn">Gimnasio</button>
+        <button type="button" class="chip arma-pop-btn">Restaurante</button>
+        <button type="button" class="chip arma-pop-btn">Panadería</button>
+        <button type="button" class="chip arma-pop-btn">Ferretería</button>
+        <button type="button" class="chip arma-pop-btn">Lavadero de carros</button>
+        <button type="button" class="chip arma-pop-btn">Taller de motos</button>
+        <button type="button" class="chip arma-pop-btn">Droguería</button>
+      </div>
+      <div class="arma-label" style="margin-top:22px">¿Qué te gustaría automatizar?</div>
+      <div class="arma-feats">
+        <label class="arma-feat"><input type="checkbox" value="agenda" /><span>Agenda de citas por WhatsApp 24/7</span></label>
+        <label class="arma-feat"><input type="checkbox" value="recordatorios" /><span>Recordatorios automáticos a clientes</span></label>
+        <label class="arma-feat"><input type="checkbox" value="pedidos" /><span>Pedidos por WhatsApp</span></label>
+        <label class="arma-feat"><input type="checkbox" value="confirmacion" /><span>Confirmación de pedido con total y tiempo de entrega</span></label>
+        <label class="arma-feat"><input type="checkbox" value="estado" /><span>Avisos de estado ("tu equipo está listo")</span></label>
+        <label class="arma-feat"><input type="checkbox" value="cotizaciones" /><span>Cotizaciones que el cliente aprueba desde el celular</span></label>
+        <label class="arma-feat"><input type="checkbox" value="fiados" /><span>Fiados o cartera con recordatorio de pago</span></label>
+        <label class="arma-feat"><input type="checkbox" value="inventario" /><span>Alerta de productos por agotarse</span></label>
+        <label class="arma-feat"><input type="checkbox" value="vuelven" /><span>Clientes que vuelven solos (cumpleaños, promos)</span></label>
+        <label class="arma-feat"><input type="checkbox" value="reporte" /><span>Reporte semanal al dueño</span></label>
+        <label class="arma-feat"><input type="checkbox" value="cierre" /><span>Cierre de caja del día</span></label>
+        <label class="arma-feat"><input type="checkbox" value="empleados" /><span>Varios empleados o sedes</span></label>
+        <label class="arma-feat"><input type="checkbox" value="ia" /><span>Asistente con IA que responde dudas solo</span></label>
+      </div>
+    </div>
+    <div class="arma-right" aria-live="polite">
+      <div class="arma-empty">👈 Escribí o elegí tu tipo de negocio para ver tu propuesta.</div>
+      <div class="arma-result" hidden>
+        <div class="arma-for">Propuesta para tu <strong id="armaName"></strong></div>
+        <ul id="armaChosen"></ul>
+        <div class="arma-plan">
+          <div class="arma-plan-name">Plan recomendado: <strong id="armaPlan"></strong></div>
+          <div class="plan-price"><b id="armaPrice"></b> <span>/ mes</span></div>
+          <div class="plan-setup">Instalación única: <span id="armaSetup"></span> · Piloto gratis 15 días</div>
+        </div>
+        <a id="armaWa" class="btn-primary" target="_blank" rel="noopener" href="https://wa.me/573026119411">Quiero esto para mi negocio</a>
+        <a id="armaEx" class="arma-ex" href="#" hidden></a>
+      </div>
+    </div>
+  </div>
+  <script type="application/json" id="arma-data">{"families":{"citas":{"label":"negocio de citas","example":"peluquerias-y-belleza","features":["agenda","recordatorios","vuelven","reporte"]},"pedidos":{"label":"negocio de pedidos","example":"restaurantes-y-bares","features":["pedidos","confirmacion","vuelven","reporte"]},"tienda":{"label":"tienda","example":"tiendas-de-barrio","features":["pedidos","fiados","inventario","cierre"]},"servicio":{"label":"negocio de servicio técnico","example":"talleres-mecanicos","features":["estado","cotizaciones","recordatorios","reporte"]},"general":{"label":"negocio","example":null,"features":["pedidos","recordatorios","vuelven"]}},"business":{"citas":["Peluquería","Barbería","Salón de uñas","Spa","Centro de estética","Consultorio médico","Consultorio odontológico","Veterinaria","Gimnasio","Estudio de tatuajes","Fisioterapia","Psicología","Academia o clases","Estudio de fotografía","Centro de yoga o pilates"],"pedidos":["Restaurante","Comidas rápidas","Panadería","Cafetería","Pastelería","Floristería","Licorera","Frutería","Pizzería","Heladería","Bar"],"tienda":["Tienda de barrio","Minimercado","Droguería","Ferretería","Papelería","Miscelánea","Carnicería","Tienda de ropa","Óptica","Tienda de mascotas","Distribuidora"],"servicio":["Taller mecánico","Taller de motos","Lavadero de carros","Servicio técnico de celulares","Reparación de electrodomésticos","Cerrajería","Arreglos de ropa","Lavandería","Montallantas"]},"features":[{"key":"agenda","name":"Agenda de citas por WhatsApp 24/7"},{"key":"recordatorios","name":"Recordatorios automáticos a clientes"},{"key":"pedidos","name":"Pedidos por WhatsApp"},{"key":"confirmacion","name":"Confirmación de pedido con total y tiempo de entrega"},{"key":"estado","name":"Avisos de estado (\"tu equipo está listo\")"},{"key":"cotizaciones","name":"Cotizaciones que el cliente aprueba desde el celular"},{"key":"fiados","name":"Fiados o cartera con recordatorio de pago"},{"key":"inventario","name":"Alerta de productos por agotarse"},{"key":"vuelven","name":"Clientes que vuelven solos (cumpleaños, promos)"},{"key":"reporte","name":"Reporte semanal al dueño"},{"key":"cierre","name":"Cierre de caja del día"},{"key":"empleados","name":"Varios empleados o sedes"},{"key":"ia","name":"Asistente con IA que responde dudas solo"}],"plans":[{"key":"arranque","name":"Arranque","monthly":89000,"setup":250000},{"key":"crece","name":"Crece","monthly":149000,"setup":450000},{"key":"pro","name":"Pro con IA","monthly":249000,"setup":750000}],"examples":{"peluquerias-y-belleza":"Peluquerías y belleza","talleres-mecanicos":"Talleres mecánicos","tiendas-de-barrio":"Tiendas de barrio","restaurantes-y-bares":"Restaurantes y bares"},"wa":"573026119411"}</script>
+</section>
+
 <section id="rubros" class="alt">
   <div class="section-header center">
-    <div class="section-tag">Elegí tu rubro</div>
-    <h2>Hecho para <span class="warm">tu tipo de negocio</span></h2>
-    <p class="section-sub">Cada rubro tiene sus propios dolores. Por eso no vendemos una app genérica.</p>
+    <div class="section-tag">Ejemplos por rubro</div>
+    <h2>Mirá cómo funciona en <span class="warm">negocios como el tuyo</span></h2>
+    <p class="section-sub">Cuatro ejemplos completos, con conversación, precios y calculadora. Si el tuyo no está, armalo arriba.</p>
   </div>
   <div class="rubros-grid">
     <a class="rubro-card" href="/negocios/peluquerias-y-belleza/"><span class="rubro-emoji">💇</span><h3>Peluquerías y belleza</h3><p>Barberías, salones, uñas, spa y estética.</p><span class="door-go">Ver qué hace por mí →</span></a>
@@ -123,7 +230,7 @@
     <a class="rubro-card" href="/negocios/tiendas-de-barrio/"><span class="rubro-emoji">🏪</span><h3>Tiendas de barrio</h3><p>Tiendas, minimercados, droguerías y misceláneas.</p><span class="door-go">Ver qué hace por mí →</span></a>
     <a class="rubro-card" href="/negocios/restaurantes-y-bares/"><span class="rubro-emoji">🍽️</span><h3>Restaurantes y bares</h3><p>Restaurantes, comidas rápidas, cafés, bares y discotecas.</p><span class="door-go">Ver qué hace por mí →</span></a>
   </div>
-  <p class="cred-bridge" style="font-size:1rem;font-weight:500;color:var(--text-muted)">¿Tu negocio no está en la lista? Consultorios, gimnasios, lavaderos, veterinarias… <a href="https://wa.me/573026119411?text=Hola%20Vtlik%2C%20tengo%20un%20negocio%20que%20no%20est%C3%A1%20en%20la%20lista%20y%20quiero%20automatizarlo" target="_blank" rel="noopener" style="color:var(--warm)">Escribinos</a>, seguramente también aplica.</p>
+  <p class="cred-bridge" style="font-size:1rem;font-weight:500;color:var(--text-muted)">¿Tu negocio no está acá? Veterinarias, gimnasios, ferreterías, lavaderos… <a href="#arma" style="color:var(--warm)">Armá tu solución</a> con cualquier tipo de negocio.</p>
 </section>
 
 <section id="demo">
@@ -306,7 +413,7 @@
   <div class="pilot">
     <h2>Probalo <span class="warm">15 días gratis</span></h2>
     <p>Lo instalamos en tu negocio y lo usás con clientes reales. Si no te sirve, no pagás nada. Escribinos y en menos de 24 horas te contamos cómo arrancar.</p>
-    <a href="https://wa.me/573026119411?text=Hola%20Vtlik%2C%20quiero%20el%20piloto%20gratis%20de%2015%20d%C3%ADas%20para%20mi%20negocio" class="btn-primary" target="_blank" rel="noopener">💬 Quiero mi piloto gratis</a>
+    <a href="https://wa.me/573026119411?text=Hola%20Vtlik%2C%20quiero%20el%20piloto%20gratis%20de%2015%20d%C3%ADas%20para%20mi%20negocio" class="btn-primary" target="_blank" rel="noopener">Quiero mi piloto gratis</a>
   </div>
 </section>
 
@@ -319,12 +426,12 @@
     <a href="https://www.instagram.com/gerenciavtlik/" target="_blank" rel="noopener" class="social-link" title="Instagram">📸</a>
     <a href="https://www.facebook.com/profile.php?id=61593305437571" target="_blank" rel="noopener" class="social-link" title="Facebook">📘</a>
     <a href="https://www.tiktok.com/@gerenciavtlik" target="_blank" rel="noopener" class="social-link" title="TikTok">🎵</a>
-    <a href="https://wa.me/573026119411" target="_blank" rel="noopener" class="social-link" title="WhatsApp">💬</a>
+    <a href="https://wa.me/573026119411" target="_blank" rel="noopener" class="social-link" title="WhatsApp"></a>
     <a href="mailto:gerencia@vtlik.com" class="social-link" title="Email">✉️</a>
   </div>
 </footer>
 
-<a href="https://wa.me/573026119411?text=Hola%20Vtlik%2C%20tengo%20un%20negocio%20y%20quiero%20automatizarlo" class="wa-float" target="_blank" rel="noopener" title="Escribinos por WhatsApp" aria-label="Escribinos por WhatsApp">💬</a>
+<a href="https://wa.me/573026119411?text=Hola%20Vtlik%2C%20tengo%20un%20negocio%20y%20quiero%20automatizarlo" class="wa-float" target="_blank" rel="noopener" title="Escribinos por WhatsApp" aria-label="Escribinos por WhatsApp"></a>
 
 <script>
   function toggleFaq(btn) { btn.parentElement.classList.toggle('open'); }
@@ -426,6 +533,70 @@
       if (es[0].isIntersecting && !started) { started = true; io.disconnect(); play(current); }
     }, { threshold: 0.35 });
     io.observe(root.querySelector('.phone'));
+  })();
+</script>
+
+<script>
+  (function () {
+    var root = document.getElementById('arma'); if (!root) return;
+    var D = JSON.parse(document.getElementById('arma-data').textContent);
+    var input = document.getElementById('armaInput');
+    var boxes = Array.prototype.slice.call(root.querySelectorAll('.arma-feat input'));
+    var fmt = function (n) { return '$' + n.toLocaleString('es-CO'); };
+    var norm = function (s) { return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim(); };
+    var index = {};
+    Object.keys(D.business).forEach(function (fam) { D.business[fam].forEach(function (b) { index[norm(b)] = fam; }); });
+    var KEYWORDS = { citas: ['pelu', 'barber', 'una', 'spa', 'estetic', 'consult', 'odonto', 'dent', 'veterin', 'gym', 'gimnas', 'tatu', 'fisio', 'psico', 'clase', 'academ', 'foto', 'yoga', 'pilates', 'masaj', 'belleza', 'medic', 'clinic'],
+                     pedidos: ['restaur', 'comida', 'panad', 'cafe', 'pastel', 'flor', 'licor', 'frut', 'pizz', 'helad', 'bar', 'asader', 'empanad', 'cocina', 'postre', 'catering'],
+                     tienda: ['tienda', 'mercado', 'drog', 'farmac', 'ferret', 'papel', 'miscel', 'carnic', 'ropa', 'optic', 'mascot', 'distrib', 'almacen', 'boutique', 'licores', 'granero', 'surti'],
+                     servicio: ['taller', 'moto', 'lavad', 'tecnic', 'celular', 'electro', 'cerraj', 'arreglo', 'costur', 'sastr', 'lavander', 'llant', 'mecan', 'repar', 'mantenim', 'plomer', 'electric'] };
+    function family(txt) {
+      var n = norm(txt); if (!n) return null;
+      if (index[n]) return index[n];
+      for (var fam in KEYWORDS) { if (KEYWORDS[fam].some(function (k) { return n.indexOf(k) !== -1; })) return fam; }
+      return 'general';
+    }
+    var lastFam = null;
+    function applyFamily(fam) {
+      if (fam === lastFam) return; lastFam = fam;
+      var on = fam ? D.families[fam].features : [];
+      boxes.forEach(function (b) { b.checked = on.indexOf(b.value) !== -1; });
+    }
+    function plan(sel) {
+      if (sel.indexOf('ia') !== -1 || sel.length >= 7) return D.plans[2];
+      if (sel.length >= 4 || sel.indexOf('vuelven') !== -1 || sel.indexOf('reporte') !== -1 || sel.indexOf('empleados') !== -1) return D.plans[1];
+      return D.plans[0];
+    }
+    function render() {
+      var name = input.value.trim();
+      var fam = family(name);
+      var sel = boxes.filter(function (b) { return b.checked; }).map(function (b) { return b.value; });
+      var has = !!name || sel.length > 0;
+      root.querySelector('.arma-empty').hidden = has;
+      root.querySelector('.arma-result').hidden = !has;
+      if (!has) return;
+      document.getElementById('armaName').textContent = name ? name.toLowerCase() : 'negocio';
+      var ul = document.getElementById('armaChosen'); ul.innerHTML = '';
+      var names = D.features.filter(function (f) { return sel.indexOf(f.key) !== -1; }).map(function (f) { return f.name; });
+      if (!names.length) { var li0 = document.createElement('li'); li0.textContent = 'Marcá a la izquierda lo que te gustaría automatizar.'; li0.className = 'muted'; ul.appendChild(li0); }
+      names.forEach(function (n) { var li = document.createElement('li'); li.textContent = n; ul.appendChild(li); });
+      var p = plan(sel);
+      document.getElementById('armaPlan').textContent = p.name;
+      document.getElementById('armaPrice').textContent = fmt(p.monthly);
+      document.getElementById('armaSetup').textContent = fmt(p.setup);
+      var msg = 'Hola Vtlik, tengo ' + (name ? 'un negocio: ' + name : 'un negocio') +
+        (names.length ? '. Me interesa: ' + names.join(', ') : '') + '. Plan sugerido: ' + p.name + '. Quiero el piloto gratis de 15 días.';
+      document.getElementById('armaWa').href = 'https://wa.me/' + D.wa + '?text=' + encodeURIComponent(msg);
+      var ex = document.getElementById('armaEx'), slug = fam && D.families[fam].example;
+      ex.hidden = !slug;
+      if (slug) { ex.href = '/negocios/' + slug + '/#demo'; ex.textContent = 'Mirá cómo funciona en un negocio parecido (' + D.examples[slug] + ') →'; }
+      if (window.gtag && name) { clearTimeout(render.t); render.t = setTimeout(function () { gtag('event', 'arma_negocio', { negocio: name.slice(0, 60), familia: fam }); }, 1500); }
+    }
+    input.addEventListener('input', function () { applyFamily(family(input.value)); render(); });
+    boxes.forEach(function (b) { b.addEventListener('change', render); });
+    Array.prototype.forEach.call(root.querySelectorAll('.arma-pop-btn'), function (b) {
+      b.addEventListener('click', function () { input.value = b.textContent; applyFamily(family(input.value)); render(); });
+    });
   })();
 </script>
 
