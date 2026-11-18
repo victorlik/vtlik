@@ -368,8 +368,8 @@ const credSection = (bridge) => `
 <section class="cred" id="experiencia">
   <div class="section-header center">
     <div class="section-tag">Experiencia comprobada</div>
-    <h2>Esto ya corre todos los días en una multinacional</h2>
-    <p class="section-sub">Construimos y mantenemos el ecosistema de automatización de la operación de soporte 24/7 de una multinacional líder en Latinoamérica.</p>
+    <h2>Esto ya corre todos los días en una multinacional de delivery</h2>
+    <p class="section-sub">Construimos y mantenemos el ecosistema de automatización de la operación de soporte 24/7 de una multinacional de delivery líder en Latinoamérica.</p>
   </div>
   <div class="cred-grid">
 ${CRED.map(([n, l]) => `    <div class="cred-item"><div class="cred-num">${n}</div><div class="cred-label">${l}</div></div>`).join('\n')}
@@ -397,7 +397,7 @@ const NEG_FAQ = [
   { q: '¿Cómo funciona el piloto gratis de 15 días?', a: 'Lo instalamos y lo usás con clientes reales durante 15 días. Si te sirve, pagás la instalación y arranca la mensualidad. Si no te convence, no pagás nada.' },
   { q: '¿Hay cláusula de permanencia?', a: 'No. Pagás mes a mes y cancelás cuando quieras. Si preferís pagar el año completo, te regalamos 2 meses.' },
   { q: '¿Puedo cambiar de plan después?', a: 'Sí. Podés empezar con Arranque y pasar a Crece o Pro cuando tu negocio lo pida, sin volver a pagar la instalación completa: solo la diferencia.' },
-  { q: '¿Y si algo deja de funcionar?', a: 'Nos escribís por WhatsApp y lo resolvemos. Además, nuestros sistemas se vigilan solos y nos avisan si algo se cae: es la misma tecnología que usamos en la operación de una multinacional.' },
+  { q: '¿Y si algo deja de funcionar?', a: 'Nos escribís por WhatsApp y lo resolvemos. Además, nuestros sistemas se vigilan solos y nos avisan si algo se cae: es la misma tecnología que usamos en la operación de una multinacional de delivery.' },
 ];
 
 // ---------------------------------------------------------------- BLOQUES DE /negocios
@@ -524,7 +524,7 @@ function buildHome() {
     shop: ['Citas y pedidos por WhatsApp, 24/7', 'Recordatorios para que no te dejen plantado', 'Clientes que vuelven solos', `Planes desde ${cop(PLANS[0].monthly)} al mes`],
   };
   const title = 'Vtlik Solutions | Automatización para empresas y negocios en Medellín';
-  const desc = 'Automatizamos la operación 24/7 de una multinacional. Ahora llevamos esa tecnología a empresas y a negocios de barrio: peluquerías, talleres, tiendas y restaurantes en Medellín.';
+  const desc = 'Automatizamos la operación 24/7 de una multinacional de delivery. Ahora llevamos esa tecnología a empresas y a negocios de barrio: peluquerías, talleres, tiendas y restaurantes en Medellín.';
   const org = ld({
     '@context': 'https://schema.org', '@type': 'ProfessionalService', '@id': 'https://vtlik.com/#organization',
     name: 'Vtlik Solutions', url: 'https://vtlik.com', email: 'gerencia@vtlik.com', telephone: '+573026119411',
@@ -540,7 +540,7 @@ function buildHome() {
 <section class="hero">
   <img src="/vtlik.jpeg" alt="Vtlik Solutions" class="hero-logo fade-in" />
   <p class="hero-slogan">Focused on making technology better</p>
-  <h1>Automatizamos la operación de una multinacional. <span class="warm">Ahora también la de tu negocio.</span></h1>
+  <h1>Automatizamos la operación de una multinacional de delivery. <span class="warm">Ahora también la de tu negocio.</span></h1>
   <p class="hero-sub">Desde un call center 24/7 hasta la peluquería de la esquina: sistemas que trabajan solos para que vos te enfoqués en lo tuyo.</p>
   <div class="doors">
     <a class="door biz" href="/empresas/">
